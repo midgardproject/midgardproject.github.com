@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}Midgard</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link rel="shortcut icon" href="/images/favicon.png"
+    type="image/png" />
+    <link type="text/css" rel="stylesheet" href="/css/style.css"
+    />
+    {% if page.custom_css %}
+    <link type="text/css" rel="stylesheet" href="{{ page.custom_css }}" />
+    {% endif %}
+    <link type="text/css" rel="stylesheet" href="/css/custom-theme/jquery-ui-1.8.6.custom.css"
+    />
+    <link href="http://fonts.googleapis.com/css?family=Cantarell" rel="stylesheet" type="text/css" />
+    {% for js in page.custom_js %}
+    <script src="{{ js }}" type="application/javascript"></script>
+    {% endfor %}
+    <!--[if IE]>
+      <script>
+        for (var e, l = 'article aside footer header nav section time'.split(' '); e = l.pop(); document.createElement(e))
+      </script>
+    <![endif]-->
+  </head>
+  
+  <body xmlns:mgd="http://www.midgard-project.org/midgard2/9.03/" xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:doap="http://usefulinc.com/ns/doap#" xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:dcterms="http://purl.org/dc/terms/">
+    <div id="main_center">
+      <header>
+        <div class="wcenterwrapper">
+          {% if page.logo %} 
+          <div class="logo">
+            <img src="{{ page.logo }}" alt="{{ page.title }}" />
+          </div>
+          {% endif %}
+          <h1>{{ page.title }}</h1>
+          <div class="tagline">{{ page.tagline }}</div>
+        </div>
+      </header>
+      <div id="center">
+        {{ content }}
+      </div>
+      <div class="push"></div>
+    </div>
+    <footer>
+      <div class="wrapper">
+        <a href="/" style="margin-right: 0;"><img src="/images/logo_m.png" alt="Midgard" class="logo" /></a>
+        <a href="http://lists.midgard-project.org/">join our mailing list</a>
+        <a href="http://twitter.com/MidgardProject">follow us on Twitter</a>
+        <a href="irc://irc.freenode.net/midgard">chat with us on #midgard</a>
+        <br/>powered by Free Software</div>
+    </footer>
+  </body>
+
+</html>

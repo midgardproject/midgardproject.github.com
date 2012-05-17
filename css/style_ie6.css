@@ -1,0 +1,17 @@
+
+/* IE6 patch */
+
+#main_center{
+	height: auto !important;
+	height: 100%;
+}
+
+article.fullwidth{
+	height: auto !important;
+	height: 400px;
+}
+
+article pre{
+	height: expression( this.scrollHeight > 150 ? "150px" : "auto" );
+	width: 91%;
+}

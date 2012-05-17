@@ -1,0 +1,67 @@
+---
+layout: default
+custom_css: /css/product.css
+custom_js:
+  - /js/jquery-1.7.1.min.js
+  - /js/menu.js
+  - /js/downloadmenu.js
+---
+<article>
+  <div class="tagline">
+    {{ content }}
+  </div>
+
+  <aside>
+    <div class="sidebox linklist">
+      <div class="wrapper">
+        <ul>
+          <li><a href="#download">Downloads</a></li>
+          {% for document in site.posts %}
+          {% if document.categories contains page.name %}
+          {% unless document.tags contains 'download' %}
+          <li><a href="#{{ document.name }}">{{ document.title }}</a></li>
+          {% endunless %}
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+  <section id="download">
+    <h2>Downloads</h2>
+    <ul class="icons">
+      {% for download in site.posts %}
+      {% if download.categories contains page.name and download.tags contains 'download' %}
+      <li><a href="#{{ download.name }}" class="{{ download.name }}">{{ download.title }}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <div class="content">
+      {% for download in site.posts %}
+      {% if download.categories contains page.name and download.tags contains 'download' %}
+      <section id="{{ download.name }}">
+        <h3>{{ download.title }}</h3>
+        <div>
+          {{ download.content }}
+        </div>
+      </section>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <div>
+    {% for document in site.posts %}
+    {% if document.categories contains page.name %}
+    {% unless document.tags contains 'download' %}
+      <section id="{{ document.name }}">
+        <h1>{{ document.title }}</h1>
+        <div>
+          {{ document.content }}
+        </div>
+      </section>
+    {% endunless %}
+    {% endif %}
+    {% endfor %}
+  </div>

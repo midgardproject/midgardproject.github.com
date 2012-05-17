@@ -1,0 +1,42 @@
+---
+layout: default
+custom_css: /css/project.css
+---
+<article>
+  <section class="tagline">
+    {{ content }}
+  </section>
+  <div class="stack">
+    {% for category in page.product_categories %}
+    <section>
+    <h2>{{ category.label }}</h2>
+      <ul>
+        {% for product in category.products %}
+        <li class="product">
+          <div class="logo">
+          {% if product.logo %}
+            <img src="{{ product.logo }}" alt="{{ product.label }}" />
+          {% endif %}
+          </div>
+          <h3>
+            <a href="{{ product.url }}">{{ product.label }}</a>
+          </h3>
+          <p>
+            <span>{{ product.tagline }}</span>
+            <a href="{{ product.url }}">&#187;</a>
+          </p>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+  </div>
+  <div class="clear"></div>
+  {% if page.extra_content %}
+  <section>
+    <p>
+      {{ page.extra_content }}
+    </p>
+  </section>
+  {% endif %}
+</article>

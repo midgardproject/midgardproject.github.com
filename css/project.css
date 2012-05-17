@@ -1,0 +1,90 @@
+.stack section
+{
+    width: 100%;
+    min-height: 100px;
+    margin-bottom: 1em;
+    clear: left;
+}
+
+.stack section h2
+{
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 0.4em;
+}
+
+.stack ul
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+.stack ul li
+{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    margin-right: 4em;
+    float: left;
+    height: 80px;
+    width: 40%;
+}
+
+.stack ul li .logo
+{
+    float: left;
+    margin-right: 1em;
+    width: 70px;
+    height: 70px;
+}
+
+.stack ul li h3
+{
+    margin: 0px;
+    margin-top: 10px;
+    padding: 0px;
+}
+
+.stack ul li a
+{
+    text-decoration: none;
+}
+
+.stack ul li p
+{
+    margin-top: 0.2em;
+}
+
+.tagline strong,
+.tagline b
+{
+    font-weight: bold;
+    color: #2e3436;
+}
+.stack ul li strong,
+.stack ul li b
+{
+    font-weight: normal;
+    color: #2e3436;
+}
+
+article nav ol
+{
+    margin: 0px;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    padding: 0px;
+    text-align: center;
+	font-family: Cantarell, Helvetica, Arial, sans-serif;
+	font-size: 20pt;
+}
+
+article nav ol li
+{
+    display: inline;
+    list-style: none;
+    margin-left: 1em;
+    margin-right: 1em;
+}
