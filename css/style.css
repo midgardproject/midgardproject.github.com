@@ -180,6 +180,7 @@ article .tagline
     font-size: larger;
     margin-bottom: 1.5em;
     margin-top: 1em;
+    text-align: justify;
 }
 article .tabs{
 	margin-bottom: 10px;
