@@ -1,6 +1,6 @@
 --- 
 extra_content: "<p>Being a free software project, Midgard works quite actively with many related communities like <a href=\"http://www.gnome.org/\">GNOME</a>, <a href=\"http://cmf.symfony.com/\">Symfony CMF</a>, and the <a href=\"http://www.iks-project.eu/\">IKS project</a>.</p><p>Read more about the project's background <a href=\"http://en.wikipedia.org/wiki/Midgard_%28software%29#History\">on Wikipedia</a> or follow the development <a href=\"https://github.com/midgardproject\">on GitHub</a>.</p>"
-tagline: "Buildings tools for a better Web since 1999"
+tagline: "Providing tools for a better Web since 1999"
 layout: project
 logo: /images/midgard_white.png
 product_categories: 
