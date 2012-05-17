@@ -2,6 +2,7 @@
 layout: product
 name: midgardmvc
 title: "Midgard MVC"
+tagline: "Component-oriented web framework for PHP"
 ---
 Midgard MVC is a web framework for PHP. Being a framework, it provides a standard way to build and deploy web applications. Your applications provide a set of interfaces that Midgard MVC calls when a matching HTTP request is made.
 

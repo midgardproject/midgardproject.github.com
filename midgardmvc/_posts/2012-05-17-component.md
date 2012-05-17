@@ -4,28 +4,28 @@ name: component
 ---
 A component is a functional module that runs inside Midgard MVC. It is usually run associated to a particular Midgard MVC Node, but can also tack itself to be run alongside another component's Node.
 
-*   _componentName_
+* _componentName_
 
-        *   _manifest.yml_: Component's package manifest, routes and signal listener registration
-    *   _configuration_
+  * _manifest.yml_: Component's package manifest, routes and signal listener registration
+  * _configuration_
 
-                *   _defaults.yml_: Component's default configuration, as name-value pairs
-    *   _controllers_
+    - _defaults.yml_: Component's default configuration, as name-value pairs
+  * _controllers_
 
-                *   _controllername.php_: A controller class for the component
-    *   _models_
+    - _controllername.php_: A controller class for the component
+  * _models_
 
-                *   _classname.xml_: Midgard Schema used by the component, registers type classname
-        *   views
+    - _classname.xml_: [Midgard Schema](/midgard2/#mgdschema) used by the component, registers type classname
+    - _classname.php_: PHP class that extends a Midgard Schema
+  * _views_
 
-                        *   _viewname.xml_: Midgard View used by the component, registers view viewname
-        *   _classname.php_: PHP class that extends a Midgard Schema
-    *   _services_
+    - _viewname.xml_: Midgard View used by the component, registers view viewname
+  * _services_
 
-                *   _authentication.php_: component-specific implementation of Midgard MVC Authentication Service (these are rarely needed)
-    *   _templates_
+    - _authentication.php_: component-specific implementation of Midgard MVC Authentication Service (these are rarely needed)
+  * _templates_
 
-                *   _templatename.xhtml_: A TAL template used by the component, named templatename<div>
+    - _templatename.xhtml_: A TAL template used by the component, named templatename
 
 ### Defining routes
 
@@ -67,15 +67,15 @@ Variables can be used with URL patterns in the following way:
 *   Named variable
 
         *   -path: '/{$foo}'
-    *   With request /bar the controller would be called with $args['foo'] = 'bar'
+    *   With request /bar the controller would be called with `$args['foo'] = 'bar'`
 *   Named and typed variable
 
         *   -path: '/latest/{int:$number}'
-    *   With request /latest/5 the controller would be called with $args['number'] = 5
+    *   With request /latest/5 the controller would be called with `$args['number'] = 5`
 *   Unnamed arguments
 
         *   -path '/file/@'
-    *   With request /file/a/b the controller would be called with $args['variable_arguments'] = array('a', 'b')
+    *   With request /file/a/b the controller would be called with `$args['variable_arguments'] = array('a', 'b')`
 
 #### Limiting route availability
 
@@ -85,7 +85,7 @@ If you want routes to be accessible only when run on the root folder of the webs
      some_route:
       root_only: true
 
-Another option is to ensure a route is accessible only when used in subrequests (_dynamic_load_ and _dynamic_call_) and not accessible directly by browser. This can be achieved by the following in route definition:
+Another option is to ensure a route is accessible only when used in subrequests (`dynamic_load` and `dynamic_call`) and not accessible directly by browser. This can be achieved by the following in route definition:
     routes:
      some_route:
        subrequest_only: true
@@ -99,9 +99,9 @@ Controller is a PHP class that contains one or more actions matching route defin
 
 The controller will then do whatever processing or data fetching it needs to do. Any content the controller wants to pass to a template should be added to the data array. If any errors occur, the controller should throw an exception.
 
-Actions are public methods in a controller class. Action methods are named using pattern _<HTTP verb>_<action name>_, for example _get_article()_ or _post_form()_. Action methods will receive the possible URL arguments as an argument containing an array.
+Actions are public methods in a controller class. Action methods are named using pattern `<HTTP verb>_<action name>`, for example `get_article()` or `post_form()`. Action methods will receive the possible URL arguments as an argument containing an array.
 
-Here is a simple example. Route definition from _net_example_calendar/manifest.yml_:
+Here is a simple example. Route definition from `net_example_calendar/manifest.yml`:
 
     show_date:
      - path: '/date'
@@ -132,7 +132,7 @@ Controller class `net_example__calendar/controllers/date.php`:
 
 Once a controller has been run, the next phase in MVC execution is templating. There are two levels of templates used:
 
-*   **Template entry point**: the "whole page" template, which includes a content area by having a <mgd:include>content</mgd:include>
+*   **Template entry point**: the "whole page" template, which includes a content area by having a `<mgd:include>content</mgd:include>`
 *   **Content entry point**: the "content area" of a page, as defined in the main template
 
 Each route definition can decide what templates to use in each of these. If a route wants to override the whole site template, then the route should define its own template entry point, and if it only wants to show something in the content area, then it should define its own content entry point.
@@ -152,7 +152,7 @@ When the templating phase of the route happens, MVC will look for such element f
 *   _templates_ directories of any components injected to the template stack
 *   Midgard MVC core _templates_ directory
 
-The first matching template element will be used and executed via TAL. The data returned by the component will be exposed into TAL as a current _component variable. In case of our date example the template could simply be a `net_example_calendar/templates/show-date.xhtml` file with following contents:
+The first matching template element will be used and executed via TAL. The data returned by the component will be exposed into TAL as a `current_component` variable. In case of our date example the template could simply be a `net_example_calendar/templates/show-date.xhtml` file with following contents:
 
     <p>Current date is <span tal:content="current_component/date">5/8/1999 01:00</span></p>
 
