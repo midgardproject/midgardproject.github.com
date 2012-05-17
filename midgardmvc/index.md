@@ -4,6 +4,7 @@ name: midgardmvc
 title: "Midgard MVC"
 logo: /images/logos/midgardmvc_white_100.png
 tagline: "Component-oriented web framework for PHP"
+github: "https://github.com/midgardproject/midgardmvc_core"
 ---
 Midgard MVC is a web framework for PHP. Being a framework, it provides a standard way to build and deploy web applications. Your applications provide a set of interfaces that Midgard MVC calls when a matching HTTP request is made.
 

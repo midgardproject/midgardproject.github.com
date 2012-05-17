@@ -4,6 +4,7 @@ name: midgard2
 title: Midgard2
 logo: /images/logos/midgard2_white_100.png
 tagline: "Generic <b>Content Repository</b> for <b>Web</b> and <b>Desktop applications</b>"
+github: https://github.com/midgardproject/midgard-core/tree/ratatoskr 
 ---
 Midgard2 is an Open Source Content Repository. It provides an object-oriented and replicated environment for building data-intensive applications for both web and the desktop.
 
