@@ -2,6 +2,7 @@
 layout: product
 name: midgard1
 title: Midgard1
+logo: /images/logos/midgard1_white_100.png
 tagline: "Web Content Repository for PHP"
 ---
 Midgard1 8.09 _Ragnaroek LTS_ is a Long Term Support version of Midgard1 for which bug fixes and minor feature improvements will be supplied by the Midgard community until October 2012\. It is recommended that all Midgard1 users upgrade their installations to the Midgard 8.09 series for stability, performance and maintainance reasons. Upgrade from [MidCOM](/midcom/) 2.8 installations running with PHP5 has been made as seamless as possible.
