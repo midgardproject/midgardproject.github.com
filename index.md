@@ -1,5 +1,5 @@
 --- 
-extra_content: "<p>Being a free software project, Midgard works quite actively with many related communities like <a href=\"http://www.gnome.org/\">GNOME</a>, <a href=\"http://cmf.symfony.com/\">Symfony CMF</a>, and the <a href=\"http://www.iks-project.eu/\">IKS project</a>.</p><p>Read more about the project's background <a href=\"http://en.wikipedia.org/wiki/Midgard_%28software%29#History\">on Wikipedia</a> or follow the development <a href=\"https://github.com/midgardproject\">on GitHub</a>.</p>"
+extra_content: "<p>Read more about the community's background <a href=\"http://en.wikipedia.org/wiki/Midgard_%28software%29#History\">on Wikipedia</a> or follow the development <a href=\"https://github.com/midgardproject\">on GitHub</a>.</p><p>Midgard works actively with many related communities like <a href=\"http://www.gnome.org/\">GNOME</a>, <a href=\"http://cmf.symfony.com/\">Symfony CMF</a>, and the <a href=\"http://www.iks-project.eu/\">IKS project</a>.</p>"
 tagline: "Providing tools for a better Web since 1999"
 layout: project
 logo: /images/midgard_white.png
@@ -50,6 +50,6 @@ product_categories:
         logo: /images/logos/midgard2_black_70.png
 title: "The Midgard Project"
 ---
-Midgard is a **free software project** aiming to build **content repositories** useful for synchronized desktop, mobile and web applications. Since 1999, the project has been releasing both the content repository library itself, and also many useful tools around it, like **web frameworks** for PHP and Python.
+Midgard is a **free software community** aiming to build **content repositories** useful for synchronized desktop, mobile and web applications. Since 1999, the project has been releasing both the content repository library itself, and also many useful tools around it, like **web frameworks** for PHP and Python.
   
-The project is fully volunteer-driven, with individuals and multiple companies working together to build useful common infrastructure.
+The community is fully volunteer-driven, with individuals and multiple companies working together to build useful common infrastructure.
