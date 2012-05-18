@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardMetadata</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Schema-User-Defined-Types.html" title="Midgard Schema User Defined Types">
+<link rel="prev" href="MidgardObject.html" title="MidgardObject">
+<link rel="next" href="midgard-2.0-midgard-object-attachment.html" title="MidgardObject attachments">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardObject.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Schema-User-Defined-Types.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="midgard-2.0-midgard-object-attachment.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#midgard-2.0-midgard-metadata.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-metadata.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-metadata.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-metadata.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="midgard-2.0-midgard-metadata"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="midgard-2.0-midgard-metadata.top_of_page"></a>MidgardMetadata</span></h2>
+<p>MidgardMetadata</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="midgard-2.0-midgard-metadata.synopsis"></a><h2>Synopsis</h2>
+<a name="MidgardMetadata"></a><pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+                    <a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata-struct" title="MidgardMetadata">MidgardMetadata</a>;
+                    <a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadataClass" title="MidgardMetadataClass">MidgardMetadataClass</a>;
+                    <a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadataPrivate" title="MidgardMetadataPrivate">MidgardMetadataPrivate</a>;
+<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata"><span class="returnvalue">MidgardMetadata</span></a> *   <a class="link" href="midgard-2.0-midgard-metadata.html#midgard-metadata-new" title="midgard_metadata_new ()">midgard_metadata_new</a>                (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject"><span class="type">MidgardDBObject</span></a> *object</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-metadata.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject">MidgardDBObject</a>
+         +----MidgardMetadata
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-metadata.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--approved" title='The "approved" property'>approved</a>"                 <span class="type">MidgardTimestamp</span>*     : Read
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--approver" title='The "approver" property'>approver</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--authors" title='The "authors" property'>authors</a>"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--created" title='The "created" property'>created</a>"                  <span class="type">MidgardTimestamp</span>*     : Read
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--creator" title='The "creator" property'>creator</a>"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--deleted" title='The "deleted" property'>deleted</a>"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--exported" title='The "exported" property'>exported</a>"                 <span class="type">MidgardTimestamp</span>*     : Read
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--hidden" title='The "hidden" property'>hidden</a>"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--imported" title='The "imported" property'>imported</a>"                 <span class="type">MidgardTimestamp</span>*     : Read
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--isapproved" title='The "isapproved" property'>isapproved</a>"               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--islocked" title='The "islocked" property'>islocked</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--locked" title='The "locked" property'>locked</a>"                   <span class="type">MidgardTimestamp</span>*     : Read
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--locker" title='The "locker" property'>locker</a>"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--navnoentry" title='The "navnoentry" property'>navnoentry</a>"               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--owner" title='The "owner" property'>owner</a>"                    <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--published" title='The "published" property'>published</a>"                <span class="type">MidgardTimestamp</span>*     : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--revised" title='The "revised" property'>revised</a>"                  <span class="type">MidgardTimestamp</span>*     : Read
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--revision" title='The "revision" property'>revision</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--revisor" title='The "revisor" property'>revisor</a>"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--scheduleend" title='The "scheduleend" property'>scheduleend</a>"              <span class="type">MidgardTimestamp</span>*     : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--schedulestart" title='The "schedulestart" property'>schedulestart</a>"            <span class="type">MidgardTimestamp</span>*     : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--score" title='The "score" property'>score</a>"                    <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata--size" title='The "size" property'>size</a>"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-metadata.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-metadata.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardMetadata-struct"></a><h3>MidgardMetadata</h3>
+<pre class="programlisting">typedef struct _MidgardMetadata MidgardMetadata;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadataClass"></a><h3>MidgardMetadataClass</h3>
+<pre class="programlisting">typedef struct {
+	MidgardDBObjectClass parent;
+} MidgardMetadataClass;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadataPrivate"></a><h3>MidgardMetadataPrivate</h3>
+<pre class="programlisting">typedef struct _MidgardMetadataPrivate MidgardMetadataPrivate;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-metadata-new"></a><h3>midgard_metadata_new ()</h3>
+<pre class="programlisting"><a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata"><span class="returnvalue">MidgardMetadata</span></a> *   midgard_metadata_new                (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject"><span class="type">MidgardDBObject</span></a> *object</code></em>);</pre>
+<p>
+Creates new midgard_metadata instance for the given <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance.
+</p>
+<p>
+Do not use <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#g-object-new"><code class="function">g_object_new()</code></a> as metadata constructor. <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> pointer is internally 
+assigned as a pointer to midgard object for which particular metadata object 
+instance was created.
+</p>
+<p>
+<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata"><span class="type">MidgardMetadata</span></a> object has two "kinds" of properties.
+The first one is settable ( and overwritten ) only by metadata implementation.
+The second one is freely settable by application. In this case midgard core
+keep value of such property "as is".  
+</p>
+<p>
+Do not free <a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata"><span class="type">MidgardMetadata</span></a> object's memory as it is automatically
+freed when particular <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> object's instance memory is freed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> for which metadata is created</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>newly allocated midgard_metadata instance</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-metadata.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardMetadata--approved"></a><h3>The <code class="literal">"approved"</code> property</h3>
+<pre class="programlisting">  "approved"                 <span class="type">MidgardTimestamp</span>*     : Read</pre>
+<p>ISO datetime when object's record has been (un)approved.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--approver"></a><h3>The <code class="literal">"approver"</code> property</h3>
+<pre class="programlisting">  "approver"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read</pre>
+<p>Guid of the person who (un)approved object's record.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--authors"></a><h3>The <code class="literal">"authors"</code> property</h3>
+<pre class="programlisting">  "authors"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>The person who is an author.</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--created"></a><h3>The <code class="literal">"created"</code> property</h3>
+<pre class="programlisting">  "created"                  <span class="type">MidgardTimestamp</span>*     : Read</pre>
+<p>ISO datetime when object's record has been created.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--creator"></a><h3>The <code class="literal">"creator"</code> property</h3>
+<pre class="programlisting">  "creator"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read</pre>
+<p>Guid of the person who created object's record.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--deleted"></a><h3>The <code class="literal">"deleted"</code> property</h3>
+<pre class="programlisting">  "deleted"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
+<p>Whether object is deleted or not.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--exported"></a><h3>The <code class="literal">"exported"</code> property</h3>
+<pre class="programlisting">  "exported"                 <span class="type">MidgardTimestamp</span>*     : Read</pre>
+<p>Whether object has been exported or not.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--hidden"></a><h3>The <code class="literal">"hidden"</code> property</h3>
+<pre class="programlisting">  "hidden"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Whether object should be hidden or not.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--imported"></a><h3>The <code class="literal">"imported"</code> property</h3>
+<pre class="programlisting">  "imported"                 <span class="type">MidgardTimestamp</span>*     : Read</pre>
+<p>Whether object has been imported or not.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--isapproved"></a><h3>The <code class="literal">"isapproved"</code> property</h3>
+<pre class="programlisting">  "isapproved"               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
+<p>Whether object is approved or not.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--islocked"></a><h3>The <code class="literal">"islocked"</code> property</h3>
+<pre class="programlisting">  "islocked"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
+<p>Whether object is locked or unlocked.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--locked"></a><h3>The <code class="literal">"locked"</code> property</h3>
+<pre class="programlisting">  "locked"                   <span class="type">MidgardTimestamp</span>*     : Read</pre>
+<p>ISO datetime when object's record has been (un)locked.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--locker"></a><h3>The <code class="literal">"locker"</code> property</h3>
+<pre class="programlisting">  "locker"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read</pre>
+<p>Guid of the person who (un)locked object's record.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--navnoentry"></a><h3>The <code class="literal">"navnoentry"</code> property</h3>
+<pre class="programlisting">  "navnoentry"               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Whether object is part of navigation (e.g. menu).</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--owner"></a><h3>The <code class="literal">"owner"</code> property</h3>
+<pre class="programlisting">  "owner"                    <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Group's guid which is an owner of the object.</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--published"></a><h3>The <code class="literal">"published"</code> property</h3>
+<pre class="programlisting">  "published"                <span class="type">MidgardTimestamp</span>*     : Read / Write</pre>
+<p>ISO datetime when object should be published (by default it's created time).</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--revised"></a><h3>The <code class="literal">"revised"</code> property</h3>
+<pre class="programlisting">  "revised"                  <span class="type">MidgardTimestamp</span>*     : Read</pre>
+<p>ISO datetime when object's record has been revised.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--revision"></a><h3>The <code class="literal">"revision"</code> property</h3>
+<pre class="programlisting">  "revision"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read</pre>
+<p>Object's record revision number.</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--revisor"></a><h3>The <code class="literal">"revisor"</code> property</h3>
+<pre class="programlisting">  "revisor"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read</pre>
+<p>Guid of the person who revised object's record.</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--scheduleend"></a><h3>The <code class="literal">"scheduleend"</code> property</h3>
+<pre class="programlisting">  "scheduleend"              <span class="type">MidgardTimestamp</span>*     : Read / Write</pre>
+<p>ISO datetime when publication time ends.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--schedulestart"></a><h3>The <code class="literal">"schedulestart"</code> property</h3>
+<pre class="programlisting">  "schedulestart"            <span class="type">MidgardTimestamp</span>*     : Read / Write</pre>
+<p>ISO datetime when publication time starts.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--score"></a><h3>The <code class="literal">"score"</code> property</h3>
+<pre class="programlisting">  "score"                    <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                  : Read / Write</pre>
+<p>Object's record score.</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardMetadata--size"></a><h3>The <code class="literal">"size"</code> property</h3>
+<pre class="programlisting">  "size"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read</pre>
+<p>Object's size in bytes.</p>
+<p>Default value: 0</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

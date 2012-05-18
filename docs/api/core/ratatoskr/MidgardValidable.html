@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardValidable</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Execution-And-Validation.html" title="Common interfaces to validate and execute operations">
+<link rel="prev" href="midgard-Execution-And-Validation.html" title="Common interfaces to validate and execute operations">
+<link rel="next" href="MidgardExecutable.html" title="MidgardExecutable">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="midgard-Execution-And-Validation.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Execution-And-Validation.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardExecutable.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardValidable.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardValidable.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardValidable.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardValidable.prerequisites" class="shortcut">Prerequisites</a>
+                   | 
+                  <a href="#MidgardValidable.implementations" class="shortcut">Known Implementations</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardValidable"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardValidable.top_of_page"></a>MidgardValidable</span></h2>
+<p>MidgardValidable</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardValidable.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="MidgardValidable.html#MidgardValidable-struct" title="MidgardValidable">MidgardValidable</a>;
+<span class="returnvalue">void</span>                <a class="link" href="MidgardValidable.html#midgard-validable-validate" title="midgard_validable_validate ()">midgard_validable_validate</a>          (<em class="parameter"><code><a class="link" href="MidgardValidable.html" title="MidgardValidable"><span class="type">MidgardValidable</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardValidable.html#midgard-validable-is-valid" title="midgard_validable_is_valid ()">midgard_validable_is_valid</a>          (<em class="parameter"><code><a class="link" href="MidgardValidable.html" title="MidgardValidable"><span class="type">MidgardValidable</span></a> *self</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardValidable.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GInterface
+   +----MidgardValidable
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardValidable.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+MidgardValidable requires
+ <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardValidable.implementations"></a><h2>Known Implementations</h2>
+<p>
+MidgardValidable is implemented by
+ <a class="link" href="MidgardQueryConstraint.html" title="MidgardQueryConstraint">MidgardQueryConstraint</a>,  <a class="link" href="MidgardQueryConstraintGroup.html" title="MidgardQueryConstraintGroup">MidgardQueryConstraintGroup</a>,  <a class="link" href="MidgardQueryProperty.html" title="MidgardQueryProperty">MidgardQueryProperty</a>,  <a class="link" href="MidgardQuerySelect.html" title="MidgardQuerySelect">MidgardQuerySelect</a>,  <a class="link" href="MidgardQueryStorage.html" title="MidgardQueryStorage">MidgardQueryStorage</a>,  <a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint">MidgardSqlQueryConstraint</a> and  <a class="link" href="MidgardSqlQuerySelectData.html" title="MidgardSqlQuerySelectData">MidgardSqlQuerySelectData</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardValidable.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardValidable.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardValidable-struct"></a><h3>MidgardValidable</h3>
+<pre class="programlisting">typedef struct _MidgardValidable MidgardValidable;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-validable-validate"></a><h3>midgard_validable_validate ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_validable_validate          (<em class="parameter"><code><a class="link" href="MidgardValidable.html" title="MidgardValidable"><span class="type">MidgardValidable</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Validate given instance.
+Implementation shall validate given instance, and in case when it's invalid,
+particular error shoudl be set. If instance is valid, error should be NULL.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardValidable.html" title="MidgardValidable"><span class="type">MidgardValidable</span></a> instance
+<em class="parameter"><code>error</code></em> (error-domains MIDGARD_VALIDATION_ERROR): location to store error</td>
+</tr></tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-validable-is-valid"></a><h3>midgard_validable_is_valid ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_validable_is_valid          (<em class="parameter"><code><a class="link" href="MidgardValidable.html" title="MidgardValidable"><span class="type">MidgardValidable</span></a> *self</code></em>);</pre>
+<p>
+Check if given <a class="link" href="MidgardValidable.html" title="MidgardValidable"><span class="type">MidgardValidable</span></a> instance is marked as valid.
+Implementation shall not validate given instance.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardValidable.html" title="MidgardValidable"><span class="type">MidgardValidable</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if it's valid, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

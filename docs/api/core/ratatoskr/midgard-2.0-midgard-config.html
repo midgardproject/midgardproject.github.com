@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardConfig</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Basic.html" title="Midgard Basic Types">
+<link rel="prev" href="midgard-Basic.html" title="Midgard Basic Types">
+<link rel="next" href="MidgardConnection.html" title="MidgardConnection">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="midgard-Basic.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Basic.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardConnection.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#midgard-2.0-midgard-config.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-config.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-config.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-config.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="midgard-2.0-midgard-config"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="midgard-2.0-midgard-config.top_of_page"></a>MidgardConfig</span></h2>
+<p>MidgardConfig —  Midgard unified config representation.</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="midgard-2.0-midgard-config.synopsis"></a><h2>Synopsis</h2>
+<a name="MidgardConfig"></a><pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+typedef             <a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig">MidgardConfig</a>;
+typedef             <a class="link" href="midgard-2.0-midgard-config.html#MidgardConfigClass" title="MidgardConfigClass">MidgardConfigClass</a>;
+                    <a class="link" href="midgard-2.0-midgard-config.html#MidgardConfigPrivate" title="MidgardConfigPrivate">MidgardConfigPrivate</a>;
+enum                <a class="link" href="midgard-2.0-midgard-config.html#MidgardDBType" title="enum MidgardDBType">MidgardDBType</a>;
+<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="returnvalue">MidgardConfig</span></a> *     <a class="link" href="midgard-2.0-midgard-config.html#midgard-config-new" title="midgard_config_new ()">midgard_config_new</a>                  (<em class="parameter"><code><span class="type">void</span></code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-config.html#midgard-config-read-file" title="midgard_config_read_file ()">midgard_config_read_file</a>            (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> user</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-config.html#midgard-config-read-file-at-path" title="midgard_config_read_file_at_path ()">midgard_config_read_file_at_path</a>    (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filepath</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-config.html#midgard-config-read-data" title="midgard_config_read_data ()">midgard_config_read_data</a>            (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *data</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **            <a class="link" href="midgard-2.0-midgard-config.html#midgard-config-list-files" title="midgard_config_list_files ()">midgard_config_list_files</a>           (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> user</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-config.html#midgard-config-save-file" title="midgard_config_save_file ()">midgard_config_save_file</a>            (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> user</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-config.html#midgard-config-create-blobdir" title="midgard_config_create_blobdir ()">midgard_config_create_blobdir</a>       (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> *self</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-config.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----MidgardConfig
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-config.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--authtype" title='The "authtype" property'>authtype</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--blobdir" title='The "blobdir" property'>blobdir</a>"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--cachedir" title='The "cachedir" property'>cachedir</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--database" title='The "database" property'>database</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--dbdir" title='The "dbdir" property'>dbdir</a>"                    <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--dbpass" title='The "dbpass" property'>dbpass</a>"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--dbtype" title='The "dbtype" property'>dbtype</a>"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--dbuser" title='The "dbuser" property'>dbuser</a>"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--host" title='The "host" property'>host</a>"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--logfilename" title='The "logfilename" property'>logfilename</a>"              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--loglevel" title='The "loglevel" property'>loglevel</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--midgardpassword" title='The "midgardpassword" property'>midgardpassword</a>"          <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--midgardusername" title='The "midgardusername" property'>midgardusername</a>"          <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--pamfile" title='The "pamfile" property'>pamfile</a>"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--port" title='The "port" property'>port</a>"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--sharedir" title='The "sharedir" property'>sharedir</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--tablecreate" title='The "tablecreate" property'>tablecreate</a>"              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--tableupdate" title='The "tableupdate" property'>tableupdate</a>"              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--testunit" title='The "testunit" property'>testunit</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig--vardir" title='The "vardir" property'>vardir</a>"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-config.description"></a><h2>Description</h2>
+<p>
+ <a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> class represents Midgard unified configuration file.
+ Underlying configuration file representation is limited to <a href="/usr/share/gtk-doc/html/glib/glib-Key-value-file-parser.html#GKeyFile"><span class="type">GKeyFile</span></a>.
+ There are few ways to read configuration data: <a class="link" href="midgard-2.0-midgard-config.html#midgard-config-read-file" title="midgard_config_read_file ()"><code class="function">midgard_config_read_file()</code></a>, which
+ encapsulates real file location, <a class="link" href="midgard-2.0-midgard-config.html#midgard-config-read-file-at-path" title="midgard_config_read_file_at_path ()"><code class="function">midgard_config_read_file_at_path()</code></a> if file location
+ is not common or very specific for application or <a class="link" href="midgard-2.0-midgard-config.html#midgard-config-read-data" title="midgard_config_read_data ()"><code class="function">midgard_config_read_data()</code></a>, which
+ reads configuration from given buffer.
+</p>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-config.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardConfig"></a><h3>MidgardConfig</h3>
+<pre class="programlisting">typedef struct MidgardConfig MidgardConfig;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfigClass"></a><h3>MidgardConfigClass</h3>
+<pre class="programlisting">typedef struct MidgardConfigClass MidgardConfigClass;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfigPrivate"></a><h3>MidgardConfigPrivate</h3>
+<pre class="programlisting">typedef struct _MidgardConfigPrivate MidgardConfigPrivate;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardDBType"></a><h3>enum MidgardDBType</h3>
+<pre class="programlisting">typedef enum {
+        MIDGARD_DB_TYPE_MYSQL = 1, 
+        MIDGARD_DB_TYPE_POSTGRES, 
+        MIDGARD_DB_TYPE_FREETDS, 
+        MIDGARD_DB_TYPE_SQLITE, 
+        MIDGARD_DB_TYPE_ODBC, 
+        MIDGARD_DB_TYPE_ORACLE 
+} MidgardDBType;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-config-new"></a><h3>midgard_config_new ()</h3>
+<pre class="programlisting"><a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="returnvalue">MidgardConfig</span></a> *     midgard_config_new                  (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Initializes new instance of MidgardConfig object type. 
+NULL is returned when object can not be initialized.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>pointer to <em class="parameter"><code>MidgardConfig</code></em> object or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-config-read-file"></a><h3>midgard_config_read_file ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_config_read_file            (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> user</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+This method reads configuration file from the given name and sets MidgardConfig object's properties.
+Such initialized MidgardConfig instance may be reused among midgard-core and midgard-php extension 
+for example, without any need to re-read configuration file and without  any need to re-initalize 
+<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> object instance. 
+</p>
+<p>
+Set <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> as <em class="parameter"><code>user</code></em> boolean value to read files from user's home directory.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> object instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filename</code></em> :</span></p></td>
+<td>name of the file to read</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user</code></em> :</span></p></td>
+<td>boolean switch for system or user's config files</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store error</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> when file has been read , <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 9.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-config-read-file-at-path"></a><h3>midgard_config_read_file_at_path ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_config_read_file_at_path    (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filepath</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filepath</code></em> :</span></p></td>
+<td>a path to read file from</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a pointer to hold error</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if file has been read, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-config-read-data"></a><h3>midgard_config_read_data ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_config_read_data            (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *data</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>a NULL-terminated buffer containing the configuration</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a pointer to hold error</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if data has been read, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-config-list-files"></a><h3>midgard_config_list_files ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **            midgard_config_list_files           (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> user</code></em>);</pre>
+<p>
+List all available configuration files.
+If <em class="parameter"><code>user</code></em> value is set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, all available files from ~/.midgard/conf.d will be listed. 
+Only system files ( usually from /etc/midgard/conf.d ) will be listed if <em class="parameter"><code>user</code></em> value is set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.
+</p>
+<p>
+Returned array should be freed when no longer needed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user</code></em> :</span></p></td>
+<td>boolean switch for system or user's config files</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>newly allocated and <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> terminated array of file names. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-config-save-file"></a><h3>midgard_config_save_file ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_config_save_file            (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> user</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Saves configuration file for the given <a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a>.
+</p>
+<p>
+This method saves configuration file with the given name.
+If third user parameter is set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then configuration file will 
+be saved in ~/.midgard2/conf.d directory.
+</p>
+<p>
+User's conf.d directory will be created if doesn't exist.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>configuration filename</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user</code></em> :</span></p></td>
+<td>system or home directory switch</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store GError</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>  ( with propper warning message ) if system wide
+directory doesn't exist or file can not be saved.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-config-create-blobdir"></a><h3>midgard_config_create_blobdir ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_config_create_blobdir       (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> *self</code></em>);</pre>
+<p>
+Creates directories for blobs
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-config.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardConfig--authtype"></a><h3>The <code class="literal">"authtype"</code> property</h3>
+<pre class="programlisting">  "authtype"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Authentication type used with connection.</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--blobdir"></a><h3>The <code class="literal">"blobdir"</code> property</h3>
+<pre class="programlisting">  "blobdir"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Location of the blobs directory.</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--cachedir"></a><h3>The <code class="literal">"cachedir"</code> property</h3>
+<pre class="programlisting">  "cachedir"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Cached files.</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--database"></a><h3>The <code class="literal">"database"</code> property</h3>
+<pre class="programlisting">  "database"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Name of the database.</p>
+<p>Default value: "midgard"</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--dbdir"></a><h3>The <code class="literal">"dbdir"</code> property</h3>
+<pre class="programlisting">  "dbdir"                    <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Directory for SQLite database file ('~/.midgard2/data' by default).</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--dbpass"></a><h3>The <code class="literal">"dbpass"</code> property</h3>
+<pre class="programlisting">  "dbpass"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Password used by user who is able to connect to database.</p>
+<p>Default value: "midgard"</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--dbtype"></a><h3>The <code class="literal">"dbtype"</code> property</h3>
+<pre class="programlisting">  "dbtype"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Database type ( by default MySQL ).</p>
+<p>Default value: "MySQL"</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--dbuser"></a><h3>The <code class="literal">"dbuser"</code> property</h3>
+<pre class="programlisting">  "dbuser"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Username for user who is able to connect to database.</p>
+<p>Default value: "midgard"</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--host"></a><h3>The <code class="literal">"host"</code> property</h3>
+<pre class="programlisting">  "host"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Database host ( 'localhost' by default ).</p>
+<p>Default value: "localhost"</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--logfilename"></a><h3>The <code class="literal">"logfilename"</code> property</h3>
+<pre class="programlisting">  "logfilename"              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Location of the log file.</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--loglevel"></a><h3>The <code class="literal">"loglevel"</code> property</h3>
+<pre class="programlisting">  "loglevel"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Log level.</p>
+<p>Default value: "warn"</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--midgardpassword"></a><h3>The <code class="literal">"midgardpassword"</code> property</h3>
+<pre class="programlisting">  "midgardpassword"          <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Midgard user's password.</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--midgardusername"></a><h3>The <code class="literal">"midgardusername"</code> property</h3>
+<pre class="programlisting">  "midgardusername"          <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Midgard user's login.</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--pamfile"></a><h3>The <code class="literal">"pamfile"</code> property</h3>
+<pre class="programlisting">  "pamfile"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Name of the file used with PAM authentication type.</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--port"></a><h3>The <code class="literal">"port"</code> property</h3>
+<pre class="programlisting">  "port"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write</pre>
+<p>Database port ( 0 by default ).</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--sharedir"></a><h3>The <code class="literal">"sharedir"</code> property</h3>
+<pre class="programlisting">  "sharedir"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Directory for shared, architecture independent files.</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--tablecreate"></a><h3>The <code class="literal">"tablecreate"</code> property</h3>
+<pre class="programlisting">  "tablecreate"              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Database creation switch.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--tableupdate"></a><h3>The <code class="literal">"tableupdate"</code> property</h3>
+<pre class="programlisting">  "tableupdate"              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Database update switch.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--testunit"></a><h3>The <code class="literal">"testunit"</code> property</h3>
+<pre class="programlisting">  "testunit"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p>Database and objects testing switch.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConfig--vardir"></a><h3>The <code class="literal">"vardir"</code> property</h3>
+<pre class="programlisting">  "vardir"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Application specific directories.</p>
+<p>Default value: ""</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

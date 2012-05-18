@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardReplicator</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Replication-And-Events.html" title="Replication and events">
+<link rel="prev" href="midgard-Replication-And-Events.html" title="Replication and events">
+<link rel="next" href="MidgardRepligard.html" title="MidgardRepligard">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="midgard-Replication-And-Events.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Replication-And-Events.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardRepligard.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#midgard-2.0-midgard-replicator.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-replicator.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="midgard-2.0-midgard-replicator"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="midgard-2.0-midgard-replicator.top_of_page"></a>MidgardReplicator</span></h2>
+<p>MidgardReplicator —  Object serialization and replication.</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="midgard-2.0-midgard-replicator.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+                    <a class="link" href="midgard-2.0-midgard-replicator.html#MidgardReplicatorPrivate" title="MidgardReplicatorPrivate">MidgardReplicatorPrivate</a>;
+struct              <a class="link" href="midgard-2.0-midgard-replicator.html#MidgardReplicator" title="struct MidgardReplicator">MidgardReplicator</a>;
+typedef             <a class="link" href="midgard-2.0-midgard-replicator.html#MidgardReplicatorClass" title="MidgardReplicatorClass">MidgardReplicatorClass</a>;
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="midgard-2.0-midgard-replicator.html#midgard-replicator-serialize" title="midgard_replicator_serialize ()">midgard_replicator_serialize</a>        (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> *object</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-replicator.html#midgard-replicator-export" title="midgard_replicator_export ()">midgard_replicator_export</a>           (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject"><span class="type">MidgardDBObject</span></a> *object</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="midgard-2.0-midgard-replicator.html#midgard-replicator-export-purged" title="midgard_replicator_export_purged ()">midgard_replicator_export_purged</a>    (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *classname</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *startdate</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *enddate</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="midgard-2.0-midgard-replicator.html#midgard-replicator-serialize-blob" title="midgard_replicator_serialize_blob ()">midgard_replicator_serialize_blob</a>   (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="midgard-2.0-midgard-replicator.html#midgard-replicator-export-blob" title="midgard_replicator_export_blob ()">midgard_replicator_export_blob</a>      (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-replicator.html#midgard-replicator-export-by-guid" title="midgard_replicator_export_by_guid ()">midgard_replicator_export_by_guid</a>   (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *guid</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="midgard-2.0-midgard-replicator.html#midgard-replicator-export-media" title="midgard_replicator_export_media ()">midgard_replicator_export_media</a>     (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>);
+<a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject"><span class="returnvalue">GObject</span></a> **          <a class="link" href="midgard-2.0-midgard-replicator.html#midgard-replicator-unserialize" title="midgard_replicator_unserialize ()">midgard_replicator_unserialize</a>      (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *xml</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> force</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-replicator.html#midgard-replicator-import-object" title="midgard_replicator_import_object ()">midgard_replicator_import_object</a>    (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject"><span class="type">MidgardDBObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> force</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="midgard-2.0-midgard-replicator.html#midgard-replicator-import-from-xml" title="midgard_replicator_import_from_xml ()">midgard_replicator_import_from_xml</a>  (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *xml</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> force</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-replicator.description"></a><h2>Description</h2>
+<p>
+ <a class="link" href="midgard-2.0-midgard-replicator.html#MidgardReplicator" title="struct MidgardReplicator"><span class="type">MidgardReplicator</span></a> lets you serialize and unserialize objects.
+ Once transformed to string, can be sent as custom message through
+ D_Bus services, imported to different database, stored in files, etc.
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+http://www.midgard-project.org/development/mrfc/view/0030.html
+</p></li>
+<li class="listitem"><p>
+http://www.midgard-project.org/development/mrfc/view/0033.html
+</p></li>
+</ul></div>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-replicator.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardReplicatorPrivate"></a><h3>MidgardReplicatorPrivate</h3>
+<pre class="programlisting">typedef struct _MidgardReplicatorPrivate MidgardReplicatorPrivate;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardReplicator"></a><h3>struct MidgardReplicator</h3>
+<pre class="programlisting">struct MidgardReplicator {
+	GObject parent;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardReplicatorClass"></a><h3>MidgardReplicatorClass</h3>
+<pre class="programlisting">typedef struct MidgardReplicatorClass MidgardReplicatorClass;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-replicator-serialize"></a><h3>midgard_replicator_serialize ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             midgard_replicator_serialize        (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> *object</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>GObject (or derived class) instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>serialized objects as xml content or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-replicator-export"></a><h3>midgard_replicator_export ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_replicator_export           (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject"><span class="type">MidgardDBObject</span></a> *object</code></em>);</pre>
+<p>
+Given object is not serialized. Its storage record is marked as exported.
+</p>
+<p>
+<em class="parameter"><code>see</code></em> <a class="link" href="MidgardObject.html#midgard-object-update" title="midgard_object_update ()"><code class="function">midgard_object_update()</code></a> to find out possible error codes returned in case of <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> failure.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject"><span class="type">MidgardDBObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-replicator-export-purged"></a><h3>midgard_replicator_export_purged ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             midgard_replicator_export_purged    (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *classname</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *startdate</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *enddate</code></em>);</pre>
+<p>
+Exports all purged objects of given class. If <em class="parameter"><code>startdate</code></em> or <em class="parameter"><code>enddate</code></em> are not NULL,
+all objects which were purged between dates will be exported.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>classname</code></em> :</span></p></td>
+<td>name of <span class="type">MidgardObjectClass</span> derived one</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>startdate</code></em> :</span></p></td>
+<td>optional start date</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>enddate</code></em> :</span></p></td>
+<td>optional end date</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>xml buffer with serialized objects or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if there are no objects matching given criteria.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-replicator-serialize-blob"></a><h3>midgard_replicator_serialize_blob ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             midgard_replicator_serialize_blob   (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>);</pre>
+<p>
+Serialize midgard_blob binary data.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> of MIDGARD_TYPE_ATTACHMENT type</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>Newly allocated xml buffer, which holds blob data base64 encoded, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-replicator-export-blob"></a><h3>midgard_replicator_export_blob ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             midgard_replicator_export_blob      (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>);</pre>
+<p>
+Alias for <a class="link" href="midgard-2.0-midgard-replicator.html#midgard-replicator-serialize-blob" title="midgard_replicator_serialize_blob ()"><code class="function">midgard_replicator_serialize_blob()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> of MIDGARD_TYPE_ATTACHMENT type</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>serialized object as xml data</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-replicator-export-by-guid"></a><h3>midgard_replicator_export_by_guid ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_replicator_export_by_guid   (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *guid</code></em>);</pre>
+<p>
+Marks object's storage record as exported.
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+Given guid is NULL or empty string (MGD_ERR_INVALID_PROPERTY_VALUE)
+</p></li>
+<li class="listitem"><p>
+Object identified by given guid doesn't exist (MGD_ERR_NOT_EXISTS)
+</p></li>
+<li class="listitem"><p>
+Object identified by given guid is purged (MGD_ERR_OBJECT_PURGED)
+</p></li>
+<li class="listitem"><p>
+Internal storage error (MGD_ERR_INTERNAL)
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>guid</code></em> :</span></p></td>
+<td>guid which identifies object to be exported</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-replicator-export-media"></a><h3>midgard_replicator_export_media ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             midgard_replicator_export_media     (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-replicator-unserialize"></a><h3>midgard_replicator_unserialize ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject"><span class="returnvalue">GObject</span></a> **          midgard_replicator_unserialize      (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *xml</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> force</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>xml</code></em> :</span></p></td>
+<td>xml buffer which holds serialized object</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>force</code></em> :</span></p></td>
+<td>toggle to force unserialization</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>Newly allocated array of GObjects. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-replicator-import-object"></a><h3>midgard_replicator_import_object ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_replicator_import_object    (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject"><span class="type">MidgardDBObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> force</code></em>);</pre>
+<p>
+Imports given object to underlying storage
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+Given guid is NULL or empty string (MGD_ERR_INVALID_PROPERTY_VALUE)
+</p></li>
+<li class="listitem"><p>
+Object is already imported (MGD_ERR_OBJECT_IMPORTED)
+</p></li>
+<li class="listitem"><p>
+Object identified is deleted (MGD_ERR_OBJECT_DELETED)
+</p></li>
+<li class="listitem"><p>
+Object doesn't provide metadata one (MGD_ERR_NO_METADATA)
+</p></li>
+</ul></div>
+<p>
+</p>
+<p>
+Set <em class="parameter"><code>force</code></em> toggle if you want to import object even if it's already imported or deleted.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject"><span class="type">MidgardDBObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>force</code></em> :</span></p></td>
+<td>toggle to force import</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-replicator-import-from-xml"></a><h3>midgard_replicator_import_from_xml ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_replicator_import_from_xml  (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *xml</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> force</code></em>);</pre>
+<p>
+This method tries to import all objects which could be unserialized from gievn xml.
+It's not atomic. Check error code returned from <a class="link" href="MidgardConnection.html#midgard-connection-get-error" title="midgard_connection_get_error ()"><code class="function">midgard_connection_get_error()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>xml</code></em> :</span></p></td>
+<td>data buffer which holds serialized object</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>force</code></em> :</span></p></td>
+<td>toggle to force import</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

@@ -1,0 +1,769 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardQueryBuilder</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Basic.html" title="Midgard Basic Types">
+<link rel="prev" href="MidgardStorage.html" title="MidgardStorage">
+<link rel="next" href="midgard-2.0-midgard-user.html" title="MidgardUser">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardStorage.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Basic.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="midgard-2.0-midgard-user.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardQueryBuilder.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardQueryBuilder.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardQueryBuilder.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardQueryBuilder.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardQueryBuilder"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardQueryBuilder.top_of_page"></a>MidgardQueryBuilder</span></h2>
+<p>MidgardQueryBuilder — Database object query</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardQueryBuilder.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+struct              <a class="link" href="MidgardQueryBuilder.html#MidgardQueryBuilder-struct" title="struct MidgardQueryBuilder">MidgardQueryBuilder</a>;
+                    <a class="link" href="MidgardQueryBuilder.html#MidgardQueryBuilderPrivate" title="MidgardQueryBuilderPrivate">MidgardQueryBuilderPrivate</a>;
+typedef             <a class="link" href="MidgardQueryBuilder.html#MidgardQueryBuilderClass" title="MidgardQueryBuilderClass">MidgardQueryBuilderClass</a>;
+<a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="returnvalue">MidgardQueryBuilder</span></a> * <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-new" title="midgard_query_builder_new ()">midgard_query_builder_new</a>         (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *classname</code></em>);
+<a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="returnvalue">MidgardQueryBuilder</span></a> * <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-create-builder" title="midgard_query_builder_create_builder ()">midgard_query_builder_create_builder</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *classname</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-add-constraint" title="midgard_query_builder_add_constraint ()">midgard_query_builder_add_constraint</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *op</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *value</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-add-constraint-with-property" title="midgard_query_builder_add_constraint_with_property ()">midgard_query_builder_add_constraint_with_property</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_a</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *op</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_b</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-begin-group" title="midgard_query_builder_begin_group ()">midgard_query_builder_begin_group</a>   (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-end-group" title="midgard_query_builder_end_group ()">midgard_query_builder_end_group</a>     (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-add-order" title="midgard_query_builder_add_order ()">midgard_query_builder_add_order</a>     (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dir</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-set-offset" title="midgard_query_builder_set_offset ()">midgard_query_builder_set_offset</a>    (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> offset</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-set-limit" title="midgard_query_builder_set_limit ()">midgard_query_builder_set_limit</a>     (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> limit</code></em>);
+<a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject"><span class="returnvalue">GObject</span></a> **          <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-execute" title="midgard_query_builder_execute ()">midgard_query_builder_execute</a>       (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_objects</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-count" title="midgard_query_builder_count ()">midgard_query_builder_count</a>         (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>);
+const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-get-type-name" title="midgard_query_builder_get_type_name ()">midgard_query_builder_get_type_name</a> (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-include-deleted" title="midgard_query_builder_include_deleted ()">midgard_query_builder_include_deleted</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryBuilder.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----MidgardQueryBuilder
+         +----<a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector">MidgardCollector</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryBuilder.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardQueryBuilder.html#MidgardQueryBuilder-execution-end" title='The "execution-end" signal'>execution-end</a>"                                  : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a>
+  "<a class="link" href="MidgardQueryBuilder.html#MidgardQueryBuilder-execution-start" title='The "execution-start" signal'>execution-start</a>"                                : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryBuilder.description"></a><h2>Description</h2>
+<p>
+The <a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> allows an application to construct and execute
+queries against any database, which Midgard is connected to.
+</p>
+<p>
+Main <a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> conveniences:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+It doesn't require any SQL
+</p></li>
+<li class="listitem"><p>
+Object properties are used as query constraints
+</p></li>
+<li class="listitem"><p>
+Objects' array is returned instead of raw records
+</p></li>
+</ul></div>
+<p>
+</p>
+<p>
+The main steps of using the query builder are:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+create a query builder instance, <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-new" title="midgard_query_builder_new ()"><code class="function">midgard_query_builder_new()</code></a>
+</p></li>
+<li class="listitem"><p>
+add constraints and other options to the query, <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-add-constraint" title="midgard_query_builder_add_constraint ()"><code class="function">midgard_query_builder_add_constraint()</code></a>
+</p></li>
+<li class="listitem"><p>
+execute the query, <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-execute" title="midgard_query_builder_execute ()"><code class="function">midgard_query_builder_execute()</code></a>
+</p></li>
+</ul></div>
+<p>
+</p>
+<p>
+Each query is represented by an instance of the <a class="link" href="MidgardQueryBuilder.html#MidgardQueryBuilderClass" title="MidgardQueryBuilderClass"><span class="type">MidgardQueryBuilderClass</span></a> class.
+The <a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> methods can be used to manipulate  the queries.
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryBuilder.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardQueryBuilder-struct"></a><h3>struct MidgardQueryBuilder</h3>
+<pre class="programlisting">struct MidgardQueryBuilder;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardQueryBuilderPrivate"></a><h3>MidgardQueryBuilderPrivate</h3>
+<pre class="programlisting">typedef struct {
+	GSList *constraints;
+	GSList *groups;
+	gboolean is_grouping;
+	guint grouping_ref;
+	MidgardGroupConstraint *group_constraint;
+	GSList *joins;
+	GHashTable *tables;
+	GSList *orders;
+	GValue *value;
+
+	/* constants */
+	MidgardConnection *mgd;
+	MgdSchemaTypeAttr *schema;
+	GType type;
+
+	guint offset;
+	guint limit;
+	gboolean include_deleted;
+	gboolean select_distinct;
+	gint error;
+
+	/* references for reserved joins */
+	gboolean param_join_exists;
+	gboolean blob_join_exists;
+} MidgardQueryBuilderPrivate;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardQueryBuilderClass"></a><h3>MidgardQueryBuilderClass</h3>
+<pre class="programlisting">typedef struct MidgardQueryBuilderClass MidgardQueryBuilderClass;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-builder-new"></a><h3>midgard_query_builder_new ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="returnvalue">MidgardQueryBuilder</span></a> * midgard_query_builder_new         (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *classname</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>classname</code></em> :</span></p></td>
+<td>any <span class="type">MidgardDBObjectClass</span> derived class' name</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> instance or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if target class is not registered in GType system
+or it's not <span class="type">MidgardDBObjectClass</span> class derived one.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-builder-create-builder"></a><h3>midgard_query_builder_create_builder ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="returnvalue">MidgardQueryBuilder</span></a> * midgard_query_builder_create_builder
+                                                        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *classname</code></em>);</pre>
+<p>
+Static constructor. Invokes <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-new" title="midgard_query_builder_new ()"><code class="function">midgard_query_builder_new()</code></a>.
+This function is added for language bindings, in which, that function
+can not be invoked explicitly.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> instance. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr></tbody>
+</table></div>
+<p class="since">Since 10.05.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-builder-add-constraint"></a><h3>midgard_query_builder_add_constraint ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_query_builder_add_constraint
+                                                        (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *op</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>
+Adds a constraint to the given query builder. The constraint is
+expressed as a triple of a field name, a comparison operator, and
+a comparison value. 
+</p>
+<p>
+</p>
+<p>
+<em class="parameter"><code>name</code></em> referes to a property of the queried Midgard object class. 
+For example, <a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> has been initialized for person 
+class which has lastname property registered.
+</p>
+<div class="example">
+<a name="idp6151632"></a><p class="title"><b>Example 1. </b></p>
+<div class="example-contents"><pre class="programlisting">
+
+GValue value = {0, };
+g_value_init(&amp;value, G_TYPE_STRING);
+g_value_set_string(&amp;value, "smith");
+
+midgard_query_builder_add_constraint(builder, "lastname", "=", &amp;value);
+
+</pre></div>
+</div>
+<p><br class="example-break">
+</p>
+<p>
+</p>
+<p>
+It also can be name of the linked class property or reserved one. 
+A dot '.' is used to separate properties for special constraints.
+If such special constraint property is used, <a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a>
+performs right join.
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem">
+<p>
+First property is the one registered for given class which is a link
+to property of different class. Second is a property of target class.
+For example, person object has property 'friend' which holds some identifier
+(id or guid) to friend class property, and friend class has property 'nick'.
+In such case we can use constraint and comparison using friend property,
+even if <a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> has been initialized for person class.
+</p>
+<div class="example">
+<a name="idp6154400"></a><p class="title"><b>Example 2. </b></p>
+<div class="example-contents"><pre class="programlisting">
+
+GValue value = {0, };
+g_value_init(&amp;value, G_TYPE_STRING);
+g_value_set_string(&amp;value, "Lancelot");
+
+midgard_query_builder_add_constraint(builder, "friend.nick", "=", &amp;value);
+
+</pre></div>
+</div>
+<p><br class="example-break">
+</p>
+</li>
+<li class="listitem">
+<p>
+There are three reserved words which have special meaning for query builder.
+'metadata', 'parameter' and 'attachment'. If one of them is used, query builder
+will make (if necessary) right join and query objects against dependent class table.
+</p>
+<div class="example">
+<a name="idp6155680"></a><p class="title"><b>Example 3. </b></p>
+<div class="example-contents"><pre class="programlisting">
+
+GValue value = {0, };
+g_value_init(&amp;value, G_TYPE_STRING);
+g_value_set_string(&amp;value, "avatar");
+
+midgard_query_builder_add_constraint(builder, "attachment.name", "=", &amp;value);
+
+</pre></div>
+</div>
+<p><br class="example-break">
+</p>
+</li>
+</ul></div>
+<p>
+</p>
+<p>
+</p>
+<p>
+</p>
+<p>
+The comparison operator is a string representation of the requested comparison. 
+Available operators are =, &lt;&gt;, &lt;, &gt;, &lt;=, &gt;=, LIKE, NOT LIKE, IN, INTREE. 
+</p>
+<p>
+</p>
+<p>
+</p>
+<p>
+The given <em class="parameter"><code>value</code></em> is copied and converted into the property type before comparison.
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>builder</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>property name used for this constraint</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>comparison operator</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>value used in comparison</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if constraint is valid, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-builder-add-constraint-with-property"></a><h3>midgard_query_builder_add_constraint_with_property ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_query_builder_add_constraint_with_property
+                                                        (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_a</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *op</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_b</code></em>);</pre>
+<p>
+Adds named property constraint to the given query builder.
+Unlike add_constraint method, this one accepts property name
+instead of scalar value. The difference is that with add_constraint
+method you can compare property with particular value, while using 
+add_constraint_with_property method you can compare two different 
+properties without any need to know their values. 
+For example, you should use this method if you want to select only 
+those objects which has been revised after publication time, and particular 
+date doesn't matter.
+</p>
+<p>
+</p>
+<div class="example">
+<a name="idp6170536"></a><p class="title"><b>Example 4. </b></p>
+<div class="example-contents"><pre class="programlisting">
+
+midgard_query_builder_add_constraint_with_property(builder, "metadata.revised", "&gt;", "metadata.published");
+
+</pre></div>
+</div>
+<p><br class="example-break">
+</p>
+<p>
+<em class="parameter"><code>See</code></em>: <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-add-constraint" title="midgard_query_builder_add_constraint ()"><code class="function">midgard_query_builder_add_constraint()</code></a>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>builder</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_a</code></em> :</span></p></td>
+<td>property name</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>comparison operator</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property_b</code></em> :</span></p></td>
+<td>property name</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if properties' names are valid, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-builder-begin-group"></a><h3>midgard_query_builder_begin_group ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_query_builder_begin_group   (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>);</pre>
+<p>
+Starts a constraint group of the given type. A conjunctive constraint
+group <em class="parameter"><code>type</code></em> (AND) requires that all component constraints match the
+queried objects, while a disjunctive group <em class="parameter"><code>type</code></em> (OR) requires just
+one of the component constraints to match.
+</p>
+<p>
+Allowed group <em class="parameter"><code>type</code></em>: 'AND' or 'OR'
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>builder</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>group type</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the <em class="parameter"><code>type</code></em> is valid, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-builder-end-group"></a><h3>midgard_query_builder_end_group ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_query_builder_end_group     (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>);</pre>
+<p>
+Closes the most recently opened constraint group. The client should
+ensure proper nesting by closing all constraint groups before the
+containing query is executed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>builder</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if a constraint group was closed, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if no
+open constraint groups were found</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-builder-add-order"></a><h3>midgard_query_builder_add_order ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_query_builder_add_order     (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dir</code></em>);</pre>
+<p>
+Adds an ordering constraint to the query. An ordering constraint consists
+of a property name and a sort direction. The objects returned by this
+query will be sorted by the given property in the given direction
+(ascending or descending). Multiple ordering constraints are applied in
+the order they were added.
+</p>
+<p>
+Allowed sort directions: 'ASC' or 'DESC'
+</p>
+<p>
+Property name pattern is described in <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-add-constraint" title="midgard_query_builder_add_constraint ()"><code class="function">midgard_query_builder_add_constraint()</code></a>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>builder</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>property name</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dir</code></em> :</span></p></td>
+<td>sort direction</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the ordering constraint is valid, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-builder-set-offset"></a><h3>midgard_query_builder_set_offset ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_query_builder_set_offset    (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> offset</code></em>);</pre>
+<p>
+Sets the start <em class="parameter"><code>offset</code></em> of the objects to return when the query is executed.
+The start <em class="parameter"><code>offset</code></em> is applied after all the matching objects have been
+identified and sorted according to the given ordering constraints. The
+first <em class="parameter"><code>offset</code></em> objects are skipped and only the remaining (if any) objects
+are returned to the client.
+</p>
+<p>
+Setting a start offset is normally only reasonable when one or more
+ordering constraints are applied to the query. A start offset is usually
+accompanied by a limit setting.
+</p>
+<p>
+<em class="parameter"><code>See</code></em>: <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-set-offset" title="midgard_query_builder_set_offset ()"><code class="function">midgard_query_builder_set_offset()</code></a>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>builder</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>offset</code></em> :</span></p></td>
+<td>query offset</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-builder-set-limit"></a><h3>midgard_query_builder_set_limit ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_query_builder_set_limit     (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> limit</code></em>);</pre>
+<p>
+Sets the maximum number of objects to return when the query is executed.
+A query will by default return all matching objects, but the <em class="parameter"><code>limit</code></em> setting
+can be used to restrict the potentially large number of returned objects.
+The <em class="parameter"><code>limit</code></em> is applied only after the matching objects have been identified
+and sorted and after the optional start offset has been applied.
+</p>
+<p>
+Setting a <em class="parameter"><code>limit</code></em> on the number of returned objects is normally only
+reasonable when one or more ordering constraints and optionally an offset
+setting are applied to the query. 
+</p>
+<p>
+<em class="parameter"><code>See</code></em>: <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-set-offset" title="midgard_query_builder_set_offset ()"><code class="function">midgard_query_builder_set_offset()</code></a>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>builder</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit</code></em> :</span></p></td>
+<td>query limit</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-builder-execute"></a><h3>midgard_query_builder_execute ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject"><span class="returnvalue">GObject</span></a> **          midgard_query_builder_execute       (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_objects</code></em>);</pre>
+<p>
+Executes the built query.
+</p>
+<p>
+Objects in returned array are <a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject"><span class="type">MidgardDBObject</span></a> derived ones,
+and typecasted to base GObject. You can safely typecast them to 
+the type, which <a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> has been initialized for.
+</p>
+<p>
+In case of any error, <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> error is set.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>builder</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_objects</code></em> :</span></p></td>
+<td>a pointer to store number of returned objects</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>NULL terminated array of objects, or NULL if none found. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-builder-count"></a><h3>midgard_query_builder_count ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               midgard_query_builder_count         (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>);</pre>
+<p>
+Returns the number of objects that this query would return when executed
+without limit or start offset settings.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>builder</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>number of object matched by this query</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-builder-get-type-name"></a><h3>midgard_query_builder_get_type_name ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       midgard_query_builder_get_type_name (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>);</pre>
+<p>
+Returns type name of the type which is currently used by Query Builder.
+</p>
+<p>
+This function should be used on language binding level , when internal
+Query Builder's instance is already created and language binding object 
+should be instanciated.
+</p>
+<p>
+Returned type name is a pointer and is owned by GLib system.
+Caller shouldn't free it.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>builder</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>name of the class, which query builder is initialized for.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-builder-include-deleted"></a><h3>midgard_query_builder_include_deleted ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_query_builder_include_deleted
+                                                        (<em class="parameter"><code><a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *builder</code></em>);</pre>
+<p>
+Query all objects - deleted and undeleted.
+</p>
+<p>
+This is valid for a class for which metadata is defined ('deleted' property
+of MidgardMetadata class), or class has 'metadata' property installed. 
+If none of them is found, this method does nothing.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>builder</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> instance</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryBuilder.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="MidgardQueryBuilder-execution-end"></a><h3>The <code class="literal">"execution-end"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *midgardquerybuilder,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>             user_data)                : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardquerybuilder</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardQueryBuilder-execution-start"></a><h3>The <code class="literal">"execution-start"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder"><span class="type">MidgardQueryBuilder</span></a> *midgardquerybuilder,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>             user_data)                : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardquerybuilder</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

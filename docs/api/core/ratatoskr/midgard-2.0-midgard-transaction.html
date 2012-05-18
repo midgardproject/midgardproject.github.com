@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardTransaction</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Basic.html" title="Midgard Basic Types">
+<link rel="prev" href="MidgardSchema.html" title="MidgardSchemaObjectFactory">
+<link rel="next" href="midgard-Midgard-Schema-User-Defined-Types.html" title="Midgard Schema User Defined Types">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardSchema.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Basic.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="midgard-Midgard-Schema-User-Defined-Types.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#midgard-2.0-midgard-transaction.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-transaction.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-transaction.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-transaction.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="midgard-2.0-midgard-transaction"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="midgard-2.0-midgard-transaction.top_of_page"></a>MidgardTransaction</span></h2>
+<p>MidgardTransaction — Database single transaction.</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="midgard-2.0-midgard-transaction.synopsis"></a><h2>Synopsis</h2>
+<a name="MidgardTransaction"></a><pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+struct              <a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransactionClass" title="struct MidgardTransactionClass">MidgardTransactionClass</a>;
+struct              <a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction-struct" title="struct MidgardTransaction">MidgardTransaction</a>;
+<a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="returnvalue">MidgardTransaction</span></a> * <a class="link" href="midgard-2.0-midgard-transaction.html#midgard-transaction-new" title="midgard_transaction_new ()">midgard_transaction_new</a>            (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-transaction.html#midgard-transaction-begin" title="midgard_transaction_begin ()">midgard_transaction_begin</a>           (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="type">MidgardTransaction</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-transaction.html#midgard-transaction-commit" title="midgard_transaction_commit ()">midgard_transaction_commit</a>          (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="type">MidgardTransaction</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-transaction.html#midgard-transaction-rollback" title="midgard_transaction_rollback ()">midgard_transaction_rollback</a>        (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="type">MidgardTransaction</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-transaction.html#midgard-transaction-get-status" title="midgard_transaction_get_status ()">midgard_transaction_get_status</a>      (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="type">MidgardTransaction</span></a> *self</code></em>);
+const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="midgard-2.0-midgard-transaction.html#midgard-transaction-get-name" title="midgard_transaction_get_name ()">midgard_transaction_get_name</a>        (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="type">MidgardTransaction</span></a> *self</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-transaction.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----MidgardTransaction
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-transaction.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction--connection" title='The "connection" property'>connection</a>"               <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a>*    : Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-transaction.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-transaction.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardTransactionClass"></a><h3>struct MidgardTransactionClass</h3>
+<pre class="programlisting">struct MidgardTransactionClass {
+	GObjectClass parent;
+
+	/* class members */
+	gboolean (*begin)		(MidgardTransaction *self);
+	gboolean (*commit)		(MidgardTransaction *self);
+	gboolean (*rollback)		(MidgardTransaction *self);
+	gboolean (*get_status)		(MidgardTransaction *self);
+	const gchar 	*(*get_name)		(MidgardTransaction *self);
+};
+</pre>
+<p>
+</p>
+<p class="since">Since 9.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardTransaction-struct"></a><h3>struct MidgardTransaction</h3>
+<pre class="programlisting">struct MidgardTransaction;</pre>
+<p>
+</p>
+<p class="since">Since 9.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-transaction-new"></a><h3>midgard_transaction_new ()</h3>
+<pre class="programlisting"><a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="returnvalue">MidgardTransaction</span></a> * midgard_transaction_new            (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>New <a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="type">MidgardTransaction</span></a> instance or NULL on failure</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 9.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-transaction-begin"></a><h3>midgard_transaction_begin ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_transaction_begin           (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="type">MidgardTransaction</span></a> *self</code></em>);</pre>
+<p>
+Begins new, underlying database provider's transaction.
+In case of error, <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> error is set to MGD_ERR_INTERNAL.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="type">MidgardTransaction</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 9.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-transaction-commit"></a><h3>midgard_transaction_commit ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_transaction_commit          (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="type">MidgardTransaction</span></a> *self</code></em>);</pre>
+<p>
+In case of error, <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> error is set to MGD_ERR_INTERNAL.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="type">MidgardTransaction</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 9.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-transaction-rollback"></a><h3>midgard_transaction_rollback ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_transaction_rollback        (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="type">MidgardTransaction</span></a> *self</code></em>);</pre>
+<p>
+In case of error, <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> error is set to MGD_ERR_INTERNAL
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="type">MidgardTransaction</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 9.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-transaction-get-status"></a><h3>midgard_transaction_get_status ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_transaction_get_status      (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="type">MidgardTransaction</span></a> *self</code></em>);</pre>
+<p>
+Returns transaction status. <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> means, any transaction operation failed.
+No <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> error is set in case of error.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="type">MidgardTransaction</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 9.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-transaction-get-name"></a><h3>midgard_transaction_get_name ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       midgard_transaction_get_name        (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="type">MidgardTransaction</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-transaction.html#MidgardTransaction"><span class="type">MidgardTransaction</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>unique name which identifies given transaction.</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 9.09</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-transaction.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardTransaction--connection"></a><h3>The <code class="literal">"connection"</code> property</h3>
+<pre class="programlisting">  "connection"               <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a>*    : Write / Construct Only</pre>
+<p>
+Pointer to <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a>, given object has been initialized for
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>
