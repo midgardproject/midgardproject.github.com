@@ -47,35 +47,29 @@ Minimal route definition:
 
 There are several ways Midgard MVC matches Requests to Routes. The matching is handled by providing an Intent to the factory method of the Request class:
 
-*   Explicit matching
-
-        *   In an explicit match we know the component instance, route identifier and arguments
-*   Implicit matching
-
-        *   In implicit matching we know one or multiple of:
-
-                *   Route identifier and arguments
-        *   URL
-        *   Component name
-        *   Existing request object
-        *   URL patterns
+* Explicit matching
+  * In an explicit match we know the component instance, route identifier and arguments
+* Implicit matching
+  * In implicit matching we know one or multiple of:
+    * Route identifier and arguments
+    * URL
+    * Component name
+    * Existing request object
+    * URL patterns
 
 Route path (under a given hierarchy node) is defined with the path property of the route. The paths follow the URL pattern specification.
 
 Variables can be used with URL patterns in the following way:
 
-*   Named variable
-
-        *   -path: '/{$foo}'
-    *   With request /bar the controller would be called with `$args['foo'] = 'bar'`
-*   Named and typed variable
-
-        *   -path: '/latest/{int:$number}'
-    *   With request /latest/5 the controller would be called with `$args['number'] = 5`
-*   Unnamed arguments
-
-        *   -path '/file/@'
-    *   With request /file/a/b the controller would be called with `$args['variable_arguments'] = array('a', 'b')`
+* Named variable
+  * `-path: '/{$foo}'`
+  * With request /bar the controller would be called with `$args['foo'] = 'bar'`
+* Named and typed variable
+  * `-path: '/latest/{int:$number}'`
+  * With request /latest/5 the controller would be called with `$args['number'] = 5`
+* Unnamed arguments
+  * `-path '/file/@'`
+  * With request /file/a/b the controller would be called with `$args['variable_arguments'] = array('a', 'b')`
 
 #### Limiting route availability
 
@@ -86,6 +80,7 @@ If you want routes to be accessible only when run on the root folder of the webs
       root_only: true
 
 Another option is to ensure a route is accessible only when used in subrequests (`dynamic_load` and `dynamic_call`) and not accessible directly by browser. This can be achieved by the following in route definition:
+
     routes:
      some_route:
        subrequest_only: true
