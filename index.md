@@ -18,19 +18,6 @@ product_categories:
         url: "http://openpsa2.org/"
         logo: /images/logos/openpsa_black_70.png
   - 
-    label: "Content Repositories"
-    products: 
-      - 
-        label: Midgard2
-        tagline: "Generic Content Repository for Web and Desktop applications"
-        url: /midgard2/
-        logo: /images/logos/midgard2_black_70.png
-      - 
-        label: "Midgard1"
-        tagline: "Legacy Web Content Repository for PHP"
-        url: /midgard1/
-        logo: /images/logos/midgard1_black_70.png
-  - 
     label: "Web Frameworks"
     products: 
       - 
@@ -43,6 +30,24 @@ product_categories:
         tagline: "Tightly coupled PHP framework and CMS for Midgard"
         url: /midcom/
         logo: /images/logos/midcom_black_70.png
+  - 
+    label: "Content Repositories"
+    products: 
+      - 
+        label: Midgard2
+        tagline: "Generic Content Repository for Web and Desktop applications"
+        url: /midgard2/
+        logo: /images/logos/midgard2_black_70.png
+      - 
+        label: "Midgard1"
+        tagline: "Legacy Web Content Repository for PHP"
+        url: /midgard1/
+        logo: /images/logos/midgard1_black_70.png
+      -
+        label: PHPCR
+        tagline: "Standard PHP Content Repository implementation"
+        url: /phpcr/
+        logo: /images/logos/midgard2_black_70.png
 title: "The Midgard Project"
 ---
 Midgard is a **free software project** aiming to build **content repositories** useful for synchronized desktop, mobile and web applications. Since 1999, the project has been releasing both the content repository library itself, and also many useful tools around it, like **web frameworks** for PHP and Python.
