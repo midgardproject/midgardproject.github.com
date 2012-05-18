@@ -44,7 +44,7 @@ product_categories:
         url: /midgard1/
         logo: /images/logos/midgard1_black_70.png
       -
-        label: PHPCR
+        label: "Midgard2 PHPCR"
         tagline: "Standard PHP Content Repository implementation"
         url: /phpcr/
         logo: /images/logos/midgard2_black_70.png
