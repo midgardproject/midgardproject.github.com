@@ -4,6 +4,7 @@ name: phpcr
 title: Midgard2 PHPCR
 logo: /images/logos/midgard2_white_100.png
 tagline: "Standard PHP Content Repository implementation"
+github: https://github.com/midgardproject/phpcr-midgard2/ 
 ---
 A [Midgard2](/midgard2/) -backed provider of the [PHP Content Repository](http://phpcr.github.com/) (PHPCR) interfaces. `phpcr-midgard2` is a [Symfony CMF](http://cmf.symfony.com/) compatible PHPCR provider that can be used in PHP Content Management Systems without requiring Java.
 
