@@ -240,4 +240,15 @@ footer .wrapper .logo{
 	float: left;
 	margin-right: 10px;
 }
-
+/*---------------------------------------------------*/
+blockquote.haiku {
+  font-size: larger;
+  background-color: transparent;
+  font-style: italic;
+}
+blockquote.haiku cite {
+  display: block;
+  margin-left: 2em;
+  font-style: normal;
+  font-size: smaller;
+}
