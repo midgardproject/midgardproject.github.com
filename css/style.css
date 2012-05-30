@@ -220,10 +220,14 @@ article .tabs{
 .linklist ul li{
 	margin-bottom: 5px;
 }
-.linklist ul a{
-	color: #529C0C !important;
-	text-decoration: underline !important;
+.linklist ul li a {
+	color: #529C0C;
 	font-weight: bold;
+  text-decoration: none;
+}
+.sidebox ul li.active a,
+.sidebox ul li a:hover {
+  color: #000000;
 }
 /*---------------------------------------------------*/
 footer a{
