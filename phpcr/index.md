@@ -3,6 +3,7 @@ layout: product
 name: phpcr
 title: Midgard2 PHPCR
 logo: /images/logos/midgard2_white_100.png
+favicon: /images/logos/midgard2_favicon.png
 tagline: "Standard PHP Content Repository implementation"
 github: https://github.com/midgardproject/phpcr-midgard2/ 
 ---

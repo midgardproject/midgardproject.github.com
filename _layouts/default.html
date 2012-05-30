@@ -4,8 +4,11 @@
   <head>
     <title>{% if page.title %}{{ page.title }} - {% endif %}{% if page.tagline %}{{ page.tagline | strip_html }}{% else %}Midgard{% endif %}</title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <link rel="shortcut icon" href="/images/favicon.png"
-    type="image/png" />
+    {% if page.favicon %}
+    <link rel="shortcut icon" href="{{ page.favicon }}" type="image/png" />
+    {% else %}
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
+    {% endif %}
     <link type="text/css" rel="stylesheet" href="/css/style.css"
     />
     {% if page.custom_css %}

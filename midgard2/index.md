@@ -3,6 +3,7 @@ layout: product
 name: midgard2
 title: Midgard2
 logo: /images/logos/midgard2_white_100.png
+favicon: /images/logos/midgard2_favicon.png
 tagline: "Generic <b>Content Repository</b> for <b>Web</b> and <b>Desktop applications</b>"
 github: https://github.com/midgardproject/midgard-core/tree/ratatoskr 
 ---

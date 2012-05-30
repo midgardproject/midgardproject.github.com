@@ -3,6 +3,7 @@ layout: product
 name: midgardmvc
 title: "Midgard MVC"
 logo: /images/logos/midgardmvc_white_100.png
+favicon: /images/logos/midgardmvc_favicon.png
 tagline: "Component-oriented web framework for PHP"
 github: "https://github.com/midgardproject/midgardmvc_core"
 ---
