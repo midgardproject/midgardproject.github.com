@@ -4,10 +4,12 @@ title: "Getting started"
 ---
 You can use the Composer-generated autoloader to load all needed classes:
 
+    <?php
     require 'vendor/autoload.php';
 
 After you've included the autoloader you should be able to open a Midgard2 repository session:
 
+    <?php
     // Set up Midgard2 connection
     $parameters = array(
         // Use local SQLite file for storage

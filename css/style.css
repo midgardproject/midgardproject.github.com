@@ -168,8 +168,9 @@ article blockquote{
 	font-size: 12px;
 }
 article pre{
-    background-color: #3f3f3f;
-    color: #dcdccc;
+  background-color: #3f3f3f;
+  color: #dcdccc;
+  border-radius: 6px;
 	margin: 0 0 10px 0;
 	padding: 15px 20px;
 	font-size: 12px;
