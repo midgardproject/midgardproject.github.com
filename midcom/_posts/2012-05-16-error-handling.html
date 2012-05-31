@@ -1,0 +1,253 @@
+---
+name: errors
+title: Error handling
+---
+<p>MidCOM allows site developers to add their own error handling.</p>
+
+<p>In all cases, the basic idea is to have a simple page in the Distribution itself and allow the site developer to add either style or page elements that can override the defaults.</p>
+
+<p>Since Midgard Style Elements evaluate in the scope of the callee, each element will list a number of variables that can be accessed directly without having to global them in as it is required with MidCOM Style-Engine driven pages.</p>
+
+<p>Since the Style Engine does not distinguish between page and style elements during execution, you can add the replacement elements where you like. Be aware though, that it is strongly encouraged to add the element in the Style, not the Page. The required style element names are given in the headings of the various sections.</p>
+
+<h2>Authentication related elements</h2>
+
+<p>The authentication pages are divided in three elements:</p>
+
+<h3>Login Form using the 'form' Authentication Frontend (<em>midcom_services_auth_frontend_form</em>)</h3>
+
+<p>This is the simplest part of it, it will add the actual login form to the generated pages. It is decopuled from the rest, because a) its behavoir is depended on the authentication frontend used and b) it needs to be reusable in the other two elements.</p>
+
+<p>This tutorial assumes that you use the default 'form' frontend.</p>
+
+<p>Currently, only the "form" authentication frontend is avaialbe, which renders a simple form that can be styled using CSS. Lets look at the default source first:</p>
+
+<pre><code>&lt;form name="midcom_services_auth_frontend_form" action="" 
+    method="POST" id="midcom_services_auth_frontend_form"&gt;
+    &lt;label for="username"&gt;
+    &lt;?php echo $_MIDCOM-&gt;i18n-&gt;get_string('username', 'midcom'); ?&gt;:
+        &lt;input name="username" id="username" /&gt;
+    &lt;/label&gt;
+    &lt;label for="password"&gt;
+        &lt;?php echo $_MIDCOM-&gt;i18n-&gt;get_string('password', 'midcom'); ?&gt;: 
+        &lt;input name="password" id="password" type="password" /&gt;
+    &lt;/label&gt;
+    &lt;input type="submit" name="midcom_services_auth_frontend_form_submit" 
+        id="midcom_services_auth_frontend_form_submit" value="&lt;?php
+        echo $_MIDCOM-&gt;i18n-&gt;get_string('login', 'midcom'); ?&gt;" /&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>As you can see, you shouldn't have much trouble customizing this form by just generating appropriate CSS rules that are included in the actual error pages generated. If you need to replace this element nevertheless, ensure that the name of the various form elements are not changed in any way.</p>
+
+<h3>Login Page (<em>midcom_services_auth_login_page</em>)</h3>
+
+<p>The login page is shown if there is no authenticated user and either the systemwide login page is called, or some component calls <code>$_MIDCOM-&gt;auth-&gt;require_valid_user()</code>.</p>
+
+<p>It is similar to the regular error pages with a slightly different formatting not crying out "ERROR" as loud. These pages still add an HTTP 403 Forbidden Header to prevent search engines or any cache to interfere with the page.</p>
+
+<p>
+<div class="note">
+The exact HTTP responses delivered by these pages may change in the course of the development of MidCOM 2.6, you might want to keep an eye on this tutorial in this respect therefore.
+</div>
+</p>
+
+<p>Again, lets look at the source of the default page:</p>
+
+<pre><code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"&gt;
+&lt;head&gt;
+&lt;title&gt;&lt;?php echo $title; ?&gt;&lt;/title&gt;
+&lt;style type="text/css"&gt;
+    body { color: #000000; background-color: #FFFFFF; }
+    address { font-size: smaller; }
+    a:link { color: #0000CC; }
+
+    #login_warning { color: red; }
+    p.login_message { }
+
+    form label { margin-left: none; padding-left: none; display: block; }
+    form label input { margin: 0.5ex 0 0 0; display: block; }
+&lt;/form&gt;
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;h1&gt;&lt;?php echo $title; ?&gt;&lt;/h1&gt;
+
+&lt;p class='login_message'&gt;&lt;?php 
+    echo $_MIDCOM-&gt;i18n-&gt;get_string('login message - please enter credencials', 
+    'midcom');?&gt;&lt;/p&gt;
+
+&lt;?php echo $login_warning; ?&gt;
+
+&lt;?php $_MIDCOM-&gt;auth-&gt;show_login_form(); ?&gt;
+
+&lt;address&gt;
+    &lt;a href="/"&gt;&lt;?php echo $_SERVER['SERVER_NAME']; ?&gt;&lt;/a&gt;&lt;br /&gt;
+    &lt;?php echo date('r'); ?&gt;&lt;br /&gt;
+    &lt;?php echo $_SERVER['SERVER_SOFTWARE']; ?&gt;
+&lt;/address&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>The important thing here is the fact that you are delivering a full HTML page at this point. It is rendered by the method <code>midcom_services_auth::show_login_page()</code>, which makes the following variables available:</p>
+
+<ul>
+<li><strong><code>$title:</code></strong> A localized page title generated by looking up the string 
+'login' in the main MidCOM L10n Database.</li>
+<li><strong><code>$login_warning:</code></strong> This string is populated with a localized warning in 
+case that the (last) login failed. It is automatically enclosed in a<br />
+paragraph with the CSS ID <code>login_warning</code> assigned to it. If there was
+no problem, the string is empty.</li>
+</ul>
+
+<p>To add the actual login form, call <code>$_MIDCOM-&gt;auth-&gt;show_login_form()</code>, as shown in the example above. While it is theoretically possible to add the login form manually, this is strongly discouraged, as it breaks the modularity of the MidCOM authentication core.</p>
+
+<h3>Access Denied Page (<em>midcom_services_auth_access_denied</em>)</h3>
+
+<p>This page is shown on all failed permission checks other then <code>$_MIDCOM-&gt;auth-&gt;require_valid_user()</code> (see above for that one). It delivers a HTTP 403 Forbidden page which also includes the possibility to log in to the system using different credencials.</p>
+
+<p>This is the default page:</p>
+
+<pre><code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"&gt;
+&lt;head&gt;
+&lt;title&gt;&lt;?php echo $title; ?&gt;&lt;/title&gt;
+&lt;style type="text/css"&gt;
+    body { color: #000000; background-color: #FFFFFF; }
+    a:link { color: #0000CC; }
+    address { font-size: smaller; }
+
+    #login_warning { color: red; }
+
+    form label { margin-left: none; padding-left: none; display: block; }
+    form label input { margin: 0.5ex 0 0 0; display: block; }
+&lt;/form&gt;
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;h1&gt;&lt;?php echo $title; ?&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;?php echo $message; ?&gt;&lt;/p&gt;
+
+&lt;h2&gt;&lt;?php echo $_MIDCOM-&gt;i18n-&gt;get_string('login', 'midcom');?&gt;:&lt;/h2&gt;
+
+&lt;?php echo $login_warning; ?&gt;
+
+&lt;?php $this-&gt;_auth_frontend-&gt;show_authentication_form(); ?&gt;
+
+&lt;p&gt;&lt;strong&gt;Error 403&lt;/strong&gt;&lt;/p&gt;
+&lt;address&gt;
+    &lt;a href="/"&gt;&lt;?php echo $_SERVER['SERVER_NAME']; ?&gt;&lt;/a&gt;&lt;br /&gt;
+    &lt;?php echo date('r'); ?&gt;&lt;br /&gt;
+    &lt;?php echo $_SERVER['SERVER_SOFTWARE']; ?&gt;
+&lt;/address&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>As you can see, this is quite similar to the Login page, with the main difference that it is more error-like. Therefore, all of the annotations from the login form and its usage do also count for the Acccess Denied element, with the single addition of another variable:</p>
+
+<ul>
+<li><strong><code>$message:</code></strong> includes the reason why the access to the page failed. It
+is localized (at least when coming from the MidCOM ACL core) and outlines
+the nature of the failed privilege check.</li>
+</ul>
+
+<h2>Styling of the other MidCOM Error pages</h2>
+
+<p>These pages are generated by calls to <code>$_MIDCOM-&gt;generate_error()</code>. They indicate critical errors which prevent a page from being processed completly.</p>
+
+<h3>4xx Standard Error pages (<em>midcom_error_4xx</em>)</h3>
+
+<p>Currently, the framework knows these error conditions in the 4xx cateogory:</p>
+
+<ul>
+<li><strong>404 Not Found:</strong> This is the case happening most often, indicating that 
+an element requested by the user could not be found.</li>
+<li><strong>401 Unauthorized:</strong> This is a legacy error code, that is not in wide 
+use right now. I have not yet decided what to do with it.</li>
+<li><strong>403 Forbidden:</strong> Normally, 403 errors are now handled by the ACL
+framework (see above). In the unlikly case however, that the ACL service
+has not yet started up, the core must deliver the corresponding error
+message.</li>
+</ul>
+
+<p>All of the errors mentioned above are delivered using the style element with their appropriate error code appended. So not found will call <em>midcom_error_404</em>.</p>
+
+<p>The basic error page looks like this:</p>
+
+<pre><code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"&gt;
+&lt;head&gt;
+&lt;title&gt;&lt;?echo $title; ?&gt;&lt;/title&gt;
+&lt;style type="text/css"&gt;
+    body { color: #000000; background-color: #FFFFFF; }
+    a:link { color: #0000CC; }
+    p, address {margin-left: 3em;}
+    address {font-size: smaller;}
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;h1&gt;&lt;?echo $title; ?&gt;&lt;/h1&gt;
+
+&lt;p&gt;
+&lt;?echo $message; ?&gt;
+&lt;/p&gt;
+
+&lt;h2&gt;Error &lt;?echo $code; ?&gt;&lt;/h2&gt;
+&lt;address&gt;
+    &lt;a href="/"&gt;&lt;?php echo $_SERVER['SERVER_NAME']; ?&gt;&lt;/a&gt;&lt;br /&gt;
+    &lt;?php echo date('r'); ?&gt;&lt;br /&gt;
+    &lt;?php echo $_SERVER['SERVER_SOFTWARE']; ?&gt;
+&lt;/address&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Again, we have a few variables available at your disposal:</p>
+
+<ul>
+<li><strong><code>$title:</code></strong> contains the currently <em>not localized</em> clear-text name of 
+the error as it is defined in the HTTP specs.</li>
+<li><strong><code>$message:</code></strong> This is the error message that should be shown to the
+user. It depends on the calling component whether this string is localized
+or not.</li>
+<li><strong><code>$code:</code></strong> contains the integer response code sent to the browser.</li>
+<li><strong><code>$header:</code></strong> contains the full HTTP/1.0 response code which has been
+sent to the browser already. You should normally not need this variable.</li>
+</ul>
+
+<h3>500 Internal Server Errors</h3>
+
+<p>This type of error page is not styleable by the site developer, as it is thrown in many places where critical errors occur. Since you can use regular MidCOM functions during rendering a customized error page, the possibility of an error throwing an error is perfectly possible, which is why the HTTP 500 error remains hardcoded (and simple).</p>
+
+<h2>Acting on errors</h2>
+<p>
+For a long time, MidCOM has been mapping various types of system errors to various <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status codes</a>, and has made it possible to create customized templates for displaying them.
+</p><p>
+Error actions, on the other hand, allow other actions to take place. Some examples:
+</p><ul><li>Log all 404 Not Found page URLs into a special log file alongside their referrers</li>
+<li>Send all 500 Internal Errors with debug stacktrace to the site developer</li>
+</ul><p>
+To enable error actions, tweak your <a href="http://www.nathan-syntronics.de/midgard/midcom/midcom-2_4/reworked-configuration-management.html">MidCOM config</a> in the following way:
+</p><pre>$GLOBALS['midcom_config_local']['error_actions'] = array
+(
+    500 =&gt; array
+    (
+        'action' =&gt; 'email',
+        'email' =&gt; 'webmaster@example.net',
+    ),
+    404 =&gt; array
+    (
+        'action' =&gt; 'log',
+        'filename' =&gt; '/var/log/broken_links.log',
+    ),
+);</pre>
