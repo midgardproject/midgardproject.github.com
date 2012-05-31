@@ -2,7 +2,7 @@
 name: multilang
 title: Building multilingual sites
 ---
-With [Midgard1](/midgard1/) and above the recommended way is to use [MultiLang](multilanguage) feature even if the site structure isn't identical among different languages.
+With [Midgard1](/midgard1/) and above the recommended way is to use [MultiLang](/midgard1/#multilang) feature even if the site structure isn't identical among different languages.
 
 If content hasn't been translated will master language (language 0) be used.
 
