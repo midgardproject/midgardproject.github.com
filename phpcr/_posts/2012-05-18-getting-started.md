@@ -29,7 +29,7 @@ After you've included the autoloader you should be able to open a Midgard2 repos
     $credentials = new \PHPCR\SimpleCredentials('admin', 'password');
     $session = $repository->login($credentials, 'default');
 
-After this the whole [PHPCR API](http://phpcr.github.com/doc/html/index.html) will be available. See some example code in the [examples` directory](https://github.com/midgardproject/phpcr-midgard2/tree/master/examples).
+After this the whole [PHPCR API](http://phpcr.github.com/doc/html/index.html) will be available. See some example code in the [examples directory](https://github.com/midgardproject/phpcr-midgard2/tree/master/examples).
 
 With MySQL, the connection parameters could for example be:
 
