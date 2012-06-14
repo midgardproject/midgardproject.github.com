@@ -168,8 +168,9 @@ article blockquote{
 	font-size: 12px;
 }
 article pre{
-    background-color: #3f3f3f;
-    color: #dcdccc;
+  background-color: #3f3f3f;
+  color: #dcdccc;
+  border-radius: 6px;
 	margin: 0 0 10px 0;
 	padding: 15px 20px;
 	font-size: 12px;
@@ -219,10 +220,14 @@ article .tabs{
 .linklist ul li{
 	margin-bottom: 5px;
 }
-.linklist ul a{
-	color: #529C0C !important;
-	text-decoration: underline !important;
+.linklist ul li a {
+	color: #529C0C;
 	font-weight: bold;
+  text-decoration: none;
+}
+.sidebox ul li.active a,
+.sidebox ul li a:hover {
+  color: #000000;
 }
 /*---------------------------------------------------*/
 footer a{
@@ -240,4 +245,15 @@ footer .wrapper .logo{
 	float: left;
 	margin-right: 10px;
 }
-
+/*---------------------------------------------------*/
+blockquote.haiku {
+  font-size: larger;
+  background-color: transparent;
+  font-style: italic;
+}
+blockquote.haiku cite {
+  display: block;
+  margin-left: 2em;
+  font-style: normal;
+  font-size: smaller;
+}
