@@ -1,0 +1,591 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardCollector</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Basic.html" title="Midgard Basic Types">
+<link rel="prev" href="midgard-2.0-midgard-user.html" title="MidgardUser">
+<link rel="next" href="midgard-2.0-midgard-blob.html" title="MidgardBlob">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="midgard-2.0-midgard-user.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Basic.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="midgard-2.0-midgard-blob.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#midgard-2.0-midgard-collector.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-collector.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-collector.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="midgard-2.0-midgard-collector"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="midgard-2.0-midgard-collector.top_of_page"></a>MidgardCollector</span></h2>
+<p>MidgardCollector — Optimized database query that doesn't return objects</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="midgard-2.0-midgard-collector.synopsis"></a><h2>Synopsis</h2>
+<a name="MidgardCollector"></a><pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+struct              <a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector-struct" title="struct MidgardCollector">MidgardCollector</a>;
+typedef             <a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollectorClass" title="MidgardCollectorClass">MidgardCollectorClass</a>;
+<a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="returnvalue">MidgardCollector</span></a> *  <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-new" title="midgard_collector_new ()">midgard_collector_new</a>               (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *typename</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *domain</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *value</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-set-key-property" title="midgard_collector_set_key_property ()">midgard_collector_set_key_property</a>  (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *value</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-add-value-property" title="midgard_collector_add_value_property ()">midgard_collector_add_value_property</a>
+                                                        (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-set" title="midgard_collector_set ()">midgard_collector_set</a>               (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *subkey</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *value</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Keyed-Data-Lists.html#GData"><span class="returnvalue">GData</span></a> *             <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-get" title="midgard_collector_get ()">midgard_collector_get</a>               (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>);
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="returnvalue">GValue</span></a> *            <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-get-subkey" title="midgard_collector_get_subkey ()">midgard_collector_get_subkey</a>        (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *subkey</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **            <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-list-keys" title="midgard_collector_list_keys ()">midgard_collector_list_keys</a>         (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-merge" title="midgard_collector_merge ()">midgard_collector_merge</a>             (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *mc</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> overwrite</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-remove-key" title="midgard_collector_remove_key ()">midgard_collector_remove_key</a>        (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-add-constraint" title="midgard_collector_add_constraint ()">midgard_collector_add_constraint</a>    (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *op</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *value</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-add-constraint-with-property" title="midgard_collector_add_constraint_with_property ()">midgard_collector_add_constraint_with_property</a>
+                                                        (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_a</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *op</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_b</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-begin-group" title="midgard_collector_begin_group ()">midgard_collector_begin_group</a>       (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-end-group" title="midgard_collector_end_group ()">midgard_collector_end_group</a>         (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-add-order" title="midgard_collector_add_order ()">midgard_collector_add_order</a>         (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dir</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-set-offset" title="midgard_collector_set_offset ()">midgard_collector_set_offset</a>        (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> offset</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-set-limit" title="midgard_collector_set_limit ()">midgard_collector_set_limit</a>         (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> limit</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-count" title="midgard_collector_count ()">midgard_collector_count</a>             (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-collector.html#midgard-collector-execute" title="midgard_collector_execute ()">midgard_collector_execute</a>           (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-collector.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder">MidgardQueryBuilder</a>
+         +----MidgardCollector
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-collector.description"></a><h2>Description</h2>
+<p>
+ The main idea of <a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> is code, resources and data reusability
+ for all data values which are not objects itself and as part of any object
+ could be retrieved from Midgard database without any need to retrieve full
+ objects' records. MidgardCollector is special limited resource data handler
+ and is optimized for performance and data accessibility.
+</p>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-collector.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardCollector-struct"></a><h3>struct MidgardCollector</h3>
+<pre class="programlisting">struct MidgardCollector;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardCollectorClass"></a><h3>MidgardCollectorClass</h3>
+<pre class="programlisting">typedef struct MidgardCollectorClass MidgardCollectorClass;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-new"></a><h3>midgard_collector_new ()</h3>
+<pre class="programlisting"><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="returnvalue">MidgardCollector</span></a> *  midgard_collector_new               (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *typename</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *domain</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>
+<em class="parameter"><code>typename</code></em> should be any <a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject"><span class="type">MidgardDBObject</span></a> derived class name.
+<em class="parameter"><code>domain</code></em> is property name which is registered for given class, and should not be 
+unique per object or record. In other words, <em class="parameter"><code>domain</code></em> is a common property (and value)
+for group of objects expected in collection.
+<em class="parameter"><code>value</code></em> must be of domain property type, and is owned by <a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> instance.
+If you need reuse given value, make a copy. 
+</p>
+<p>
+Cases to return NULL:
+</p>
+<p>
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+<em class="parameter"><code>mgd</code></em> <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance is invalid
+</p></li>
+<li class="listitem"><p>
+<em class="parameter"><code>typename</code></em> is not registered in GType system or it's not <a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject"><span class="type">MidgardDBObject</span></a> derived 
+</p></li>
+<li class="listitem"><p>
+<em class="parameter"><code>domain</code></em> property is not registered for given <em class="parameter"><code>typename</code></em> class 
+</p></li>
+<li class="listitem"><p>
+<em class="parameter"><code>value</code></em> is of invalid type
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>typename</code></em> :</span></p></td>
+<td>name of given class, which collector is initialized for</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>domain</code></em> :</span></p></td>
+<td>collection' domain</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>domain's constraint value</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> instance, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-set-key-property"></a><h3>midgard_collector_set_key_property ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_collector_set_key_property  (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>
+If <em class="parameter"><code>value</code></em> is explicitly set to NULL , then all key property name's records
+are selected from database and set in internal collector's resultset. 
+If not, key property name and its value is used as constraint to limit selected
+records from database. In latter case add_value_property method should be invoked.
+GValue value passed as third argument is owned by Midgard Collector. If value
+should be reused, its copy should be passed to constructor.
+</p>
+<p>
+Cases to return FALSE:
+</p>
+<p>
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+<em class="parameter"><code>self</code></em> <a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> instance is invalid
+</p></li>
+<li class="listitem"><p>
+<em class="parameter"><code>key</code></em> property is not registered for the <em class="parameter"><code>typename</code></em> class 
+</p></li>
+<li class="listitem"><p>
+<em class="parameter"><code>value</code></em> is of invalid type
+</p></li>
+<li class="listitem"><p>
+<em class="parameter"><code>key</code></em> property is already set for <em class="parameter"><code>self</code></em> <a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> 
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>property name which must be a key</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>optional value of key's constraint</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if key has been set, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-add-value-property"></a><h3>midgard_collector_add_value_property ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_collector_add_value_property
+                                                        (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
+<p>
+Cases to return FALSE:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+<em class="parameter"><code>self</code></em>, <a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> object is invalid
+</p></li>
+<li class="listitem"><p>
+<em class="parameter"><code>value</code></em> property is not registered for the <em class="parameter"><code>class</code></em>, which has been initialized for given <a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a>
+</p></li>
+</ul></div>
+<p>
+</p>
+<p>
+Number of value properties added to Midgard Collector is limited by
+the number of properties registered for type which has been initialized
+for the given <a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> instance.
+</p>
+<p>
+<em class="parameter"><code>See</code></em>: <a class="link" href="MidgardQueryBuilder.html#midgard-query-builder-add-constraint" title="midgard_query_builder_add_constraint ()"><code class="function">midgard_query_builder_add_constraint()</code></a> for available property name pattern
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>property name</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if named value property has been added, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-set"></a><h3>midgard_collector_set ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_collector_set               (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *subkey</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>
+Cases to return FALSE:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+<em class="parameter"><code>self</code></em>, <a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> instance is invalid
+</p></li>
+<li class="listitem"><p>
+<em class="parameter"><code>subkey</code></em> property name is not registered for collestor's class
+</p></li>
+<li class="listitem"><p>
+<em class="parameter"><code>value</code></em> is of invalid type
+</p></li>
+</ul></div>
+<p>
+</p>
+<p>
+If the key is already added to MidgardCollector then its value 
+(as subkey&amp;value pair) is destroyed and new one is set. 
+In other case new key and its subkey&amp;value pair is added  to collector.
+</p>
+<p>
+Key used in this function is a value returned ( or set ) for collector's key.
+Keys are collection of values returned from property fields.  
+Subkey is an explicit  property name.
+</p>
+<p>
+GValue <em class="parameter"><code>value</code></em> argument is owned by MidgardCollector.
+If value should be reused, its copy should be passed as method argument.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>key name for which <em class="parameter"><code>subkey</code></em>&amp;<em class="parameter"><code>value</code></em> pair should be set</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>subkey</code></em> :</span></p></td>
+<td>property name which is a subkey</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>value for given <em class="parameter"><code>subkey</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, if key's value has been set, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-get"></a><h3>midgard_collector_get ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Keyed-Data-Lists.html#GData"><span class="returnvalue">GData</span></a> *             midgard_collector_get               (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>);</pre>
+<p>
+GData keys ( collector's subkeys ) are inserted to GData as
+Quarks , so you must call g_quark_to_string if you need to get strings 
+( e.g. implementing hash table for language bindings ).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>name of the key to look for</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Keyed-Data-Lists.html#GData"><span class="type">GData</span></a> for the given key or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if key is not found in collection. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-get-subkey"></a><h3>midgard_collector_get_subkey ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="returnvalue">GValue</span></a> *            midgard_collector_get_subkey        (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *subkey</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>name of the key</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>subkey</code></em> :</span></p></td>
+<td>name of key's subkey to look for</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>subkey's <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> value or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if not found</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-list-keys"></a><h3>midgard_collector_list_keys ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **            midgard_collector_list_keys         (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-merge"></a><h3>midgard_collector_merge ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_collector_merge             (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *mc</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> overwrite</code></em>);</pre>
+<p>
+If third overwrite parameter is set as TRUE then all keys which exists 
+in <em class="parameter"><code>self</code></em> and <em class="parameter"><code>mc</code></em> collector's instance will be oberwritten in <em class="parameter"><code>self</code></em> colection
+instance. If set as FALSE , only those keys will be added, which do not exist
+in <em class="parameter"><code>self</code></em> collection and exist in <em class="parameter"><code>mc</code></em> collection.
+</p>
+<p>
+Cases to return FALSE:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+Second argument is not valid <a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> 
+</p></li>
+<li class="listitem"><p>
+<em class="parameter"><code>mc</code></em>, <a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> has no keys collection
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mc</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>overwrite</code></em> :</span></p></td>
+<td>whether overwrite collector's keys</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if collections has been merged, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-remove-key"></a><h3>midgard_collector_remove_key ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_collector_remove_key        (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>);</pre>
+<p>
+Removes key and associated value from the given <a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> instance.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>name of the key in collector's collection</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if key (and its value) has been removed from collection, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-add-constraint"></a><h3>midgard_collector_add_constraint ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_collector_add_constraint    (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *op</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-add-constraint-with-property"></a><h3>midgard_collector_add_constraint_with_property ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_collector_add_constraint_with_property
+                                                        (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_a</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *op</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property_b</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-begin-group"></a><h3>midgard_collector_begin_group ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_collector_begin_group       (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-end-group"></a><h3>midgard_collector_end_group ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_collector_end_group         (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-add-order"></a><h3>midgard_collector_add_order ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_collector_add_order         (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dir</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-set-offset"></a><h3>midgard_collector_set_offset ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_collector_set_offset        (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> offset</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-set-limit"></a><h3>midgard_collector_set_limit ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_collector_set_limit         (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> limit</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-count"></a><h3>midgard_collector_count ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_collector_count             (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-collector-execute"></a><h3>midgard_collector_execute ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_collector_execute           (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-collector.html#MidgardCollector"><span class="type">MidgardCollector</span></a> *self</code></em>);</pre>
+<p>
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

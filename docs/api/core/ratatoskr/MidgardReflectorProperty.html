@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardReflectorProperty</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Schema-Reflection.html" title="Reflection types for Midgard Schema User Defined types">
+<link rel="prev" href="midgard-Midgard-Schema-Reflection.html" title="Reflection types for Midgard Schema User Defined types">
+<link rel="next" href="MidgardReflectorObject.html" title="MidgardReflectorObject">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="midgard-Midgard-Schema-Reflection.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Schema-Reflection.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardReflectorObject.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardReflectorProperty.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardReflectorProperty.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardReflectorProperty.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardReflectorProperty.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardReflectorProperty"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardReflectorProperty.top_of_page"></a>MidgardReflectorProperty</span></h2>
+<p>MidgardReflectorProperty — Provides reflection routines for properties registered for <a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject"><span class="type">MidgardDBObject</span></a> derived classes.</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardReflectorProperty.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+struct              <a class="link" href="MidgardReflectorProperty.html#MidgardReflectorProperty-struct" title="struct MidgardReflectorProperty">MidgardReflectorProperty</a>;
+<a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="returnvalue">MidgardReflectorProperty</span></a> * <a class="link" href="MidgardReflectorProperty.html#midgard-reflector-property-new" title="midgard_reflector_property_new ()">midgard_reflector_property_new</a>
+                                                        (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *classname</code></em>);
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>               <a class="link" href="MidgardReflectorProperty.html#midgard-reflector-property-get-midgard-type" title="midgard_reflector_property_get_midgard_type ()">midgard_reflector_property_get_midgard_type</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardReflectorProperty.html#midgard-reflector-property-is-link" title="midgard_reflector_property_is_link ()">midgard_reflector_property_is_link</a>  (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardReflectorProperty.html#midgard-reflector-property-is-linked" title="midgard_reflector_property_is_linked ()">midgard_reflector_property_is_linked</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>);
+const <span class="returnvalue">MidgardDBObjectClass</span> * <a class="link" href="MidgardReflectorProperty.html#midgard-reflector-property-get-link-class" title="midgard_reflector_property_get_link_class ()">midgard_reflector_property_get_link_class</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>);
+const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="MidgardReflectorProperty.html#midgard-reflector-property-get-link-name" title="midgard_reflector_property_get_link_name ()">midgard_reflector_property_get_link_name</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>);
+const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="MidgardReflectorProperty.html#midgard-reflector-property-get-link-target" title="midgard_reflector_property_get_link_target ()">midgard_reflector_property_get_link_target</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>);
+const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="MidgardReflectorProperty.html#midgard-reflector-property-description" title="midgard_reflector_property_description ()">midgard_reflector_property_description</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>);
+const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="MidgardReflectorProperty.html#midgard-reflector-property-get-user-value" title="midgard_reflector_property_get_user_value ()">midgard_reflector_property_get_user_value</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardReflectorProperty.html#midgard-reflector-property-is-private" title="midgard_reflector_property_is_private ()">midgard_reflector_property_is_private</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardReflectorProperty.html#midgard-reflector-property-is-unique" title="midgard_reflector_property_is_unique ()">midgard_reflector_property_is_unique</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardReflectorProperty.html#midgard-reflector-property-is-primary" title="midgard_reflector_property_is_primary ()">midgard_reflector_property_is_primary</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardReflectorProperty.html#midgard-reflector-property-has-default-value" title="midgard_reflector_property_has_default_value ()">midgard_reflector_property_has_default_value</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property</code></em>);
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="returnvalue">GValue</span></a> *            <a class="link" href="MidgardReflectorProperty.html#midgard-reflector-property-get-default-value" title="midgard_reflector_property_get_default_value ()">midgard_reflector_property_get_default_value</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardReflectorProperty.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----MidgardReflectorProperty
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardReflectorProperty.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardReflectorProperty.html#MidgardReflectorProperty--dbclass" title='The "dbclass" property'>dbclass</a>"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardReflectorProperty.description"></a><h2>Description</h2>
+<p>
+Main purpose of this class is to provide reflection routines for any <a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject"><span class="type">MidgardDBObject</span></a> derived class' properties.
+Mainly, it's most usable for Midgard Schema classes defined in xml files (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> derived), but of course
+properties of any class which extends Midgard Schema one may be also reflected with <a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a>.
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardReflectorProperty.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardReflectorProperty-struct"></a><h3>struct MidgardReflectorProperty</h3>
+<pre class="programlisting">struct MidgardReflectorProperty;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-reflector-property-new"></a><h3>midgard_reflector_property_new ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="returnvalue">MidgardReflectorProperty</span></a> * midgard_reflector_property_new
+                                                        (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *classname</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>classname</code></em> :</span></p></td>
+<td>Name of <a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject"><span class="type">MidgardDBObject</span></a> (or derived) class. <span class="annotation">[<a href="http://foldoc.org/in"><span class="acronym">in</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>newly initialized <a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> instance or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-reflector-property-get-midgard-type"></a><h3>midgard_reflector_property_get_midgard_type ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="returnvalue">GType</span></a>               midgard_reflector_property_get_midgard_type
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>property name which is registered for <span class="type">MidgardDBObjectClass</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>type (<a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a>) of the property or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if property is not registered for given class.</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-reflector-property-is-link"></a><h3>midgard_reflector_property_is_link ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_reflector_property_is_link  (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>);</pre>
+<p>
+Checks whether property is a link.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>property name</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if property is registered as link, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise (or in case if property is not registered for given class.</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-reflector-property-is-linked"></a><h3>midgard_reflector_property_is_linked ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_reflector_property_is_linked
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>);</pre>
+<p>
+Checks if property is linked with another type.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>property name</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if property is linked with another type (property of another class is defined as a link to given one).
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> is returned if property is not linked or is not registered for given class.</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-reflector-property-get-link-class"></a><h3>midgard_reflector_property_get_link_class ()</h3>
+<pre class="programlisting">const <span class="returnvalue">MidgardDBObjectClass</span> * midgard_reflector_property_get_link_class
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>property name</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the pointer to the <span class="type">MidgardDBObjectClass</span>, a given property is a link to.
+<em class="parameter"><code>see</code></em> <a class="link" href="MidgardReflectorProperty.html#midgard-reflector-property-get-link-name" title="midgard_reflector_property_get_link_name ()"><code class="function">midgard_reflector_property_get_link_name()</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-reflector-property-get-link-name"></a><h3>midgard_reflector_property_get_link_name ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       midgard_reflector_property_get_link_name
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>property name</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The name of the class, the given property is a link to.
+Or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if property is not a link or given property is not registered for given class. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-reflector-property-get-link-target"></a><h3>midgard_reflector_property_get_link_target ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       midgard_reflector_property_get_link_target
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>property name</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The name of the property, the given one is a link to.
+Or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if property is not a link or it's not registered for given class. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-reflector-property-description"></a><h3>midgard_reflector_property_description ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       midgard_reflector_property_description
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *propname</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>property name</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>description of the given property or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-reflector-property-get-user-value"></a><h3>midgard_reflector_property_get_user_value ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       midgard_reflector_property_get_user_value
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property</code></em> :</span></p></td>
+<td>property to look value for</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>name of user defined field</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>value for user defined field, or NULL if none found</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-reflector-property-is-private"></a><h3>midgard_reflector_property_is_private ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_reflector_property_is_private
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property</code></em> :</span></p></td>
+<td>property name to check</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, if propery is defined private, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-reflector-property-is-unique"></a><h3>midgard_reflector_property_is_unique ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_reflector_property_is_unique
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property</code></em> :</span></p></td>
+<td>property name to check</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, if property is defined as unique, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-reflector-property-is-primary"></a><h3>midgard_reflector_property_is_primary ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_reflector_property_is_primary
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property</code></em> :</span></p></td>
+<td>property name to check</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, if property is primary, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-reflector-property-has-default-value"></a><h3>midgard_reflector_property_has_default_value ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_reflector_property_has_default_value
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property</code></em> :</span></p></td>
+<td>property name to check</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, if property has default value, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-reflector-property-get-default-value"></a><h3>midgard_reflector_property_get_default_value ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="returnvalue">GValue</span></a> *            midgard_reflector_property_get_default_value
+                                                        (<em class="parameter"><code><a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property</code></em> :</span></p></td>
+<td>property name to check</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> value or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if property is not registered for the class or there's no default value for the given property</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardReflectorProperty.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardReflectorProperty--dbclass"></a><h3>The <code class="literal">"dbclass"</code> property</h3>
+<pre class="programlisting">  "dbclass"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Write / Construct Only</pre>
+<p>
+Holds the name of the class which, <a class="link" href="MidgardReflectorProperty.html" title="MidgardReflectorProperty"><span class="type">MidgardReflectorProperty</span></a> has been initialized for.
+</p>
+<p>Default value: ""</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

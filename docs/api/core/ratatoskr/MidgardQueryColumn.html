@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardQueryColumn</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Query.html" title="Midgard Query">
+<link rel="prev" href="MidgardQuerySelector.html" title="MidgardQuerySelector">
+<link rel="next" href="MidgardQueryRow.html" title="MidgardQueryRow">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardQuerySelector.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Query.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardQueryRow.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardQueryColumn.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardQueryColumn.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardQueryColumn.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardQueryColumn.prerequisites" class="shortcut">Prerequisites</a>
+                   | 
+                  <a href="#MidgardQueryColumn.implementations" class="shortcut">Known Implementations</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardQueryColumn"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardQueryColumn.top_of_page"></a>MidgardQueryColumn</span></h2>
+<p>MidgardQueryColumn</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardQueryColumn.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="MidgardQueryColumn.html#MidgardQueryColumn-struct" title="MidgardQueryColumn">MidgardQueryColumn</a>;
+<a class="link" href="MidgardQueryProperty.html" title="MidgardQueryProperty"><span class="returnvalue">MidgardQueryProperty</span></a> * <a class="link" href="MidgardQueryColumn.html#midgard-query-column-get-query-property" title="midgard_query_column_get_query_property ()">midgard_query_column_get_query_property</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardQueryColumn.html" title="MidgardQueryColumn"><span class="type">MidgardQueryColumn</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="MidgardQueryColumn.html#midgard-query-column-get-name" title="midgard_query_column_get_name ()">midgard_query_column_get_name</a>       (<em class="parameter"><code><a class="link" href="MidgardQueryColumn.html" title="MidgardQueryColumn"><span class="type">MidgardQueryColumn</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="MidgardQueryColumn.html#midgard-query-column-get-qualifier" title="midgard_query_column_get_qualifier ()">midgard_query_column_get_qualifier</a>  (<em class="parameter"><code><a class="link" href="MidgardQueryColumn.html" title="MidgardQueryColumn"><span class="type">MidgardQueryColumn</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryColumn.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GInterface
+   +----MidgardQueryColumn
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryColumn.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+MidgardQueryColumn requires
+ <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryColumn.implementations"></a><h2>Known Implementations</h2>
+<p>
+MidgardQueryColumn is implemented by
+ <a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn">MidgardSqlQueryColumn</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryColumn.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryColumn.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardQueryColumn-struct"></a><h3>MidgardQueryColumn</h3>
+<pre class="programlisting">typedef struct _MidgardQueryColumn MidgardQueryColumn;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-column-get-query-property"></a><h3>midgard_query_column_get_query_property ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardQueryProperty.html" title="MidgardQueryProperty"><span class="returnvalue">MidgardQueryProperty</span></a> * midgard_query_column_get_query_property
+                                                        (<em class="parameter"><code><a class="link" href="MidgardQueryColumn.html" title="MidgardQueryColumn"><span class="type">MidgardQueryColumn</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryColumn.html" title="MidgardQueryColumn"><span class="type">MidgardQueryColumn</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store error</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryProperty.html" title="MidgardQueryProperty"><span class="type">MidgardQueryProperty</span></a> associated with the column or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-column-get-name"></a><h3>midgard_query_column_get_name ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       midgard_query_column_get_name       (<em class="parameter"><code><a class="link" href="MidgardQueryColumn.html" title="MidgardQueryColumn"><span class="type">MidgardQueryColumn</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryColumn.html" title="MidgardQueryColumn"><span class="type">MidgardQueryColumn</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store error</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the name of the column. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-column-get-qualifier"></a><h3>midgard_query_column_get_qualifier ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       midgard_query_column_get_qualifier  (<em class="parameter"><code><a class="link" href="MidgardQueryColumn.html" title="MidgardQueryColumn"><span class="type">MidgardQueryColumn</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Qualifier is a trait, which is a common among particular columns.
+Usually it is a prefix for column's name (e.g. 'a.id', 'a.title').
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryColumn.html" title="MidgardQueryColumn"><span class="type">MidgardQueryColumn</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store error</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>qualifier name or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.6</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardSqlQuerySelectData</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Query.html" title="Midgard Query">
+<link rel="prev" href="MidgardSqlQueryRow.html" title="MidgardSqlQueryRow">
+<link rel="next" href="midgard-Midgard-Schema-Reflection.html" title="Reflection types for Midgard Schema User Defined types">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardSqlQueryRow.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Query.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="midgard-Midgard-Schema-Reflection.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardSqlQuerySelectData.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardSqlQuerySelectData.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardSqlQuerySelectData.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardSqlQuerySelectData.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#MidgardSqlQuerySelectData.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardSqlQuerySelectData"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardSqlQuerySelectData.top_of_page"></a>MidgardSqlQuerySelectData</span></h2>
+<p>MidgardSqlQuerySelectData</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardSqlQuerySelectData.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="MidgardSqlQuerySelectData.html#MidgardSqlQuerySelectData-struct" title="MidgardSqlQuerySelectData">MidgardSqlQuerySelectData</a>;
+struct              <a class="link" href="MidgardSqlQuerySelectData.html#MidgardSqlQuerySelectDataClass" title="struct MidgardSqlQuerySelectDataClass">MidgardSqlQuerySelectDataClass</a>;
+<a class="link" href="MidgardSqlQuerySelectData.html" title="MidgardSqlQuerySelectData"><span class="returnvalue">MidgardSqlQuerySelectData</span></a> * <a class="link" href="MidgardSqlQuerySelectData.html#midgard-sql-query-select-data-new" title="midgard_sql_query_select_data_new ()">midgard_sql_query_select_data_new</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardSqlQuerySelectData.html#midgard-sql-query-select-data-add-column" title="midgard_sql_query_select_data_add_column ()">midgard_sql_query_select_data_add_column</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardSqlQuerySelectData.html" title="MidgardSqlQuerySelectData"><span class="type">MidgardSqlQuerySelectData</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="type">MidgardSqlQueryColumn</span></a> *column</code></em>);
+<a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="returnvalue">MidgardSqlQueryColumn</span></a> ** <a class="link" href="MidgardSqlQuerySelectData.html#midgard-sql-query-select-data-get-columns" title="midgard_sql_query_select_data_get_columns ()">midgard_sql_query_select_data_get_columns</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardSqlQuerySelectData.html" title="MidgardSqlQuerySelectData"><span class="type">MidgardSqlQuerySelectData</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_objects</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQuerySelectData.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor">MidgardQueryExecutor</a>
+         +----MidgardSqlQuerySelectData
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQuerySelectData.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+MidgardSqlQuerySelectData implements
+ <a class="link" href="MidgardExecutable.html" title="MidgardExecutable">MidgardExecutable</a>,  <a class="link" href="MidgardValidable.html" title="MidgardValidable">MidgardValidable</a> and  <a class="link" href="MidgardQuerySelector.html" title="MidgardQuerySelector">MidgardQuerySelector</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQuerySelectData.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardSqlQuerySelectData.html#MidgardSqlQuerySelectData--connection" title='The "connection" property'>connection</a>"               <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a>*    : Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQuerySelectData.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQuerySelectData.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardSqlQuerySelectData-struct"></a><h3>MidgardSqlQuerySelectData</h3>
+<pre class="programlisting">typedef struct _MidgardSqlQuerySelectData MidgardSqlQuerySelectData;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardSqlQuerySelectDataClass"></a><h3>struct MidgardSqlQuerySelectDataClass</h3>
+<pre class="programlisting">struct MidgardSqlQuerySelectDataClass {
+	MidgardQueryExecutorClass parent;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-sql-query-select-data-new"></a><h3>midgard_sql_query_select_data_new ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardSqlQuerySelectData.html" title="MidgardSqlQuerySelectData"><span class="returnvalue">MidgardSqlQuerySelectData</span></a> * midgard_sql_query_select_data_new
+                                                        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="MidgardSqlQuerySelectData.html" title="MidgardSqlQuerySelectData"><span class="type">MidgardSqlQuerySelectData</span></a> instance or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-sql-query-select-data-add-column"></a><h3>midgard_sql_query_select_data_add_column ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_sql_query_select_data_add_column
+                                                        (<em class="parameter"><code><a class="link" href="MidgardSqlQuerySelectData.html" title="MidgardSqlQuerySelectData"><span class="type">MidgardSqlQuerySelectData</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="type">MidgardSqlQueryColumn</span></a> *column</code></em>);</pre>
+<p>
+Adds a new column, which will be available in <a class="link" href="MidgardSqlQueryResult.html" title="MidgardSqlQueryResult"><span class="type">MidgardSqlQueryResult</span></a>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardSqlQuerySelectData.html" title="MidgardSqlQuerySelectData"><span class="type">MidgardSqlQuerySelectData</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>column</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="type">MidgardSqlQueryColumn</span></a> to add</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-sql-query-select-data-get-columns"></a><h3>midgard_sql_query_select_data_get_columns ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="returnvalue">MidgardSqlQueryColumn</span></a> ** midgard_sql_query_select_data_get_columns
+                                                        (<em class="parameter"><code><a class="link" href="MidgardSqlQuerySelectData.html" title="MidgardSqlQuerySelectData"><span class="type">MidgardSqlQuerySelectData</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_objects</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Returns all collumns added to given instance.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardSqlQuerySelectData.html" title="MidgardSqlQuerySelectData"><span class="type">MidgardSqlQuerySelectData</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_objects</code></em> :</span></p></td>
+<td>pointer to store number of returned columns</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store returned error</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>array of <a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="type">MidgardSqlQueryColumn</span></a> objects or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> MidgardSqlQueryColumn][<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=n_objects][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.6</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQuerySelectData.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardSqlQuerySelectData--connection"></a><h3>The <code class="literal">"connection"</code> property</h3>
+<pre class="programlisting">  "connection"               <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a>*    : Write / Construct Only</pre>
+<p>
+Pointer to a connection, <a class="link" href="MidgardSqlQuerySelectData.html" title="MidgardSqlQuerySelectData"><span class="type">MidgardSqlQuerySelectData</span></a> has been initialized for
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

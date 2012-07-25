@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardDbus</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Replication-And-Events.html" title="Replication and events">
+<link rel="prev" href="MidgardRepligard.html" title="MidgardRepligard">
+<link rel="next" href="midgard-Execution-And-Validation.html" title="Common interfaces to validate and execute operations">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardRepligard.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Replication-And-Events.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="midgard-Execution-And-Validation.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardDbus.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardDbus.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardDbus.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardDbus.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardDbus"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardDbus.top_of_page"></a>MidgardDbus</span></h2>
+<p>MidgardDbus</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardDbus.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="MidgardDbus.html#MidgardDbus-struct" title="MidgardDbus">MidgardDbus</a>;
+struct              <a class="link" href="MidgardDbus.html#MidgardDbusClass" title="struct MidgardDbusClass">MidgardDbusClass</a>;
+<a class="link" href="MidgardDbus.html" title="MidgardDbus"><span class="returnvalue">MidgardDbus</span></a> *       <a class="link" href="MidgardDbus.html#midgard-dbus-new" title="midgard_dbus_new ()">midgard_dbus_new</a>                    (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> use_session</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardDbus.html#midgard-dbus-is-enabled" title="midgard_dbus_is_enabled ()">midgard_dbus_is_enabled</a>             (<em class="parameter"><code><span class="type">void</span></code></em>);
+<a class="link" href="MidgardDbus.html" title="MidgardDbus"><span class="returnvalue">MidgardDbus</span></a> *       <a class="link" href="MidgardDbus.html#midgard-dbus-create-dbus" title="midgard_dbus_create_dbus ()">midgard_dbus_create_dbus</a>            (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> use_session</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardDbus.html#midgard-dbus-send" title="midgard_dbus_send ()">midgard_dbus_send</a>                   (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *message</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> use_session</code></em>);
+const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="MidgardDbus.html#midgard-dbus-get-message" title="midgard_dbus_get_message ()">midgard_dbus_get_message</a>            (<em class="parameter"><code><a class="link" href="MidgardDbus.html" title="MidgardDbus"><span class="type">MidgardDbus</span></a> *self</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardDbus.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----MidgardDbus
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardDbus.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardDbus.html#MidgardDbus-notified" title='The "notified" signal'>notified</a>"                                       : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardDbus.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardDbus.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardDbus-struct"></a><h3>MidgardDbus</h3>
+<pre class="programlisting">typedef struct _MidgardDbus MidgardDbus;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardDbusClass"></a><h3>struct MidgardDbusClass</h3>
+<pre class="programlisting">struct MidgardDbusClass {
+	GObjectClass parent;
+
+	/* signals */
+	void (*notified) (GObject *self, const gchar *message);
+	
+	/* signals id */
+	guint signal_notified;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-dbus-new"></a><h3>midgard_dbus_new ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardDbus.html" title="MidgardDbus"><span class="returnvalue">MidgardDbus</span></a> *       midgard_dbus_new                    (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> use_session</code></em>);</pre>
+<p>
+<em class="parameter"><code>use_session</code></em>, set to FALSE for session bus, TRUE for system one
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>a path at which D-Bus object exists</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>use_session</code></em> :</span></p></td>
+<td>whether to use session bus</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="MidgardDbus.html" title="MidgardDbus"><span class="type">MidgardDbus</span></a> instance, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-dbus-is-enabled"></a><h3>midgard_dbus_is_enabled ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_dbus_is_enabled             (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if Midgard library is compiled with DBUS support, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr></tbody>
+</table></div>
+<p class="since">Since 10.05.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-dbus-create-dbus"></a><h3>midgard_dbus_create_dbus ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardDbus.html" title="MidgardDbus"><span class="returnvalue">MidgardDbus</span></a> *       midgard_dbus_create_dbus            (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> use_session</code></em>);</pre>
+<p>
+Constructor. Invokes <a class="link" href="MidgardDbus.html#midgard-dbus-new" title="midgard_dbus_new ()"><code class="function">midgard_dbus_new()</code></a>.
+This function is added for language bindings, in which, midgard_dbus_new can not be 
+invoked explicitly.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="MidgardDbus.html" title="MidgardDbus"><span class="type">MidgardDbus</span></a> instance. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr></tbody>
+</table></div>
+<p class="since">Since 10.05.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-dbus-send"></a><h3>midgard_dbus_send ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_dbus_send                   (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *message</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> use_session</code></em>);</pre>
+<p>
+Emits 'Notified' signal on objects at given <em class="parameter"><code>path</code></em> and sends given message.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>dbus path at which we expect recipients</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td>a message to be sent</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>use_session</code></em> :</span></p></td>
+<td>whether to use system or session bus</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-dbus-get-message"></a><h3>midgard_dbus_get_message ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       midgard_dbus_get_message            (<em class="parameter"><code><a class="link" href="MidgardDbus.html" title="MidgardDbus"><span class="type">MidgardDbus</span></a> *self</code></em>);</pre>
+<p>
+Get message associated with givven instance.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<span class="type">MidgardDBus</span> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>pointer to object's message or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardDbus.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="MidgardDbus-notified"></a><h3>The <code class="literal">"notified"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardDbus.html" title="MidgardDbus"><span class="type">MidgardDbus</span></a> *midgarddbus,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>       *arg1,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>     user_data)        : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgarddbus</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

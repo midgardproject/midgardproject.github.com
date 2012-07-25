@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardSqlQueryRow</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Query.html" title="Midgard Query">
+<link rel="prev" href="MidgardSqlQueryResult.html" title="MidgardSqlQueryResult">
+<link rel="next" href="MidgardSqlQuerySelectData.html" title="MidgardSqlQuerySelectData">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardSqlQueryResult.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Query.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardSqlQuerySelectData.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardSqlQueryRow.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardSqlQueryRow.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardSqlQueryRow.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardSqlQueryRow.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#MidgardSqlQueryRow.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardSqlQueryRow"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardSqlQueryRow.top_of_page"></a>MidgardSqlQueryRow</span></h2>
+<p>MidgardSqlQueryRow</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardSqlQueryRow.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="MidgardSqlQueryRow.html#MidgardSqlQueryRow-struct" title="MidgardSqlQueryRow">MidgardSqlQueryRow</a>;
+struct              <a class="link" href="MidgardSqlQueryRow.html#MidgardSqlQueryRowClass" title="struct MidgardSqlQueryRowClass">MidgardSqlQueryRowClass</a>;
+<a class="link" href="MidgardSqlQueryRow.html" title="MidgardSqlQueryRow"><span class="returnvalue">MidgardSqlQueryRow</span></a> * <a class="link" href="MidgardSqlQueryRow.html#midgard-sql-query-row-new" title="midgard_sql_query_row_new ()">midgard_sql_query_row_new</a>          (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> row</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQueryRow.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----MidgardSqlQueryRow
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQueryRow.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+MidgardSqlQueryRow implements
+ <a class="link" href="MidgardQueryRow.html" title="MidgardQueryRow">MidgardQueryRow</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQueryRow.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardSqlQueryRow.html#MidgardSqlQueryRow--connection" title='The "connection" property'>connection</a>"               <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a>*    : Write / Construct Only
+  "<a class="link" href="MidgardSqlQueryRow.html#MidgardSqlQueryRow--model" title='The "model" property'>model</a>"                    <a href="/usr/share/gtk-doc/html/libgda-4.0/GdaDataModel.html"><span class="type">GdaDataModel</span></a>*         : Write / Construct Only
+  "<a class="link" href="MidgardSqlQueryRow.html#MidgardSqlQueryRow--row" title='The "row" property'>row</a>"                      <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQueryRow.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQueryRow.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardSqlQueryRow-struct"></a><h3>MidgardSqlQueryRow</h3>
+<pre class="programlisting">typedef struct _MidgardSqlQueryRow MidgardSqlQueryRow;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardSqlQueryRowClass"></a><h3>struct MidgardSqlQueryRowClass</h3>
+<pre class="programlisting">struct MidgardSqlQueryRowClass {
+	GObjectClass parent;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-sql-query-row-new"></a><h3>midgard_sql_query_row_new ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardSqlQueryRow.html" title="MidgardSqlQueryRow"><span class="returnvalue">MidgardSqlQueryRow</span></a> * midgard_sql_query_row_new          (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> row</code></em>);</pre>
+<p>
+This constructor should be used by <a class="link" href="MidgardQueryResult.html" title="MidgardQueryResult"><span class="type">MidgardQueryResult</span></a> implementation
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>a GObject which represents data model</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>row</code></em> :</span></p></td>
+<td>Row's index in a given model</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="MidgardSqlQueryRow.html" title="MidgardSqlQueryRow"><span class="type">MidgardSqlQueryRow</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.6</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQueryRow.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardSqlQueryRow--connection"></a><h3>The <code class="literal">"connection"</code> property</h3>
+<pre class="programlisting">  "connection"               <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a>*    : Write / Construct Only</pre>
+<p>Connection to underlying database.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardSqlQueryRow--model"></a><h3>The <code class="literal">"model"</code> property</h3>
+<pre class="programlisting">  "model"                    <a href="/usr/share/gtk-doc/html/libgda-4.0/GdaDataModel.html"><span class="type">GdaDataModel</span></a>*         : Write / Construct Only</pre>
+<p>Holds a reference to data model.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardSqlQueryRow--row"></a><h3>The <code class="literal">"row"</code> property</h3>
+<pre class="programlisting">  "row"                      <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Write / Construct Only</pre>
+<p>Index of a row in a model.</p>
+<p>Default value: 0</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

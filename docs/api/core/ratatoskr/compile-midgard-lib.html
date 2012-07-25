@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Compiling Midgard library</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="pt02.html" title="Part II. Build and compile">
+<link rel="prev" href="get-midgard-lib.html" title="Getting Midgard">
+<link rel="next" href="compile-midgard-app.html" title="Compiling Midgard Applications">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2"><tr valign="middle">
+<td><a accesskey="p" href="get-midgard-lib.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="pt02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="compile-midgard-app.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="compile-midgard-lib"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle">Compiling Midgard library</span></h2>
+<p>Compiling Midgard library — 
+How to compile Midgard library
+</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="building"></a><h2>Building the Library on UNIX</h2>
+<p>
+        On UNIX, Midgard uses the standard GNU build system,
+        using <span class="application">autoconf</span> for package
+        configuration and resolving portability issues,
+        <span class="application">automake</span> for building makefiles
+        that comply with the GNU Coding Standards, and
+        <span class="application">libtool</span> for building shared
+        libraries on multiple platforms.  The normal sequence for
+        compiling and installing the Midgard library is thus:
+
+        </p>
+<div class="literallayout"><p><br>
+          <strong class="userinput"><code>./configure</code></strong><br>
+          <strong class="userinput"><code>make</code></strong><br>
+          <strong class="userinput"><code>make install</code></strong><br>
+        </p></div>
+<p>
+      </p>
+<p>
+        The standard options provided by <span class="application">GNU
+        autoconf</span> may be passed to the
+        <span class="command"><strong>configure</strong></span> script.  Please see the
+        <span class="application">autoconf</span> documentation or run
+        <span class="command"><strong>./configure --help</strong></span> for information about
+        the standard options.
+      </p>
+</div>
+<div class="refsect1">
+<a name="dependencies"></a><h2>Dependencies</h2>
+<p>
+        Before you can compile the Midgard library, you need to have
+        various other tools and libraries installed on your
+        system. The two tools needed during the build process (as
+        differentiated from the tools used in when creating Midgard
+        mentioned above such as <span class="application">autoconf</span>)
+        are <span class="command"><strong>pkg-config</strong></span> and GNU make.
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+	    <a class="ulink" href="http://www.freedesktop.org/software/pkgconfig/" target="_top">pkg-config</a>
+	    is a tool for tracking the compilation flags needed for
+	    libraries that are used by the Midgard library. (For each
+	    library, a small <code class="literal">.pc</code> text file is i
+        installed in a standard location that contains the compilation 
+        flags needed for that library along with version number 
+        information.)  Configure script checks if <span class="command"><strong>pkg-config</strong></span> 
+        version is correct.
+   	  </p></li>
+<li class="listitem"><p>
+        GNU make.It may be called <span class="command"><strong>make</strong></span>
+	    or <span class="command"><strong>gmake</strong></span>.
+	  </p></li>
+</ul></div>
+<p>
+        Midgard library depends on a number of other libraries.
+      </p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+	    <a class="ulink" href="http://library.gnome.org/devel/glib/" target="_top">GLib
+	    library</a>. Required version is at least 2.12.	
+      </p></li>
+<li class="listitem"><p>
+    	  <a class="ulink" href="http://xmlsoft.org/" target="_top">XML
+	      library</a>. required version is at least 2.6	
+        </p></li>
+<li class="listitem"><p>
+    	  <a class="ulink" href="http://www.gnome-db.org/" target="_top">GDA
+	      library</a>. required version is at least 3.0. 
+        </p></li>
+<li class="listitem"><p>
+    	  <a class="ulink" href="http://www.freedesktop.org/wiki/Software/dbus" target="_top">D-Bus
+	      library</a>. required version is at least 1.2. 
+        </p></li>
+</ul></div>
+</div>
+<div class="refsect1">
+<a name="extra-configuration-options"></a><h2>Extra Configuration Options</h2>
+<p>
+        In addition to the normal options, the
+        <span class="command"><strong>configure</strong></span> script in the Midgard
+        library supports these additional arguments:
+
+        </p>
+<div class="cmdsynopsis"><p><code class="command">configure</code>  [[--with-libgda4=[no|yes]]] [[--with-dbus-support=[yes|no]]]</p></div>
+<p>
+      </p>
+<p><b><code class="systemitem">--with-libgda4</code>. </b>
+          By default Midgard library is build with libgda3 support.
+          However, you may enable libgda4 by passing yes to this configure option.
+          Note, that libgda4 support is experimental and should not be used in production environmnent.
+         </p>
+<p><b><code class="systemitem">--with-dbus-support</code>. </b>
+          Default beheviour is to support D-Bus. No D-Bus message is sent from Midgard library when D-Bus support is disabled.
+        </p>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardObject attachments</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Schema-User-Defined-Types.html" title="Midgard Schema User Defined Types">
+<link rel="prev" href="midgard-2.0-midgard-metadata.html" title="MidgardMetadata">
+<link rel="next" href="midgard-2.0-midgard-object-parameter.html" title="MidgardObject parameters">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="midgard-2.0-midgard-metadata.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Schema-User-Defined-Types.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="midgard-2.0-midgard-object-parameter.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#midgard-2.0-midgard-object-attachment.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-object-attachment.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="midgard-2.0-midgard-object-attachment"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="midgard-2.0-midgard-object-attachment.top_of_page"></a>MidgardObject attachments</span></h2>
+<p>MidgardObject attachments</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="midgard-2.0-midgard-object-attachment.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> *     <a class="link" href="midgard-2.0-midgard-object-attachment.html#midgard-object-create-attachment" title="midgard_object_create_attachment ()">midgard_object_create_attachment</a>    (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *title</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *mimetype</code></em>);
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> **    <a class="link" href="midgard-2.0-midgard-object-attachment.html#midgard-object-list-attachments" title="midgard_object_list_attachments ()">midgard_object_list_attachments</a>     (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_objects</code></em>);
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> **    <a class="link" href="midgard-2.0-midgard-object-attachment.html#midgard-object-find-attachments" title="midgard_object_find_attachments ()">midgard_object_find_attachments</a>     (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-object-attachment.html#midgard-object-has-attachments" title="midgard_object_has_attachments ()">midgard_object_has_attachments</a>      (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-object-attachment.html#midgard-object-delete-attachments" title="midgard_object_delete_attachments ()">midgard_object_delete_attachments</a>   (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-object-attachment.html#midgard-object-purge-attachments" title="midgard_object_purge_attachments ()">midgard_object_purge_attachments</a>    (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> delete_blob</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-object-attachment.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-object-attachment.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="midgard-object-create-attachment"></a><h3>midgard_object_create_attachment ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> *     midgard_object_create_attachment    (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *title</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *mimetype</code></em>);</pre>
+<p>
+Creates object's attachment using given properties.
+Any property may be explicitly set to NULL.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>name for attachment</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>title</code></em> :</span></p></td>
+<td>its title</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mimetype</code></em> :</span></p></td>
+<td>and mimetype</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>newly created <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> of midgard_attachment class or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-list-attachments"></a><h3>midgard_object_list_attachments ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> **    midgard_object_list_attachments     (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_objects</code></em>);</pre>
+<p>
+Returned objects are midgard_attachment class. Attachments objects are 
+fetched from database unconditionally. 
+That is, only those which parent guid property matches object's guid. 
+</p>
+<p>
+Returned array should be freed when no longer needed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>a <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> self instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_objects</code></em> :</span></p></td>
+<td>pointer to store number of returned objects. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>Newly allocated and NULL terminated array of midgard_attachment objects. <span class="annotation">[<a href="http://foldoc.org/array"><span class="acronym">array</span></a> length=n_objects][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-find-attachments"></a><h3>midgard_object_find_attachments ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> **    midgard_object_find_attachments     (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);</pre>
+<p>
+Find object's attachment(s) with matching given properties.
+<em class="parameter"><code>parameters</code></em> argument is optional. All object's attachments are 
+returned ( if exist ) if <em class="parameter"><code>parameters</code></em> is explicitly set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_params</code></em> :</span></p></td>
+<td>number of properties</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parameters</code></em> :</span></p></td>
+<td>properties list</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>newly created, NULL terminated array of <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> ( midgard_attachment class ) or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-has-attachments"></a><h3>midgard_object_has_attachments ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_has_attachments      (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if object has attachments, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-delete-attachments"></a><h3>midgard_object_delete_attachments ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_delete_attachments   (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);</pre>
+<p>
+Delete object's attachments(s) which match given properties' values.
+Properties list in <em class="parameter"><code>parameters</code></em> is optional. All object's attachments are 
+deleted ( if exist ) if <em class="parameter"><code>parameters</code></em> is explicitly set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_params</code></em> :</span></p></td>
+<td>number of properties</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parameters</code></em> :</span></p></td>
+<td>properties list. <span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if at least one of the attachment could not be deleted</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-purge-attachments"></a><h3>midgard_object_purge_attachments ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_purge_attachments    (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> delete_blob</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);</pre>
+<p>
+Purge object's attachments(s) which match given properties' values.
+Properties list in <em class="parameter"><code>parameters</code></em> is optional. All object's attachments are 
+purged ( if exist ) if <em class="parameter"><code>parameters</code></em> is explicitly set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</p>
+<p>
+<em class="parameter"><code>delete_blob</code></em> should be set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if midgard_attachment holds a reference 
+to blob located on filesystem ( it should be set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> by default ).
+However, if midgard_attachment is created for blobs sharing and file should not 
+be deleted, <em class="parameter"><code>delete_blob</code></em> should be set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.
+</p>
+<p>
+There's no way to determine if midgard_attachment is sharing blob, so aplication 
+itelf is responsible to create such own logic.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>delete_blob</code></em> :</span></p></td>
+<td>whether blob should be deleted as well</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_params</code></em> :</span></p></td>
+<td>number of properties</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parameters</code></em> :</span></p></td>
+<td>properties list. <span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if at least one of the attachment could not be purged</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>
