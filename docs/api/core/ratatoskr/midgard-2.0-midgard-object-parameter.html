@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardObject parameters</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Schema-User-Defined-Types.html" title="Midgard Schema User Defined Types">
+<link rel="prev" href="midgard-2.0-midgard-object-attachment.html" title="MidgardObject attachments">
+<link rel="next" href="MidgardView.html" title="MidgardView">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="midgard-2.0-midgard-object-attachment.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Schema-User-Defined-Types.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardView.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#midgard-2.0-midgard-object-parameter.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-object-parameter.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="midgard-2.0-midgard-object-parameter"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="midgard-2.0-midgard-object-parameter.top_of_page"></a>MidgardObject parameters</span></h2>
+<p>MidgardObject parameters</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="midgard-2.0-midgard-object-parameter.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="returnvalue">GValue</span></a> *      <a class="link" href="midgard-2.0-midgard-object-parameter.html#midgard-object-get-parameter" title="midgard_object_get_parameter ()">midgard_object_get_parameter</a>        (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *domain</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-object-parameter.html#midgard-object-set-parameter" title="midgard_object_set_parameter ()">midgard_object_set_parameter</a>        (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *domain</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *value</code></em>);
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> **    <a class="link" href="midgard-2.0-midgard-object-parameter.html#midgard-object-list-parameters" title="midgard_object_list_parameters ()">midgard_object_list_parameters</a>      (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *domain</code></em>);
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> **    <a class="link" href="midgard-2.0-midgard-object-parameter.html#midgard-object-find-parameters" title="midgard_object_find_parameters ()">midgard_object_find_parameters</a>      (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-object-parameter.html#midgard-object-has-parameters" title="midgard_object_has_parameters ()">midgard_object_has_parameters</a>       (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-object-parameter.html#midgard-object-delete-parameters" title="midgard_object_delete_parameters ()">midgard_object_delete_parameters</a>    (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-object-parameter.html#midgard-object-purge-parameters" title="midgard_object_purge_parameters ()">midgard_object_purge_parameters</a>     (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-object-parameter.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-object-parameter.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="midgard-object-get-parameter"></a><h3>midgard_object_get_parameter ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="returnvalue">GValue</span></a> *      midgard_object_get_parameter        (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *domain</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-set-parameter"></a><h3>midgard_object_set_parameter ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_set_parameter        (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *domain</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>
+Creates object's parameter object if it doesn't exists, updates otherwise.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>domain</code></em> :</span></p></td>
+<td>parameter's domain string</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>parameter's name string</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>a GValue value which should be set for domain&amp;name pair</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-list-parameters"></a><h3>midgard_object_list_parameters ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> **    midgard_object_list_parameters      (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *domain</code></em>);</pre>
+<p>
+Returned objects are midgard_parameter class. Parameter objects are 
+fetched from database unconditionally if domain i sexplicitly set to NULL. 
+That is, only those which parent guid property matches object's guid. 
+</p>
+<p>
+Returned array should be freed when no longer needed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>a <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> self instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>domain</code></em> :</span></p></td>
+<td>optional paramaters' domain</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>Newly allocated and NULL terminated array of midgard_parameter objects. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-find-parameters"></a><h3>midgard_object_find_parameters ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> **    midgard_object_find_parameters      (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);</pre>
+<p>
+Find object's parameter(s) with matching given properties.
+<em class="parameter"><code>parameters</code></em> argument is optional. All object's parameters are 
+returned ( if exist ) if <em class="parameter"><code>parameters</code></em> is explicitly set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_params</code></em> :</span></p></td>
+<td>number of properties</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parameters</code></em> :</span></p></td>
+<td>properties list</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>newly created, NULL terminated array of <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> ( midgard_parameter class ) or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-has-parameters"></a><h3>midgard_object_has_parameters ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_has_parameters       (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if object has paramateres, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-delete-parameters"></a><h3>midgard_object_delete_parameters ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_delete_parameters    (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);</pre>
+<p>
+Delete object's parameter(s) which match given properties' values.
+Properties list in <em class="parameter"><code>parameters</code></em> is optional. All object's parameters are 
+deleted ( if exist ) if <em class="parameter"><code>parameters</code></em> is explicitly set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_params</code></em> :</span></p></td>
+<td>number of properties</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parameters</code></em> :</span></p></td>
+<td>properties list</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if at least one of the parameters could not be deleted</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-purge-parameters"></a><h3>midgard_object_purge_parameters ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_purge_parameters     (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);</pre>
+<p>
+Purge object's parameter(s) which match given properties' values.
+Properties list in <em class="parameter"><code>parameters</code></em> is optional. All object's parameters are 
+purged ( if exist ) if <em class="parameter"><code>parameters</code></em> is explicitly set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_params</code></em> :</span></p></td>
+<td>number of properties</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parameters</code></em> :</span></p></td>
+<td>properties list</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if at least one of the parameters could not be purged</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

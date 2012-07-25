@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardQueryExecutor</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Query.html" title="Midgard Query">
+<link rel="prev" href="MidgardQueryStorage.html" title="MidgardQueryStorage">
+<link rel="next" href="MidgardQuerySelect.html" title="MidgardQuerySelect">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardQueryStorage.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Query.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardQuerySelect.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardQueryExecutor.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardQueryExecutor.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardQueryExecutor.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardQueryExecutor.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#MidgardQueryExecutor.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#MidgardQueryExecutor.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardQueryExecutor"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardQueryExecutor.top_of_page"></a>MidgardQueryExecutor</span></h2>
+<p>MidgardQueryExecutor</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardQueryExecutor.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="MidgardQueryExecutor.html#MidgardQueryExecutor-struct" title="MidgardQueryExecutor">MidgardQueryExecutor</a>;
+struct              <a class="link" href="MidgardQueryExecutor.html#MidgardQueryExecutorClass" title="struct MidgardQueryExecutorClass">MidgardQueryExecutorClass</a>;
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardQueryExecutor.html#midgard-query-executor-set-constraint" title="midgard_query_executor_set_constraint ()">midgard_query_executor_set_constraint</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardQueryConstraintSimple.html" title="MidgardQueryConstraintSimple"><span class="type">MidgardQueryConstraintSimple</span></a> *constraint</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardQueryExecutor.html#midgard-query-executor-set-limit" title="midgard_query_executor_set_limit ()">midgard_query_executor_set_limit</a>    (<em class="parameter"><code><a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> limit</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardQueryExecutor.html#midgard-query-executor-set-offset" title="midgard_query_executor_set_offset ()">midgard_query_executor_set_offset</a>   (<em class="parameter"><code><a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> offset</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardQueryExecutor.html#midgard-query-executor-add-order" title="midgard_query_executor_add_order ()">midgard_query_executor_add_order</a>    (<em class="parameter"><code><a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardQueryHolder.html" title="MidgardQueryHolder"><span class="type">MidgardQueryHolder</span></a> *holder</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardQueryExecutor.html#midgard-query-executor-add-join" title="midgard_query_executor_add_join ()">midgard_query_executor_add_join</a>     (<em class="parameter"><code><a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *join_type</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardQueryHolder.html" title="MidgardQueryHolder"><span class="type">MidgardQueryHolder</span></a> *left_holder</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardQueryHolder.html" title="MidgardQueryHolder"><span class="type">MidgardQueryHolder</span></a> *right_holder</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="MidgardQueryExecutor.html#midgard-query-executor-get-results-count" title="midgard_query_executor_get_results_count ()">midgard_query_executor_get_results_count</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> *self</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryExecutor.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----MidgardQueryExecutor
+         +----<a class="link" href="MidgardQuerySelect.html" title="MidgardQuerySelect">MidgardQuerySelect</a>
+         +----<a class="link" href="MidgardSqlQuerySelectData.html" title="MidgardSqlQuerySelectData">MidgardSqlQuerySelectData</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryExecutor.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+MidgardQueryExecutor implements
+ <a class="link" href="MidgardExecutable.html" title="MidgardExecutable">MidgardExecutable</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryExecutor.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardQueryExecutor.html#MidgardQueryExecutor--constraint" title='The "constraint" property'>constraint</a>"               <a class="link" href="MidgardQueryConstraintSimple.html" title="MidgardQueryConstraintSimple"><span class="type">MidgardQueryConstraintSimple</span></a>*  : Read
+  "<a class="link" href="MidgardQueryExecutor.html#MidgardQueryExecutor--resultscount" title='The "resultscount" property'>resultscount</a>"             <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryExecutor.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardQueryExecutor.html#MidgardQueryExecutor-execution-end" title='The "execution-end" signal'>execution-end</a>"                                  : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a>
+  "<a class="link" href="MidgardQueryExecutor.html#MidgardQueryExecutor-execution-start" title='The "execution-start" signal'>execution-start</a>"                                : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryExecutor.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryExecutor.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardQueryExecutor-struct"></a><h3>MidgardQueryExecutor</h3>
+<pre class="programlisting">typedef struct _MidgardQueryExecutor MidgardQueryExecutor;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardQueryExecutorClass"></a><h3>struct MidgardQueryExecutorClass</h3>
+<pre class="programlisting">struct MidgardQueryExecutorClass {
+	GObjectClass parent;
+
+	/* virtual methods */
+	gboolean (*set_constraint)		(MidgardQueryExecutor *self, MidgardQueryConstraintSimple *constraint);
+	gboolean (*set_limit)			(MidgardQueryExecutor *self, guint limit);
+	gboolean (*set_offset)			(MidgardQueryExecutor *self, guint offset);
+	gboolean (*add_order)			(MidgardQueryExecutor *self, MidgardQueryHolder *holder, const gchar *type);
+	gboolean        (*add_join)			(MidgardQueryExecutor *self, const gchar *join_type, 
+								MidgardQueryHolder *left_holder, MidgardQueryHolder *right_holder);
+	guint 		(*get_results_count)		(MidgardQueryExecutor *self);
+
+	/* signals */
+	void            (*execution_start)      (GObject *object);
+	void            (*execution_end)        (GObject *object);
+
+	/* signals IDs */
+	guint           signal_id_execution_start;
+	guint           signal_id_execution_end;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-executor-set-constraint"></a><h3>midgard_query_executor_set_constraint ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_query_executor_set_constraint
+                                                        (<em class="parameter"><code><a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardQueryConstraintSimple.html" title="MidgardQueryConstraintSimple"><span class="type">MidgardQueryConstraintSimple</span></a> *constraint</code></em>);</pre>
+<p>
+Set constraint object which will be used for query execution
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>constraint</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryConstraintSimple.html" title="MidgardQueryConstraintSimple"><span class="type">MidgardQueryConstraintSimple</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-executor-set-limit"></a><h3>midgard_query_executor_set_limit ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_query_executor_set_limit    (<em class="parameter"><code><a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> limit</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit</code></em> :</span></p></td>
+<td>execution limit</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-executor-set-offset"></a><h3>midgard_query_executor_set_offset ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_query_executor_set_offset   (<em class="parameter"><code><a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> offset</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>offset</code></em> :</span></p></td>
+<td>execution offset</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-executor-add-order"></a><h3>midgard_query_executor_add_order ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_query_executor_add_order    (<em class="parameter"><code><a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardQueryHolder.html" title="MidgardQueryHolder"><span class="type">MidgardQueryHolder</span></a> *holder</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>holder</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryHolder.html" title="MidgardQueryHolder"><span class="type">MidgardQueryHolder</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>execution order</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-executor-add-join"></a><h3>midgard_query_executor_add_join ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_query_executor_add_join     (<em class="parameter"><code><a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *join_type</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardQueryHolder.html" title="MidgardQueryHolder"><span class="type">MidgardQueryHolder</span></a> *left_holder</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardQueryHolder.html" title="MidgardQueryHolder"><span class="type">MidgardQueryHolder</span></a> *right_holder</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-executor-get-results-count"></a><h3>midgard_query_executor_get_results_count ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               midgard_query_executor_get_results_count
+                                                        (<em class="parameter"><code><a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>number of objects or records returned from execution</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryExecutor.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardQueryExecutor--constraint"></a><h3>The <code class="literal">"constraint"</code> property</h3>
+<pre class="programlisting">  "constraint"               <a class="link" href="MidgardQueryConstraintSimple.html" title="MidgardQueryConstraintSimple"><span class="type">MidgardQueryConstraintSimple</span></a>*  : Read</pre>
+<p>
+Constraint object which has been set to given executor instance
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardQueryExecutor--resultscount"></a><h3>The <code class="literal">"resultscount"</code> property</h3>
+<pre class="programlisting">  "resultscount"             <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read</pre>
+<p>
+Number of records matched in query.
+</p>
+<p>Default value: 0</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryExecutor.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="MidgardQueryExecutor-execution-end"></a><h3>The <code class="literal">"execution-end"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> *midgardqueryexecutor,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>              user_data)                 : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardqueryexecutor</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardQueryExecutor-execution-start"></a><h3>The <code class="literal">"execution-start"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor"><span class="type">MidgardQueryExecutor</span></a> *midgardqueryexecutor,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>              user_data)                 : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardqueryexecutor</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

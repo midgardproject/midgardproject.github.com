@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardBlob</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Basic.html" title="Midgard Basic Types">
+<link rel="prev" href="midgard-2.0-midgard-collector.html" title="MidgardCollector">
+<link rel="next" href="midgard-2.0-midgard-quota.html" title="midgard_quota">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="midgard-2.0-midgard-collector.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Basic.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="midgard-2.0-midgard-quota.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#midgard-2.0-midgard-blob.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-blob.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-blob.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-blob.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="midgard-2.0-midgard-blob"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="midgard-2.0-midgard-blob.top_of_page"></a>MidgardBlob</span></h2>
+<p>MidgardBlob — Files and binary data.</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="midgard-2.0-midgard-blob.synopsis"></a><h2>Synopsis</h2>
+<a name="MidgardBlob"></a><pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+typedef             <a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob">MidgardBlob</a>;
+typedef             <a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlobClass" title="MidgardBlobClass">MidgardBlobClass</a>;
+                    <a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlobPrivate" title="MidgardBlobPrivate">MidgardBlobPrivate</a>;
+<a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="returnvalue">MidgardBlob</span></a> *       <a class="link" href="midgard-2.0-midgard-blob.html#midgard-blob-new" title="midgard_blob_new ()">midgard_blob_new</a>                    (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *attachment</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *encoding</code></em>);
+<a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="returnvalue">MidgardBlob</span></a> *       <a class="link" href="midgard-2.0-midgard-blob.html#midgard-blob-create-blob" title="midgard_blob_create_blob ()">midgard_blob_create_blob</a>            (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *attachment</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *encoding</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="midgard-2.0-midgard-blob.html#midgard-blob-read-content" title="midgard_blob_read_content ()">midgard_blob_read_content</a>           (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> *bytes_read</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-blob.html#midgard-blob-write-content" title="midgard_blob_write_content ()">midgard_blob_write_content</a>          (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *content</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-IO-Channels.html#GIOChannel"><span class="returnvalue">GIOChannel</span></a> *        <a class="link" href="midgard-2.0-midgard-blob.html#midgard-blob-get-handler" title="midgard_blob_get_handler ()">midgard_blob_get_handler</a>            (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *mode</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="midgard-2.0-midgard-blob.html#midgard-blob-get-path" title="midgard_blob_get_path ()">midgard_blob_get_path</a>               (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-blob.html#midgard-blob-exists" title="midgard_blob_exists ()">midgard_blob_exists</a>                 (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-blob.html#midgard-blob-remove-file" title="midgard_blob_remove_file ()">midgard_blob_remove_file</a>            (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-blob.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----MidgardBlob
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-blob.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob--attachment" title='The "attachment" property'>attachment</a>"               <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a>*        : Read / Write / Construct Only
+  "<a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob--content" title='The "content" property'>content</a>"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob--encoding" title='The "encoding" property'>encoding</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only
+  "<a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob--parentguid" title='The "parentguid" property'>parentguid</a>"               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-blob.description"></a><h2>Description</h2>
+<p>
+ <a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> class provides transparent access to real files located in filesystem.
+ It's a proxy between database objects (usually midgard_attachment) and real files
+ like images or documents.
+</p>
+<p>
+ Main <a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> approaches:
+ </p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+ Binary data doesn't have to be stored together with database record ( <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> ).
+ </p></li>
+<li class="listitem"><p>
+ One object may have unlimited attachments.
+ </p></li>
+<li class="listitem"><p>
+ One blob may be shared among different objects ( of different classes even ).
+ </p></li>
+<li class="listitem"><p>
+ You may attach attachment to another attachment ( notes to documentation or image thumbnails ).
+ </p></li>
+<li class="listitem"><p>
+ Binary file is independent from objects
+ </p></li>
+</ul></div>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-blob.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardBlob"></a><h3>MidgardBlob</h3>
+<pre class="programlisting">typedef struct MidgardBlob MidgardBlob;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardBlobClass"></a><h3>MidgardBlobClass</h3>
+<pre class="programlisting">typedef struct MidgardBlobClass MidgardBlobClass;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardBlobPrivate"></a><h3>MidgardBlobPrivate</h3>
+<pre class="programlisting">typedef struct _MidgardBlobPrivate MidgardBlobPrivate;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-blob-new"></a><h3>midgard_blob_new ()</h3>
+<pre class="programlisting"><a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="returnvalue">MidgardBlob</span></a> *       midgard_blob_new                    (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *attachment</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *encoding</code></em>);</pre>
+<p>
+Default encoding is UTF-8. Set NULL <em class="parameter"><code>encoding</code></em> if such is required. 
+</p>
+<p>
+Instatiate new Midgard Blob object for the given midgard_attachment object. 
+</p>
+<p>
+This constructor defines new relative path for attachment, if midgard_attachment 
+is associated with midgard_blob and its location is empty. 
+In any other case, location is not changed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>attachment</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> of MIDGARD_TYPE_ATTACHMENT type.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>encoding</code></em> :</span></p></td>
+<td>file encoding. <span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>newly instatiated <a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> object or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-blob-create-blob"></a><h3>midgard_blob_create_blob ()</h3>
+<pre class="programlisting"><a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="returnvalue">MidgardBlob</span></a> *       midgard_blob_create_blob            (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *attachment</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *encoding</code></em>);</pre>
+<p>
+Invokes <a class="link" href="midgard-2.0-midgard-blob.html#midgard-blob-new" title="midgard_blob_new ()"><code class="function">midgard_blob_new()</code></a> and it's designed for language bindings, in whic, 
+that function can not be invoked explicitly.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>attachment</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> of MIDGARD_TYPE_ATTACHMENT type.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>encoding</code></em> :</span></p></td>
+<td>file encoding. <span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> instance. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-blob-read-content"></a><h3>midgard_blob_read_content ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             midgard_blob_read_content           (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> *bytes_read</code></em>);</pre>
+<p>
+Returned content should be freed when no longer needed.
+<em class="parameter"><code>bytes_read</code></em> holds size of returned content. 
+</p>
+<p>
+This function should be used to get content of small files.
+For large and huge ones midgard_blob_get_handler should be used
+to get file handle.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>MidgardBlob self instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bytes_read</code></em> :</span></p></td>
+<td>number of bytes read. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>content of the file, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-blob-write-content"></a><h3>midgard_blob_write_content ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_blob_write_content          (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *content</code></em>);</pre>
+<p>
+Write given <em class="parameter"><code>content</code></em> to a file.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> self instance.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>content</code></em> :</span></p></td>
+<td>content which should be written to file.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if content has been written to file, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-blob-get-handler"></a><h3>midgard_blob_get_handler ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-IO-Channels.html#GIOChannel"><span class="returnvalue">GIOChannel</span></a> *        midgard_blob_get_handler            (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *mode</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+The main idea is to get file handler. On C level it returns
+GIOChannel, but language bindings could return typical file handler 
+or anything else which is needed for particular language.
+</p>
+<p>
+Returned channel is owned by midgard_blob and should not be freed
+or unreferenced.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mode</code></em> :</span></p></td>
+<td>fopen mode (r, w, a, b). Default is 'w'.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a pointer to store error. <span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>GIOChannel or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-blob-get-path"></a><h3>midgard_blob_get_path ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       midgard_blob_get_path               (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> *self</code></em>);</pre>
+<p>
+Returned path is owned by midgard_blob and should not be freed.
+It basically contains blobdir and relative file's location.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>absolute path or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if path is not set yet.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-blob-exists"></a><h3>midgard_blob_exists ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_blob_exists                 (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> *self</code></em>);</pre>
+<p>
+Check if file associated with midgard_blob exists.
+This function will also return FALSE, if file is not yet associated.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if file exists, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-blob-remove-file"></a><h3>midgard_blob_remove_file ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_blob_remove_file            (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Deletes a file which is associated with blob and located at
+attachment's location which is initialized for blob.
+<a class="link" href="midgard-2.0-midgard-blob.html#midgard-blob-exists" title="midgard_blob_exists ()"><span class="type">midgard_blob_exists</span></a> should be invoked if file may be already 
+deleted, for example when one file is shared among many attachments.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-blob.html#MidgardBlob"><span class="type">MidgardBlob</span></a> self instance.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-blob.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardBlob--attachment"></a><h3>The <code class="literal">"attachment"</code> property</h3>
+<pre class="programlisting">  "attachment"               <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a>*        : Read / Write / Construct Only</pre>
+<p></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardBlob--content"></a><h3>The <code class="literal">"content"</code> property</h3>
+<pre class="programlisting">  "content"                  <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p></p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardBlob--encoding"></a><h3>The <code class="literal">"encoding"</code> property</h3>
+<pre class="programlisting">  "encoding"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
+<p></p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardBlob--parentguid"></a><h3>The <code class="literal">"parentguid"</code> property</h3>
+<pre class="programlisting">  "parentguid"               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p></p>
+<p>Default value: ""</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

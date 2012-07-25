@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="Midgard2 Reference Manual" link="index.html" author="" name="midgard-2.0" version="2" language="c">
+  <chapters>
+    <sub name="Architecture" link="pt01.html"/>
+    <sub name="Build and compile" link="pt02.html">
+      <sub name="Getting Midgard" link="get-midgard-lib.html"/>
+      <sub name="Compiling Midgard library" link="compile-midgard-lib.html"/>
+      <sub name="Compiling Midgard Applications" link="compile-midgard-app.html"/>
+    </sub>
+    <sub name="API reference" link="pt03.html">
+      <sub name="Midgard Basic Types" link="midgard-Basic.html">
+        <sub name="MidgardConfig" link="midgard-2.0-midgard-config.html"/>
+        <sub name="MidgardConnection" link="MidgardConnection.html"/>
+        <sub name="MidgardStorage" link="MidgardStorage.html"/>
+        <sub name="MidgardQueryBuilder" link="MidgardQueryBuilder.html"/>
+        <sub name="MidgardUser" link="midgard-2.0-midgard-user.html"/>
+        <sub name="MidgardCollector" link="midgard-2.0-midgard-collector.html"/>
+        <sub name="MidgardBlob" link="midgard-2.0-midgard-blob.html"/>
+        <sub name="midgard_quota" link="midgard-2.0-midgard-quota.html"/>
+        <sub name="midgard_error" link="midgard-2.0-midgard-error.html"/>
+        <sub name="MidgardSchemaObjectTree" link="midgard-2.0-MidgardSchemaObjectTree.html"/>
+        <sub name="MidgardSchemaObjectFactory" link="MidgardSchemaObjectFactory.html"/>
+        <sub name="MidgardDBObject" link="midgard-2.0-midgard-dbobject.html"/>
+        <sub name="MidgardSchemaObjectFactory" link="MidgardSchema.html"/>
+        <sub name="MidgardTransaction" link="midgard-2.0-midgard-transaction.html"/>
+      </sub>
+      <sub name="Midgard Schema User Defined Types" link="midgard-Midgard-Schema-User-Defined-Types.html">
+        <sub name="MidgardObject" link="MidgardObject.html"/>
+        <sub name="MidgardMetadata" link="midgard-2.0-midgard-metadata.html"/>
+        <sub name="MidgardObject attachments" link="midgard-2.0-midgard-object-attachment.html"/>
+        <sub name="MidgardObject parameters" link="midgard-2.0-midgard-object-parameter.html"/>
+        <sub name="MidgardView" link="MidgardView.html"/>
+      </sub>
+      <sub name="Workspaces and Data Contexts" link="midgard-Midgard-Workspaces-And-Data-Contexts.html">
+        <sub name="MidgardWorkspaceStorage" link="MidgardWorkspaceStorage.html"/>
+        <sub name="MidgardWorkspaceContext" link="MidgardWorkspaceContext.html"/>
+        <sub name="MidgardWorkspace" link="MidgardWorkspace.html"/>
+        <sub name="MidgardWorkspaceManager" link="MidgardWorkspaceManager.html"/>
+      </sub>
+      <sub name="Midgard Query" link="midgard-Midgard-Query.html">
+        <sub name="MidgardQueryConstraint" link="MidgardQueryConstraint.html"/>
+        <sub name="MidgardQueryConstraintSimple" link="MidgardQueryConstraintSimple.html"/>
+        <sub name="MidgardQueryConstraintGroup" link="MidgardQueryConstraintGroup.html"/>
+        <sub name="MidgardQueryHolder" link="MidgardQueryHolder.html"/>
+        <sub name="MidgardQueryValue" link="MidgardQueryValue.html"/>
+        <sub name="MidgardQueryProperty" link="MidgardQueryProperty.html"/>
+        <sub name="MidgardQueryStorage" link="MidgardQueryStorage.html"/>
+        <sub name="MidgardQueryExecutor" link="MidgardQueryExecutor.html"/>
+        <sub name="MidgardQuerySelect" link="MidgardQuerySelect.html"/>
+        <sub name="MidgardQuerySelector" link="MidgardQuerySelector.html"/>
+        <sub name="MidgardQueryColumn" link="MidgardQueryColumn.html"/>
+        <sub name="MidgardQueryRow" link="MidgardQueryRow.html"/>
+        <sub name="MidgardQueryResult" link="MidgardQueryResult.html"/>
+        <sub name="MidgardSqlQueryColumn" link="MidgardSqlQueryColumn.html"/>
+        <sub name="MidgardSqlQueryConstraint" link="MidgardSqlQueryConstraint.html"/>
+        <sub name="MidgardSqlQueryResult" link="MidgardSqlQueryResult.html"/>
+        <sub name="MidgardSqlQueryRow" link="MidgardSqlQueryRow.html"/>
+        <sub name="MidgardSqlQuerySelectData" link="MidgardSqlQuerySelectData.html"/>
+      </sub>
+      <sub name="Reflection types for Midgard Schema User Defined types" link="midgard-Midgard-Schema-Reflection.html">
+        <sub name="MidgardReflectorProperty" link="MidgardReflectorProperty.html"/>
+        <sub name="MidgardReflectorObject" link="MidgardReflectorObject.html"/>
+      </sub>
+      <sub name="Replication and events" link="midgard-Replication-And-Events.html">
+        <sub name="MidgardReplicator" link="midgard-2.0-midgard-replicator.html"/>
+        <sub name="MidgardRepligard" link="MidgardRepligard.html"/>
+        <sub name="MidgardDbus" link="MidgardDbus.html"/>
+      </sub>
+      <sub name="Common interfaces to validate and execute operations" link="midgard-Execution-And-Validation.html">
+        <sub name="MidgardValidable" link="MidgardValidable.html"/>
+        <sub name="MidgardExecutable" link="MidgardExecutable.html"/>
+      </sub>
+      <sub name="Types" link="midgard-Types.html">
+        <sub name="midgard_type" link="midgard-2.0-midgard-type.html"/>
+        <sub name="MidgardTimestamp" link="midgard-2.0-midgard-timestamp.html"/>
+      </sub>
+      <sub name="Miscelanous" link="midgard-Misc.html">
+        <sub name="midgard" link="midgard-2.0-midgard.html"/>
+        <sub name="uuid" link="midgard-2.0-uuid.html"/>
+        <sub name="guid" link="midgard-2.0-guid.html"/>
+        <sub name="midgard_config_auto" link="midgard-2.0-midgard-config-auto.html"/>
+      </sub>
+    </sub>
+    <sub name="Examples" link="pt04.html">
+      <sub name="midgard_connection" link="example-midgard-connection.html"/>
+      <sub name="midgard_hello_world" link="example-hello-world.html"/>
+    </sub>
+    <sub name="Index" link="ix01.html"/>
+    <sub name="Index of deprecated symbols" link="ix02.html"/>
+    <sub name="Index of new symbols in 10.05.6" link="ix03.html"/>
+    <sub name="Index of new symbols in 10.05.5" link="ix04.html"/>
+    <sub name="Index of new symbols in 10.05" link="ix05.html"/>
+    <sub name="Index of new symbols in 9.09" link="ix06.html"/>
+  </chapters>
+  <functions>
+    <keyword type="typedef" name="MidgardConfig" link="midgard-2.0-midgard-config.html#MidgardConfig"/>
+    <keyword type="typedef" name="MidgardConfigClass" link="midgard-2.0-midgard-config.html#MidgardConfigClass"/>
+    <keyword type="struct" name="MidgardConfigPrivate" link="midgard-2.0-midgard-config.html#MidgardConfigPrivate"/>
+    <keyword type="enum" name="enum MidgardDBType" link="midgard-2.0-midgard-config.html#MidgardDBType"/>
+    <keyword type="function" name="midgard_config_new ()" link="midgard-2.0-midgard-config.html#midgard-config-new"/>
+    <keyword type="function" name="midgard_config_read_file ()" link="midgard-2.0-midgard-config.html#midgard-config-read-file" since="9.3"/>
+    <keyword type="function" name="midgard_config_read_file_at_path ()" link="midgard-2.0-midgard-config.html#midgard-config-read-file-at-path"/>
+    <keyword type="function" name="midgard_config_read_data ()" link="midgard-2.0-midgard-config.html#midgard-config-read-data"/>
+    <keyword type="function" name="midgard_config_list_files ()" link="midgard-2.0-midgard-config.html#midgard-config-list-files"/>
+    <keyword type="function" name="midgard_config_save_file ()" link="midgard-2.0-midgard-config.html#midgard-config-save-file"/>
+    <keyword type="function" name="midgard_config_create_blobdir ()" link="midgard-2.0-midgard-config.html#midgard-config-create-blobdir"/>
+    <keyword type="property" name="The &quot;authtype&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--authtype"/>
+    <keyword type="property" name="The &quot;blobdir&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--blobdir"/>
+    <keyword type="property" name="The &quot;cachedir&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--cachedir"/>
+    <keyword type="property" name="The &quot;database&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--database"/>
+    <keyword type="property" name="The &quot;dbdir&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--dbdir"/>
+    <keyword type="property" name="The &quot;dbpass&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--dbpass"/>
+    <keyword type="property" name="The &quot;dbtype&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--dbtype"/>
+    <keyword type="property" name="The &quot;dbuser&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--dbuser"/>
+    <keyword type="property" name="The &quot;host&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--host"/>
+    <keyword type="property" name="The &quot;logfilename&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--logfilename"/>
+    <keyword type="property" name="The &quot;loglevel&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--loglevel"/>
+    <keyword type="property" name="The &quot;midgardpassword&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--midgardpassword"/>
+    <keyword type="property" name="The &quot;midgardusername&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--midgardusername"/>
+    <keyword type="property" name="The &quot;pamfile&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--pamfile"/>
+    <keyword type="property" name="The &quot;port&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--port"/>
+    <keyword type="property" name="The &quot;sharedir&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--sharedir"/>
+    <keyword type="property" name="The &quot;tablecreate&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--tablecreate"/>
+    <keyword type="property" name="The &quot;tableupdate&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--tableupdate"/>
+    <keyword type="property" name="The &quot;testunit&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--testunit"/>
+    <keyword type="property" name="The &quot;vardir&quot; property" link="midgard-2.0-midgard-config.html#MidgardConfig--vardir"/>
+    <keyword type="macro" name="GETTEXT_PACKAGE" link="MidgardConnection.html#GETTEXT-PACKAGE:CAPS"/>
+    <keyword type="struct" name="MidgardConnection" link="MidgardConnection.html#MidgardConnection-struct"/>
+    <keyword type="typedef" name="MidgardConnectionClass" link="MidgardConnection.html#MidgardConnectionClass"/>
+    <keyword type="function" name="midgard_connection_new ()" link="MidgardConnection.html#midgard-connection-new"/>
+    <keyword type="function" name="midgard_connection_open ()" link="MidgardConnection.html#midgard-connection-open"/>
+    <keyword type="function" name="midgard_connection_close ()" link="MidgardConnection.html#midgard-connection-close" since="10.05.1"/>
+    <keyword type="function" name="midgard_connection_open_config ()" link="MidgardConnection.html#midgard-connection-open-config"/>
+    <keyword type="function" name="midgard_connection_set_loglevel ()" link="MidgardConnection.html#midgard-connection-set-loglevel"/>
+    <keyword type="function" name="midgard_connection_get_loglevel ()" link="MidgardConnection.html#midgard-connection-get-loglevel"/>
+    <keyword type="function" name="midgard_connection_set_loghandler ()" link="MidgardConnection.html#midgard-connection-set-loghandler"/>
+    <keyword type="function" name="midgard_connection_get_loghandler ()" link="MidgardConnection.html#midgard-connection-get-loghandler"/>
+    <keyword type="function" name="midgard_connection_get_error ()" link="MidgardConnection.html#midgard-connection-get-error"/>
+    <keyword type="function" name="midgard_connection_get_error_string ()" link="MidgardConnection.html#midgard-connection-get-error-string"/>
+    <keyword type="function" name="midgard_connection_set_error ()" link="MidgardConnection.html#midgard-connection-set-error"/>
+    <keyword type="function" name="midgard_connection_get_user ()" link="MidgardConnection.html#midgard-connection-get-user"/>
+    <keyword type="function" name="midgard_connection_copy ()" link="MidgardConnection.html#midgard-connection-copy"/>
+    <keyword type="function" name="midgard_connection_reopen ()" link="MidgardConnection.html#midgard-connection-reopen"/>
+    <keyword type="function" name="midgard_connection_list_auth_types ()" link="MidgardConnection.html#midgard-connection-list-auth-types"/>
+    <keyword type="function" name="midgard_connection_enable_replication ()" link="MidgardConnection.html#midgard-connection-enable-replication" since="10.05"/>
+    <keyword type="function" name="midgard_connection_enable_quota ()" link="MidgardConnection.html#midgard-connection-enable-quota" since="10.05"/>
+    <keyword type="function" name="midgard_connection_enable_dbus ()" link="MidgardConnection.html#midgard-connection-enable-dbus" since="10.05"/>
+    <keyword type="function" name="midgard_connection_enable_workspace ()" link="MidgardConnection.html#midgard-connection-enable-workspace" since="10.05.5"/>
+    <keyword type="function" name="midgard_connection_is_enabled_replication ()" link="MidgardConnection.html#midgard-connection-is-enabled-replication" since="10.05"/>
+    <keyword type="function" name="midgard_connection_is_enabled_quota ()" link="MidgardConnection.html#midgard-connection-is-enabled-quota" since="10.05"/>
+    <keyword type="function" name="midgard_connection_is_enabled_dbus ()" link="MidgardConnection.html#midgard-connection-is-enabled-dbus" since="10.05"/>
+    <keyword type="function" name="midgard_connection_is_enabled_workspace ()" link="MidgardConnection.html#midgard-connection-is-enabled-workspace" since="10.05.5"/>
+    <keyword type="function" name="midgard_connection_get_workspace ()" link="MidgardConnection.html#midgard-connection-get-workspace" since="10.05.5"/>
+    <keyword type="function" name="midgard_connection_set_workspace ()" link="MidgardConnection.html#midgard-connection-set-workspace" since="10.05.5"/>
+    <keyword type="property" name="The &quot;config&quot; property" link="MidgardConnection.html#MidgardConnection--config"/>
+    <keyword type="signal" name="The &quot;auth-changed&quot; signal" link="MidgardConnection.html#MidgardConnection-auth-changed"/>
+    <keyword type="signal" name="The &quot;connected&quot; signal" link="MidgardConnection.html#MidgardConnection-connected"/>
+    <keyword type="signal" name="The &quot;disconnected&quot; signal" link="MidgardConnection.html#MidgardConnection-disconnected"/>
+    <keyword type="signal" name="The &quot;error&quot; signal" link="MidgardConnection.html#MidgardConnection-error"/>
+    <keyword type="signal" name="The &quot;lost-provider&quot; signal" link="MidgardConnection.html#MidgardConnection-lost-provider"/>
+    <keyword type="struct" name="MidgardStorage" link="MidgardStorage.html#MidgardStorage-struct"/>
+    <keyword type="struct" name="MidgardStorageClass" link="MidgardStorage.html#MidgardStorageClass" since="9.09"/>
+    <keyword type="function" name="midgard_storage_create_base_storage ()" link="MidgardStorage.html#midgard-storage-create-base-storage" since="9.09"/>
+    <keyword type="function" name="midgard_storage_create ()" link="MidgardStorage.html#midgard-storage-create" since="10.05"/>
+    <keyword type="function" name="midgard_storage_update ()" link="MidgardStorage.html#midgard-storage-update" since="10.05"/>
+    <keyword type="function" name="midgard_storage_exists ()" link="MidgardStorage.html#midgard-storage-exists" since="10.05"/>
+    <keyword type="function" name="midgard_storage_delete ()" link="MidgardStorage.html#midgard-storage-delete" since="10.05"/>
+    <keyword type="struct" name="struct MidgardQueryBuilder" link="MidgardQueryBuilder.html#MidgardQueryBuilder-struct"/>
+    <keyword type="struct" name="MidgardQueryBuilderPrivate" link="MidgardQueryBuilder.html#MidgardQueryBuilderPrivate"/>
+    <keyword type="typedef" name="MidgardQueryBuilderClass" link="MidgardQueryBuilder.html#MidgardQueryBuilderClass"/>
+    <keyword type="function" name="midgard_query_builder_new ()" link="MidgardQueryBuilder.html#midgard-query-builder-new"/>
+    <keyword type="function" name="midgard_query_builder_create_builder ()" link="MidgardQueryBuilder.html#midgard-query-builder-create-builder" since="10.05.1"/>
+    <keyword type="function" name="midgard_query_builder_add_constraint ()" link="MidgardQueryBuilder.html#midgard-query-builder-add-constraint"/>
+    <keyword type="function" name="midgard_query_builder_add_constraint_with_property ()" link="MidgardQueryBuilder.html#midgard-query-builder-add-constraint-with-property"/>
+    <keyword type="function" name="midgard_query_builder_begin_group ()" link="MidgardQueryBuilder.html#midgard-query-builder-begin-group"/>
+    <keyword type="function" name="midgard_query_builder_end_group ()" link="MidgardQueryBuilder.html#midgard-query-builder-end-group"/>
+    <keyword type="function" name="midgard_query_builder_add_order ()" link="MidgardQueryBuilder.html#midgard-query-builder-add-order"/>
+    <keyword type="function" name="midgard_query_builder_set_offset ()" link="MidgardQueryBuilder.html#midgard-query-builder-set-offset"/>
+    <keyword type="function" name="midgard_query_builder_set_limit ()" link="MidgardQueryBuilder.html#midgard-query-builder-set-limit"/>
+    <keyword type="function" name="midgard_query_builder_execute ()" link="MidgardQueryBuilder.html#midgard-query-builder-execute"/>
+    <keyword type="function" name="midgard_query_builder_count ()" link="MidgardQueryBuilder.html#midgard-query-builder-count"/>
+    <keyword type="function" name="midgard_query_builder_get_type_name ()" link="MidgardQueryBuilder.html#midgard-query-builder-get-type-name"/>
+    <keyword type="function" name="midgard_query_builder_include_deleted ()" link="MidgardQueryBuilder.html#midgard-query-builder-include-deleted"/>
+    <keyword type="signal" name="The &quot;execution-end&quot; signal" link="MidgardQueryBuilder.html#MidgardQueryBuilder-execution-end"/>
+    <keyword type="signal" name="The &quot;execution-start&quot; signal" link="MidgardQueryBuilder.html#MidgardQueryBuilder-execution-start"/>
+    <keyword type="struct" name="struct MidgardUserClass" link="midgard-2.0-midgard-user.html#MidgardUserClass"/>
+    <keyword type="struct" name="MidgardUserPrivate" link="midgard-2.0-midgard-user.html#MidgardUserPrivate"/>
+    <keyword type="struct" name="MidgardUser" link="midgard-2.0-midgard-user.html#MidgardUser-struct"/>
+    <keyword type="function" name="midgard_user_new ()" link="midgard-2.0-midgard-user.html#midgard-user-new"/>
+    <keyword type="function" name="midgard_user_get ()" link="midgard-2.0-midgard-user.html#midgard-user-get"/>
+    <keyword type="function" name="midgard_user_query ()" link="midgard-2.0-midgard-user.html#midgard-user-query"/>
+    <keyword type="function" name="midgard_user_create ()" link="midgard-2.0-midgard-user.html#midgard-user-create" since="9.09"/>
+    <keyword type="function" name="midgard_user_update ()" link="midgard-2.0-midgard-user.html#midgard-user-update" since="9.09"/>
+    <keyword type="function" name="midgard_user_delete ()" link="midgard-2.0-midgard-user.html#midgard-user-delete" since="9.09.2"/>
+    <keyword type="function" name="midgard_user_log_in ()" link="midgard-2.0-midgard-user.html#midgard-user-log-in" since="9.09"/>
+    <keyword type="function" name="midgard_user_log_out ()" link="midgard-2.0-midgard-user.html#midgard-user-log-out" since="9.09"/>
+    <keyword type="function" name="midgard_user_is_user ()" link="midgard-2.0-midgard-user.html#midgard-user-is-user"/>
+    <keyword type="function" name="midgard_user_is_admin ()" link="midgard-2.0-midgard-user.html#midgard-user-is-admin"/>
+    <keyword type="function" name="midgard_user_get_person ()" link="midgard-2.0-midgard-user.html#midgard-user-get-person"/>
+    <keyword type="function" name="midgard_user_set_person ()" link="midgard-2.0-midgard-user.html#midgard-user-set-person"/>
+    <keyword type="property" name="The &quot;active&quot; property" link="midgard-2.0-midgard-user.html#MidgardUser--active"/>
+    <keyword type="property" name="The &quot;authtype&quot; property" link="midgard-2.0-midgard-user.html#MidgardUser--authtype"/>
+    <keyword type="property" name="The &quot;authtypeid&quot; property" link="midgard-2.0-midgard-user.html#MidgardUser--authtypeid"/>
+    <keyword type="property" name="The &quot;guid&quot; property" link="midgard-2.0-midgard-user.html#MidgardUser--guid"/>
+    <keyword type="property" name="The &quot;login&quot; property" link="midgard-2.0-midgard-user.html#MidgardUser--login"/>
+    <keyword type="property" name="The &quot;password&quot; property" link="midgard-2.0-midgard-user.html#MidgardUser--password"/>
+    <keyword type="property" name="The &quot;person&quot; property" link="midgard-2.0-midgard-user.html#MidgardUser--person"/>
+    <keyword type="property" name="The &quot;usertype&quot; property" link="midgard-2.0-midgard-user.html#MidgardUser--usertype"/>
+    <keyword type="struct" name="struct MidgardCollector" link="midgard-2.0-midgard-collector.html#MidgardCollector-struct"/>
+    <keyword type="typedef" name="MidgardCollectorClass" link="midgard-2.0-midgard-collector.html#MidgardCollectorClass"/>
+    <keyword type="function" name="midgard_collector_new ()" link="midgard-2.0-midgard-collector.html#midgard-collector-new"/>
+    <keyword type="function" name="midgard_collector_set_key_property ()" link="midgard-2.0-midgard-collector.html#midgard-collector-set-key-property"/>
+    <keyword type="function" name="midgard_collector_add_value_property ()" link="midgard-2.0-midgard-collector.html#midgard-collector-add-value-property"/>
+    <keyword type="function" name="midgard_collector_set ()" link="midgard-2.0-midgard-collector.html#midgard-collector-set"/>
+    <keyword type="function" name="midgard_collector_get ()" link="midgard-2.0-midgard-collector.html#midgard-collector-get"/>
+    <keyword type="function" name="midgard_collector_get_subkey ()" link="midgard-2.0-midgard-collector.html#midgard-collector-get-subkey"/>
+    <keyword type="function" name="midgard_collector_list_keys ()" link="midgard-2.0-midgard-collector.html#midgard-collector-list-keys"/>
+    <keyword type="function" name="midgard_collector_merge ()" link="midgard-2.0-midgard-collector.html#midgard-collector-merge"/>
+    <keyword type="function" name="midgard_collector_remove_key ()" link="midgard-2.0-midgard-collector.html#midgard-collector-remove-key"/>
+    <keyword type="function" name="midgard_collector_add_constraint ()" link="midgard-2.0-midgard-collector.html#midgard-collector-add-constraint"/>
+    <keyword type="function" name="midgard_collector_add_constraint_with_property ()" link="midgard-2.0-midgard-collector.html#midgard-collector-add-constraint-with-property"/>
+    <keyword type="function" name="midgard_collector_begin_group ()" link="midgard-2.0-midgard-collector.html#midgard-collector-begin-group"/>
+    <keyword type="function" name="midgard_collector_end_group ()" link="midgard-2.0-midgard-collector.html#midgard-collector-end-group"/>
+    <keyword type="function" name="midgard_collector_add_order ()" link="midgard-2.0-midgard-collector.html#midgard-collector-add-order"/>
+    <keyword type="function" name="midgard_collector_set_offset ()" link="midgard-2.0-midgard-collector.html#midgard-collector-set-offset"/>
+    <keyword type="function" name="midgard_collector_set_limit ()" link="midgard-2.0-midgard-collector.html#midgard-collector-set-limit"/>
+    <keyword type="function" name="midgard_collector_count ()" link="midgard-2.0-midgard-collector.html#midgard-collector-count"/>
+    <keyword type="function" name="midgard_collector_execute ()" link="midgard-2.0-midgard-collector.html#midgard-collector-execute"/>
+    <keyword type="typedef" name="MidgardBlob" link="midgard-2.0-midgard-blob.html#MidgardBlob"/>
+    <keyword type="typedef" name="MidgardBlobClass" link="midgard-2.0-midgard-blob.html#MidgardBlobClass"/>
+    <keyword type="struct" name="MidgardBlobPrivate" link="midgard-2.0-midgard-blob.html#MidgardBlobPrivate"/>
+    <keyword type="function" name="midgard_blob_new ()" link="midgard-2.0-midgard-blob.html#midgard-blob-new"/>
+    <keyword type="function" name="midgard_blob_create_blob ()" link="midgard-2.0-midgard-blob.html#midgard-blob-create-blob" since="10.05.1"/>
+    <keyword type="function" name="midgard_blob_read_content ()" link="midgard-2.0-midgard-blob.html#midgard-blob-read-content"/>
+    <keyword type="function" name="midgard_blob_write_content ()" link="midgard-2.0-midgard-blob.html#midgard-blob-write-content"/>
+    <keyword type="function" name="midgard_blob_get_handler ()" link="midgard-2.0-midgard-blob.html#midgard-blob-get-handler"/>
+    <keyword type="function" name="midgard_blob_get_path ()" link="midgard-2.0-midgard-blob.html#midgard-blob-get-path"/>
+    <keyword type="function" name="midgard_blob_exists ()" link="midgard-2.0-midgard-blob.html#midgard-blob-exists"/>
+    <keyword type="function" name="midgard_blob_remove_file ()" link="midgard-2.0-midgard-blob.html#midgard-blob-remove-file"/>
+    <keyword type="property" name="The &quot;attachment&quot; property" link="midgard-2.0-midgard-blob.html#MidgardBlob--attachment"/>
+    <keyword type="property" name="The &quot;content&quot; property" link="midgard-2.0-midgard-blob.html#MidgardBlob--content"/>
+    <keyword type="property" name="The &quot;encoding&quot; property" link="midgard-2.0-midgard-blob.html#MidgardBlob--encoding"/>
+    <keyword type="property" name="The &quot;parentguid&quot; property" link="midgard-2.0-midgard-blob.html#MidgardBlob--parentguid"/>
+    <keyword type="function" name="midgard_quota_get_object_size ()" link="midgard-2.0-midgard-quota.html#midgard-quota-get-object-size"/>
+    <keyword type="function" name="midgard_quota_create ()" link="midgard-2.0-midgard-quota.html#midgard-quota-create"/>
+    <keyword type="function" name="midgard_quota_update ()" link="midgard-2.0-midgard-quota.html#midgard-quota-update"/>
+    <keyword type="function" name="midgard_quota_remove ()" link="midgard-2.0-midgard-quota.html#midgard-quota-remove"/>
+    <keyword type="function" name="midgard_quota_set_type_size ()" link="midgard-2.0-midgard-quota.html#midgard-quota-set-type-size"/>
+    <keyword type="function" name="midgard_quota_get_type_size ()" link="midgard-2.0-midgard-quota.html#midgard-quota-get-type-size"/>
+    <keyword type="function" name="midgard_quota_size_is_reached ()" link="midgard-2.0-midgard-quota.html#midgard-quota-size-is-reached"/>
+    <keyword type="macro" name="MIDGARD_GENERIC_ERROR" link="midgard-2.0-midgard-error.html#MIDGARD-GENERIC-ERROR:CAPS"/>
+    <keyword type="function" name="midgard_error_generic ()" link="midgard-2.0-midgard-error.html#midgard-error-generic"/>
+    <keyword type="function" name="midgard_error_string ()" link="midgard-2.0-midgard-error.html#midgard-error-string"/>
+    <keyword type="function" name="midgard_set_error ()" link="midgard-2.0-midgard-error.html#midgard-set-error"/>
+    <keyword type="function" name="midgard_error_default_log ()" link="midgard-2.0-midgard-error.html#midgard-error-default-log"/>
+    <keyword type="function" name="midgard_error_parse_loglevel ()" link="midgard-2.0-midgard-error.html#midgard-error-parse-loglevel"/>
+    <keyword type="macro" name="MIDGARD_ERRNO_SET()" link="midgard-2.0-midgard-error.html#MIDGARD-ERRNO-SET:CAPS"/>
+    <keyword type="struct" name="struct MidgardSchemaObjectTree" link="midgard-2.0-MidgardSchemaObjectTree.html#MidgardSchemaObjectTree"/>
+    <keyword type="struct" name="struct MidgardSchemaObjectTreeClass" link="midgard-2.0-MidgardSchemaObjectTree.html#MidgardSchemaObjectTreeClass"/>
+    <keyword type="function" name="midgard_schema_object_tree_is_in_tree ()" link="midgard-2.0-MidgardSchemaObjectTree.html#midgard-schema-object-tree-is-in-tree" since="10.05"/>
+    <keyword type="function" name="midgard_schema_object_tree_get_parent_name ()" link="midgard-2.0-MidgardSchemaObjectTree.html#midgard-schema-object-tree-get-parent-name" since="10.05"/>
+    <keyword type="function" name="midgard_schema_object_tree_get_parent_object ()" link="midgard-2.0-MidgardSchemaObjectTree.html#midgard-schema-object-tree-get-parent-object" since="10.05"/>
+    <keyword type="function" name="midgard_schema_object_tree_list_objects ()" link="midgard-2.0-MidgardSchemaObjectTree.html#midgard-schema-object-tree-list-objects" since="10.05"/>
+    <keyword type="function" name="midgard_schema_object_tree_list_children_objects ()" link="midgard-2.0-MidgardSchemaObjectTree.html#midgard-schema-object-tree-list-children-objects" since="10.05"/>
+    <keyword type="struct" name="struct MidgardSchemaObjectFactory" link="MidgardSchemaObjectFactory.html#MidgardSchemaObjectFactory-struct"/>
+    <keyword type="struct" name="struct MidgardSchemaObjectFactoryClass" link="MidgardSchemaObjectFactory.html#MidgardSchemaObjectFactoryClass"/>
+    <keyword type="function" name="midgard_schema_object_factory_get_object_by_guid ()" link="MidgardSchemaObjectFactory.html#midgard-schema-object-factory-get-object-by-guid" since="10.05"/>
+    <keyword type="function" name="midgard_schema_object_factory_get_object_by_path ()" link="MidgardSchemaObjectFactory.html#midgard-schema-object-factory-get-object-by-path" since="10.05"/>
+    <keyword type="function" name="midgard_schema_object_factory_object_undelete ()" link="MidgardSchemaObjectFactory.html#midgard-schema-object-factory-object-undelete" since="10.05"/>
+    <keyword type="function" name="midgard_schema_object_factory_create_object ()" link="MidgardSchemaObjectFactory.html#midgard-schema-object-factory-create-object" since="10.05.1"/>
+    <keyword type="struct" name="MidgardDBObjectPrivate" link="midgard-2.0-midgard-dbobject.html#MidgardDBObjectPrivate"/>
+    <keyword type="struct" name="struct MidgardDBObject" link="midgard-2.0-midgard-dbobject.html#MidgardDBObject-struct"/>
+    <keyword type="property" name="The &quot;connection&quot; property" link="midgard-2.0-midgard-dbobject.html#MidgardDBObject--connection"/>
+    <keyword type="struct" name="struct MidgardSchema" link="MidgardSchema.html#MidgardSchema-struct"/>
+    <keyword type="struct" name="struct MidgardSchemaClass" link="MidgardSchema.html#MidgardSchemaClass"/>
+    <keyword type="function" name="midgard_schema_init ()" link="MidgardSchema.html#midgard-schema-init"/>
+    <keyword type="function" name="midgard_schema_read_dir ()" link="MidgardSchema.html#midgard-schema-read-dir"/>
+    <keyword type="function" name="midgard_schema_type_exists ()" link="MidgardSchema.html#midgard-schema-type-exists"/>
+    <keyword type="function" name="midgard_schema_read_file ()" link="MidgardSchema.html#midgard-schema-read-file"/>
+    <keyword type="struct" name="struct MidgardTransactionClass" link="midgard-2.0-midgard-transaction.html#MidgardTransactionClass" since="9.09"/>
+    <keyword type="struct" name="struct MidgardTransaction" link="midgard-2.0-midgard-transaction.html#MidgardTransaction-struct"/>
+    <keyword type="function" name="midgard_transaction_new ()" link="midgard-2.0-midgard-transaction.html#midgard-transaction-new" since="9.09"/>
+    <keyword type="function" name="midgard_transaction_begin ()" link="midgard-2.0-midgard-transaction.html#midgard-transaction-begin" since="9.09"/>
+    <keyword type="function" name="midgard_transaction_commit ()" link="midgard-2.0-midgard-transaction.html#midgard-transaction-commit" since="9.09"/>
+    <keyword type="function" name="midgard_transaction_rollback ()" link="midgard-2.0-midgard-transaction.html#midgard-transaction-rollback" since="9.09"/>
+    <keyword type="function" name="midgard_transaction_get_status ()" link="midgard-2.0-midgard-transaction.html#midgard-transaction-get-status" since="9.09"/>
+    <keyword type="function" name="midgard_transaction_get_name ()" link="midgard-2.0-midgard-transaction.html#midgard-transaction-get-name" since="9.09"/>
+    <keyword type="property" name="The &quot;connection&quot; property" link="midgard-2.0-midgard-transaction.html#MidgardTransaction--connection"/>
+    <keyword type="macro" name="MIDGARD_OBJECT_GET_CLASS_BY_NAME()" link="MidgardObject.html#MIDGARD-OBJECT-GET-CLASS-BY-NAME:CAPS"/>
+    <keyword type="struct" name="struct MidgardObject" link="MidgardObject.html#MidgardObject-struct"/>
+    <keyword type="struct" name="MidgardObjectPrivate" link="MidgardObject.html#MidgardObjectPrivate"/>
+    <keyword type="struct" name="MidgardObjectClassPrivate" link="MidgardObject.html#MidgardObjectClassPrivate"/>
+    <keyword type="function" name="midgard_object_new ()" link="MidgardObject.html#midgard-object-new"/>
+    <keyword type="function" name="midgard_object_get_by_id ()" link="MidgardObject.html#midgard-object-get-by-id"/>
+    <keyword type="function" name="midgard_object_save ()" link="MidgardObject.html#midgard-object-save" since="10.05.5"/>
+    <keyword type="function" name="midgard_object_update ()" link="MidgardObject.html#midgard-object-update"/>
+    <keyword type="function" name="midgard_object_create ()" link="MidgardObject.html#midgard-object-create"/>
+    <keyword type="function" name="midgard_object_get_by_guid ()" link="MidgardObject.html#midgard-object-get-by-guid"/>
+    <keyword type="function" name="midgard_object_delete ()" link="MidgardObject.html#midgard-object-delete"/>
+    <keyword type="function" name="midgard_object_purge ()" link="MidgardObject.html#midgard-object-purge"/>
+    <keyword type="function" name="midgard_object_get_by_path ()" link="MidgardObject.html#midgard-object-get-by-path"/>
+    <keyword type="function" name="midgard_object_set_guid ()" link="MidgardObject.html#midgard-object-set-guid"/>
+    <keyword type="function" name="midgard_object_set_connection ()" link="MidgardObject.html#midgard-object-set-connection"/>
+    <keyword type="function" name="midgard_object_lock ()" link="MidgardObject.html#midgard-object-lock"/>
+    <keyword type="function" name="midgard_object_unlock ()" link="MidgardObject.html#midgard-object-unlock"/>
+    <keyword type="function" name="midgard_object_is_locked ()" link="MidgardObject.html#midgard-object-is-locked"/>
+    <keyword type="function" name="midgard_object_approve ()" link="MidgardObject.html#midgard-object-approve"/>
+    <keyword type="function" name="midgard_object_unapprove ()" link="MidgardObject.html#midgard-object-unapprove"/>
+    <keyword type="function" name="midgard_object_is_approved ()" link="MidgardObject.html#midgard-object-is-approved"/>
+    <keyword type="function" name="midgard_object_get_workspace ()" link="MidgardObject.html#midgard-object-get-workspace" since="10.05.5"/>
+    <keyword type="property" name="The &quot;action&quot; property" link="MidgardObject.html#MidgardObject--action"/>
+    <keyword type="property" name="The &quot;guid&quot; property" link="MidgardObject.html#MidgardObject--guid"/>
+    <keyword type="property" name="The &quot;metadata&quot; property" link="MidgardObject.html#MidgardObject--metadata"/>
+    <keyword type="signal" name="The &quot;action-approve&quot; signal" link="MidgardObject.html#MidgardObject-action-approve"/>
+    <keyword type="signal" name="The &quot;action-approve-hook&quot; signal" link="MidgardObject.html#MidgardObject-action-approve-hook"/>
+    <keyword type="signal" name="The &quot;action-approved&quot; signal" link="MidgardObject.html#MidgardObject-action-approved"/>
+    <keyword type="signal" name="The &quot;action-create&quot; signal" link="MidgardObject.html#MidgardObject-action-create"/>
+    <keyword type="signal" name="The &quot;action-create-hook&quot; signal" link="MidgardObject.html#MidgardObject-action-create-hook"/>
+    <keyword type="signal" name="The &quot;action-created&quot; signal" link="MidgardObject.html#MidgardObject-action-created"/>
+    <keyword type="signal" name="The &quot;action-delete&quot; signal" link="MidgardObject.html#MidgardObject-action-delete"/>
+    <keyword type="signal" name="The &quot;action-delete-hook&quot; signal" link="MidgardObject.html#MidgardObject-action-delete-hook"/>
+    <keyword type="signal" name="The &quot;action-deleted&quot; signal" link="MidgardObject.html#MidgardObject-action-deleted"/>
+    <keyword type="signal" name="The &quot;action-export&quot; signal" link="MidgardObject.html#MidgardObject-action-export"/>
+    <keyword type="signal" name="The &quot;action-export-hook&quot; signal" link="MidgardObject.html#MidgardObject-action-export-hook"/>
+    <keyword type="signal" name="The &quot;action-exported&quot; signal" link="MidgardObject.html#MidgardObject-action-exported"/>
+    <keyword type="signal" name="The &quot;action-import&quot; signal" link="MidgardObject.html#MidgardObject-action-import"/>
+    <keyword type="signal" name="The &quot;action-import-hook&quot; signal" link="MidgardObject.html#MidgardObject-action-import-hook"/>
+    <keyword type="signal" name="The &quot;action-imported&quot; signal" link="MidgardObject.html#MidgardObject-action-imported"/>
+    <keyword type="signal" name="The &quot;action-loaded&quot; signal" link="MidgardObject.html#MidgardObject-action-loaded"/>
+    <keyword type="signal" name="The &quot;action-loaded-hook&quot; signal" link="MidgardObject.html#MidgardObject-action-loaded-hook"/>
+    <keyword type="signal" name="The &quot;action-lock&quot; signal" link="MidgardObject.html#MidgardObject-action-lock"/>
+    <keyword type="signal" name="The &quot;action-lock-hook&quot; signal" link="MidgardObject.html#MidgardObject-action-lock-hook"/>
+    <keyword type="signal" name="The &quot;action-locked&quot; signal" link="MidgardObject.html#MidgardObject-action-locked"/>
+    <keyword type="signal" name="The &quot;action-purge&quot; signal" link="MidgardObject.html#MidgardObject-action-purge"/>
+    <keyword type="signal" name="The &quot;action-purge-hook&quot; signal" link="MidgardObject.html#MidgardObject-action-purge-hook"/>
+    <keyword type="signal" name="The &quot;action-purged&quot; signal" link="MidgardObject.html#MidgardObject-action-purged"/>
+    <keyword type="signal" name="The &quot;action-unapprove&quot; signal" link="MidgardObject.html#MidgardObject-action-unapprove"/>
+    <keyword type="signal" name="The &quot;action-unapprove-hook&quot; signal" link="MidgardObject.html#MidgardObject-action-unapprove-hook"/>
+    <keyword type="signal" name="The &quot;action-unapproved&quot; signal" link="MidgardObject.html#MidgardObject-action-unapproved"/>
+    <keyword type="signal" name="The &quot;action-unlock&quot; signal" link="MidgardObject.html#MidgardObject-action-unlock"/>
+    <keyword type="signal" name="The &quot;action-unlock-hook&quot; signal" link="MidgardObject.html#MidgardObject-action-unlock-hook"/>
+    <keyword type="signal" name="The &quot;action-unlocked&quot; signal" link="MidgardObject.html#MidgardObject-action-unlocked"/>
+    <keyword type="signal" name="The &quot;action-update&quot; signal" link="MidgardObject.html#MidgardObject-action-update"/>
+    <keyword type="signal" name="The &quot;action-update-hook&quot; signal" link="MidgardObject.html#MidgardObject-action-update-hook"/>
+    <keyword type="signal" name="The &quot;action-updated&quot; signal" link="MidgardObject.html#MidgardObject-action-updated"/>
+    <keyword type="struct" name="MidgardMetadata" link="midgard-2.0-midgard-metadata.html#MidgardMetadata-struct"/>
+    <keyword type="struct" name="MidgardMetadataClass" link="midgard-2.0-midgard-metadata.html#MidgardMetadataClass"/>
+    <keyword type="struct" name="MidgardMetadataPrivate" link="midgard-2.0-midgard-metadata.html#MidgardMetadataPrivate"/>
+    <keyword type="function" name="midgard_metadata_new ()" link="midgard-2.0-midgard-metadata.html#midgard-metadata-new"/>
+    <keyword type="property" name="The &quot;approved&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--approved"/>
+    <keyword type="property" name="The &quot;approver&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--approver"/>
+    <keyword type="property" name="The &quot;authors&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--authors"/>
+    <keyword type="property" name="The &quot;created&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--created"/>
+    <keyword type="property" name="The &quot;creator&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--creator"/>
+    <keyword type="property" name="The &quot;deleted&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--deleted"/>
+    <keyword type="property" name="The &quot;exported&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--exported"/>
+    <keyword type="property" name="The &quot;hidden&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--hidden"/>
+    <keyword type="property" name="The &quot;imported&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--imported"/>
+    <keyword type="property" name="The &quot;isapproved&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--isapproved"/>
+    <keyword type="property" name="The &quot;islocked&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--islocked"/>
+    <keyword type="property" name="The &quot;locked&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--locked"/>
+    <keyword type="property" name="The &quot;locker&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--locker"/>
+    <keyword type="property" name="The &quot;navnoentry&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--navnoentry"/>
+    <keyword type="property" name="The &quot;owner&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--owner"/>
+    <keyword type="property" name="The &quot;published&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--published"/>
+    <keyword type="property" name="The &quot;revised&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--revised"/>
+    <keyword type="property" name="The &quot;revision&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--revision"/>
+    <keyword type="property" name="The &quot;revisor&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--revisor"/>
+    <keyword type="property" name="The &quot;scheduleend&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--scheduleend"/>
+    <keyword type="property" name="The &quot;schedulestart&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--schedulestart"/>
+    <keyword type="property" name="The &quot;score&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--score"/>
+    <keyword type="property" name="The &quot;size&quot; property" link="midgard-2.0-midgard-metadata.html#MidgardMetadata--size"/>
+    <keyword type="function" name="midgard_object_create_attachment ()" link="midgard-2.0-midgard-object-attachment.html#midgard-object-create-attachment"/>
+    <keyword type="function" name="midgard_object_list_attachments ()" link="midgard-2.0-midgard-object-attachment.html#midgard-object-list-attachments"/>
+    <keyword type="function" name="midgard_object_find_attachments ()" link="midgard-2.0-midgard-object-attachment.html#midgard-object-find-attachments"/>
+    <keyword type="function" name="midgard_object_has_attachments ()" link="midgard-2.0-midgard-object-attachment.html#midgard-object-has-attachments"/>
+    <keyword type="function" name="midgard_object_delete_attachments ()" link="midgard-2.0-midgard-object-attachment.html#midgard-object-delete-attachments"/>
+    <keyword type="function" name="midgard_object_purge_attachments ()" link="midgard-2.0-midgard-object-attachment.html#midgard-object-purge-attachments"/>
+    <keyword type="function" name="midgard_object_get_parameter ()" link="midgard-2.0-midgard-object-parameter.html#midgard-object-get-parameter"/>
+    <keyword type="function" name="midgard_object_set_parameter ()" link="midgard-2.0-midgard-object-parameter.html#midgard-object-set-parameter"/>
+    <keyword type="function" name="midgard_object_list_parameters ()" link="midgard-2.0-midgard-object-parameter.html#midgard-object-list-parameters"/>
+    <keyword type="function" name="midgard_object_find_parameters ()" link="midgard-2.0-midgard-object-parameter.html#midgard-object-find-parameters"/>
+    <keyword type="function" name="midgard_object_has_parameters ()" link="midgard-2.0-midgard-object-parameter.html#midgard-object-has-parameters"/>
+    <keyword type="function" name="midgard_object_delete_parameters ()" link="midgard-2.0-midgard-object-parameter.html#midgard-object-delete-parameters"/>
+    <keyword type="function" name="midgard_object_purge_parameters ()" link="midgard-2.0-midgard-object-parameter.html#midgard-object-purge-parameters"/>
+    <keyword type="struct" name="struct MidgardView" link="MidgardView.html#MidgardView-struct"/>
+    <keyword type="struct" name="struct MidgardViewClass" link="MidgardView.html#MidgardViewClass" since="9.09"/>
+    <keyword type="struct" name="MidgardWorkspaceStorage" link="MidgardWorkspaceStorage.html#MidgardWorkspaceStorage-struct"/>
+    <keyword type="function" name="midgard_workspace_storage_get_path ()" link="MidgardWorkspaceStorage.html#midgard-workspace-storage-get-path" since="10.05.5"/>
+    <keyword type="function" name="midgard_workspace_storage_get_workspace_by_name ()" link="MidgardWorkspaceStorage.html#midgard-workspace-storage-get-workspace-by-name" since="10.05.5"/>
+    <keyword type="function" name="midgard_workspace_storage_list_children ()" link="MidgardWorkspaceStorage.html#midgard-workspace-storage-list-children" since="10.05.5"/>
+    <keyword type="function" name="midgard_workspace_storage_list_workspace_names ()" link="MidgardWorkspaceStorage.html#midgard-workspace-storage-list-workspace-names" since="10.05.5"/>
+    <keyword type="struct" name="MidgardWorkspaceContext" link="MidgardWorkspaceContext.html#MidgardWorkspaceContext-struct"/>
+    <keyword type="struct" name="struct MidgardWorkspaceContextClass" link="MidgardWorkspaceContext.html#MidgardWorkspaceContextClass"/>
+    <keyword type="function" name="midgard_workspace_context_new ()" link="MidgardWorkspaceContext.html#midgard-workspace-context-new" since="10.05.5"/>
+    <keyword type="function" name="midgard_workspace_context_has_workspace ()" link="MidgardWorkspaceContext.html#midgard-workspace-context-has-workspace" since="10.05.5"/>
+    <keyword type="struct" name="MidgardWorkspace" link="MidgardWorkspace.html#MidgardWorkspace-struct"/>
+    <keyword type="struct" name="struct MidgardWorkspaceClass" link="MidgardWorkspace.html#MidgardWorkspaceClass"/>
+    <keyword type="function" name="midgard_workspace_new ()" link="MidgardWorkspace.html#midgard-workspace-new" since="10.05.5"/>
+    <keyword type="function" name="midgard_workspace_get_context ()" link="MidgardWorkspace.html#midgard-workspace-get-context" since="10.05.5"/>
+    <keyword type="property" name="The &quot;guid&quot; property" link="MidgardWorkspace.html#MidgardWorkspace--guid"/>
+    <keyword type="property" name="The &quot;id&quot; property" link="MidgardWorkspace.html#MidgardWorkspace--id"/>
+    <keyword type="property" name="The &quot;name&quot; property" link="MidgardWorkspace.html#MidgardWorkspace--name"/>
+    <keyword type="property" name="The &quot;parent-workspace&quot; property" link="MidgardWorkspace.html#MidgardWorkspace--parent-workspace"/>
+    <keyword type="property" name="The &quot;path&quot; property" link="MidgardWorkspace.html#MidgardWorkspace--path"/>
+    <keyword type="property" name="The &quot;up&quot; property" link="MidgardWorkspace.html#MidgardWorkspace--up"/>
+    <keyword type="struct" name="MidgardWorkspaceManager" link="MidgardWorkspaceManager.html#MidgardWorkspaceManager-struct"/>
+    <keyword type="struct" name="struct MidgardWorkspaceManagerClass" link="MidgardWorkspaceManager.html#MidgardWorkspaceManagerClass"/>
+    <keyword type="function" name="midgard_workspace_manager_new ()" link="MidgardWorkspaceManager.html#midgard-workspace-manager-new" since="10.05.5"/>
+    <keyword type="function" name="midgard_workspace_manager_get_workspace_by_path ()" link="MidgardWorkspaceManager.html#midgard-workspace-manager-get-workspace-by-path" since="10.05.5"/>
+    <keyword type="function" name="midgard_workspace_manager_create_workspace ()" link="MidgardWorkspaceManager.html#midgard-workspace-manager-create-workspace" since="10.05.5"/>
+    <keyword type="function" name="midgard_workspace_manager_update_workspace ()" link="MidgardWorkspaceManager.html#midgard-workspace-manager-update-workspace" since="10.05.5"/>
+    <keyword type="function" name="midgard_workspace_manager_path_exists ()" link="MidgardWorkspaceManager.html#midgard-workspace-manager-path-exists" since="10.05.5"/>
+    <keyword type="function" name="midgard_workspace_manager_purge_workspace ()" link="MidgardWorkspaceManager.html#midgard-workspace-manager-purge-workspace" since="10.05.5"/>
+    <keyword type="function" name="midgard_workspace_manager_move_content ()" link="MidgardWorkspaceManager.html#midgard-workspace-manager-move-content" since="10.05.5"/>
+    <keyword type="property" name="The &quot;connection&quot; property" link="MidgardWorkspaceManager.html#MidgardWorkspaceManager--connection"/>
+    <keyword type="struct" name="struct MidgardQueryConstraint" link="MidgardQueryConstraint.html#MidgardQueryConstraint-struct"/>
+    <keyword type="struct" name="struct MidgardQueryConstraintClass" link="MidgardQueryConstraint.html#MidgardQueryConstraintClass"/>
+    <keyword type="function" name="midgard_query_constraint_new ()" link="MidgardQueryConstraint.html#midgard-query-constraint-new" since="10.05"/>
+    <keyword type="function" name="midgard_query_constraint_get_storage ()" link="MidgardQueryConstraint.html#midgard-query-constraint-get-storage" since="10.05"/>
+    <keyword type="function" name="midgard_query_constraint_set_storage ()" link="MidgardQueryConstraint.html#midgard-query-constraint-set-storage" since="10.05"/>
+    <keyword type="function" name="midgard_query_constraint_get_property ()" link="MidgardQueryConstraint.html#midgard-query-constraint-get-property" since="10.05"/>
+    <keyword type="function" name="midgard_query_constraint_set_property ()" link="MidgardQueryConstraint.html#midgard-query-constraint-set-property" since="10.05"/>
+    <keyword type="function" name="midgard_query_constraint_get_operator ()" link="MidgardQueryConstraint.html#midgard-query-constraint-get-operator" since="10.05"/>
+    <keyword type="function" name="midgard_query_constraint_set_operator ()" link="MidgardQueryConstraint.html#midgard-query-constraint-set-operator" since="10.05"/>
+    <keyword type="property" name="The &quot;holder&quot; property" link="MidgardQueryConstraint.html#MidgardQueryConstraint--holder"/>
+    <keyword type="property" name="The &quot;operator&quot; property" link="MidgardQueryConstraint.html#MidgardQueryConstraint--operator"/>
+    <keyword type="property" name="The &quot;property&quot; property" link="MidgardQueryConstraint.html#MidgardQueryConstraint--property"/>
+    <keyword type="property" name="The &quot;storage&quot; property" link="MidgardQueryConstraint.html#MidgardQueryConstraint--storage"/>
+    <keyword type="struct" name="MidgardQueryConstraintSimple" link="MidgardQueryConstraintSimple.html#MidgardQueryConstraintSimple-struct"/>
+    <keyword type="function" name="midgard_query_constraint_simple_list_constraints ()" link="MidgardQueryConstraintSimple.html#midgard-query-constraint-simple-list-constraints" since="10.05"/>
+    <keyword type="struct" name="struct MidgardQueryConstraintGroup" link="MidgardQueryConstraintGroup.html#MidgardQueryConstraintGroup-struct"/>
+    <keyword type="struct" name="struct MidgardQueryConstraintGroupClass" link="MidgardQueryConstraintGroup.html#MidgardQueryConstraintGroupClass"/>
+    <keyword type="function" name="midgard_query_constraint_group_new ()" link="MidgardQueryConstraintGroup.html#midgard-query-constraint-group-new" since="10.05.1"/>
+    <keyword type="function" name="midgard_query_constraint_group_new_valist ()" link="MidgardQueryConstraintGroup.html#midgard-query-constraint-group-new-valist" since="10.05.1"/>
+    <keyword type="function" name="midgard_query_constraint_group_new_with_constraints ()" link="MidgardQueryConstraintGroup.html#midgard-query-constraint-group-new-with-constraints" since="10.05.1"/>
+    <keyword type="function" name="midgard_query_constraint_group_get_group_type ()" link="MidgardQueryConstraintGroup.html#midgard-query-constraint-group-get-group-type" since="10.05"/>
+    <keyword type="function" name="midgard_query_constraint_group_set_group_type ()" link="MidgardQueryConstraintGroup.html#midgard-query-constraint-group-set-group-type" since="10.05"/>
+    <keyword type="function" name="midgard_query_constraint_group_add_constraint ()" link="MidgardQueryConstraintGroup.html#midgard-query-constraint-group-add-constraint" since="10.05"/>
+    <keyword type="property" name="The &quot;grouptype&quot; property" link="MidgardQueryConstraintGroup.html#MidgardQueryConstraintGroup--grouptype"/>
+    <keyword type="struct" name="MidgardQueryHolder" link="MidgardQueryHolder.html#MidgardQueryHolder-struct"/>
+    <keyword type="function" name="midgard_query_holder_get_value ()" link="MidgardQueryHolder.html#midgard-query-holder-get-value" since="10.05"/>
+    <keyword type="function" name="midgard_query_holder_set_value ()" link="MidgardQueryHolder.html#midgard-query-holder-set-value" since="10.05"/>
+    <keyword type="struct" name="struct MidgardQueryValue" link="MidgardQueryValue.html#MidgardQueryValue-struct"/>
+    <keyword type="struct" name="struct MidgardQueryValueClass" link="MidgardQueryValue.html#MidgardQueryValueClass"/>
+    <keyword type="function" name="midgard_query_value_new ()" link="MidgardQueryValue.html#midgard-query-value-new" since="10.05"/>
+    <keyword type="function" name="midgard_query_value_create_with_value ()" link="MidgardQueryValue.html#midgard-query-value-create-with-value" since="10.05.1"/>
+    <keyword type="struct" name="struct MidgardQueryProperty" link="MidgardQueryProperty.html#MidgardQueryProperty-struct"/>
+    <keyword type="struct" name="struct MidgardQueryPropertyClass" link="MidgardQueryProperty.html#MidgardQueryPropertyClass"/>
+    <keyword type="function" name="midgard_query_property_new ()" link="MidgardQueryProperty.html#midgard-query-property-new" since="10.05"/>
+    <keyword type="property" name="The &quot;property&quot; property" link="MidgardQueryProperty.html#MidgardQueryProperty--property"/>
+    <keyword type="property" name="The &quot;storage&quot; property" link="MidgardQueryProperty.html#MidgardQueryProperty--storage"/>
+    <keyword type="struct" name="struct MidgardQueryStorage" link="MidgardQueryStorage.html#MidgardQueryStorage-struct"/>
+    <keyword type="struct" name="struct MidgardQueryStorageClass" link="MidgardQueryStorage.html#MidgardQueryStorageClass"/>
+    <keyword type="function" name="midgard_query_storage_new ()" link="MidgardQueryStorage.html#midgard-query-storage-new" since="10.05"/>
+    <keyword type="property" name="The &quot;dbclass&quot; property" link="MidgardQueryStorage.html#MidgardQueryStorage--dbclass"/>
+    <keyword type="struct" name="MidgardQueryExecutor" link="MidgardQueryExecutor.html#MidgardQueryExecutor-struct"/>
+    <keyword type="struct" name="struct MidgardQueryExecutorClass" link="MidgardQueryExecutor.html#MidgardQueryExecutorClass"/>
+    <keyword type="function" name="midgard_query_executor_set_constraint ()" link="MidgardQueryExecutor.html#midgard-query-executor-set-constraint" since="10.05"/>
+    <keyword type="function" name="midgard_query_executor_set_limit ()" link="MidgardQueryExecutor.html#midgard-query-executor-set-limit" since="10.05"/>
+    <keyword type="function" name="midgard_query_executor_set_offset ()" link="MidgardQueryExecutor.html#midgard-query-executor-set-offset" since="10.05"/>
+    <keyword type="function" name="midgard_query_executor_add_order ()" link="MidgardQueryExecutor.html#midgard-query-executor-add-order" since="10.05"/>
+    <keyword type="function" name="midgard_query_executor_add_join ()" link="MidgardQueryExecutor.html#midgard-query-executor-add-join"/>
+    <keyword type="function" name="midgard_query_executor_get_results_count ()" link="MidgardQueryExecutor.html#midgard-query-executor-get-results-count" since="10.05"/>
+    <keyword type="property" name="The &quot;constraint&quot; property" link="MidgardQueryExecutor.html#MidgardQueryExecutor--constraint"/>
+    <keyword type="property" name="The &quot;resultscount&quot; property" link="MidgardQueryExecutor.html#MidgardQueryExecutor--resultscount"/>
+    <keyword type="signal" name="The &quot;execution-end&quot; signal" link="MidgardQueryExecutor.html#MidgardQueryExecutor-execution-end"/>
+    <keyword type="signal" name="The &quot;execution-start&quot; signal" link="MidgardQueryExecutor.html#MidgardQueryExecutor-execution-start"/>
+    <keyword type="struct" name="MidgardQuerySelect" link="MidgardQuerySelect.html#MidgardQuerySelect-struct"/>
+    <keyword type="struct" name="struct MidgardQuerySelectClass" link="MidgardQuerySelect.html#MidgardQuerySelectClass"/>
+    <keyword type="function" name="midgard_query_select_new ()" link="MidgardQuerySelect.html#midgard-query-select-new" since="10.05"/>
+    <keyword type="function" name="midgard_query_select_list_objects ()" link="MidgardQuerySelect.html#midgard-query-select-list-objects" since="10.05"/>
+    <keyword type="function" name="midgard_query_select_toggle_read_only ()" link="MidgardQuerySelect.html#midgard-query-select-toggle-read-only" since="10.05"/>
+    <keyword type="function" name="midgard_query_select_include_deleted ()" link="MidgardQuerySelect.html#midgard-query-select-include-deleted" since="10.05.1"/>
+    <keyword type="property" name="The &quot;connection&quot; property" link="MidgardQuerySelect.html#MidgardQuerySelect--connection"/>
+    <keyword type="property" name="The &quot;storage&quot; property" link="MidgardQuerySelect.html#MidgardQuerySelect--storage"/>
+    <keyword type="struct" name="MidgardQuerySelector" link="MidgardQuerySelector.html#MidgardQuerySelector-struct"/>
+    <keyword type="function" name="midgard_query_selector_get_connection ()" link="MidgardQuerySelector.html#midgard-query-selector-get-connection" since="10.05.6"/>
+    <keyword type="function" name="midgard_query_selector_get_query_result ()" link="MidgardQuerySelector.html#midgard-query-selector-get-query-result" since="10.05.6"/>
+    <keyword type="function" name="midgard_query_selector_get_query_string ()" link="MidgardQuerySelector.html#midgard-query-selector-get-query-string" since="10.05.6"/>
+    <keyword type="struct" name="MidgardQueryColumn" link="MidgardQueryColumn.html#MidgardQueryColumn-struct"/>
+    <keyword type="function" name="midgard_query_column_get_query_property ()" link="MidgardQueryColumn.html#midgard-query-column-get-query-property" since="10.05.6"/>
+    <keyword type="function" name="midgard_query_column_get_name ()" link="MidgardQueryColumn.html#midgard-query-column-get-name" since="10.05.6"/>
+    <keyword type="function" name="midgard_query_column_get_qualifier ()" link="MidgardQueryColumn.html#midgard-query-column-get-qualifier" since="10.05.6"/>
+    <keyword type="struct" name="MidgardQueryRow" link="MidgardQueryRow.html#MidgardQueryRow-struct"/>
+    <keyword type="function" name="midgard_query_row_get_object ()" link="MidgardQueryRow.html#midgard-query-row-get-object" since="10.05.6"/>
+    <keyword type="function" name="midgard_query_row_get_value ()" link="MidgardQueryRow.html#midgard-query-row-get-value" since="10.05.6"/>
+    <keyword type="function" name="midgard_query_row_get_values ()" link="MidgardQueryRow.html#midgard-query-row-get-values" since="10.05.6"/>
+    <keyword type="struct" name="MidgardQueryResult" link="MidgardQueryResult.html#MidgardQueryResult-struct"/>
+    <keyword type="function" name="midgard_query_result_get_objects ()" link="MidgardQueryResult.html#midgard-query-result-get-objects" since="10.05.6"/>
+    <keyword type="function" name="midgard_query_result_get_columns ()" link="MidgardQueryResult.html#midgard-query-result-get-columns" since="10.05.6"/>
+    <keyword type="function" name="midgard_query_result_get_column_names ()" link="MidgardQueryResult.html#midgard-query-result-get-column-names" since="10.05.6"/>
+    <keyword type="function" name="midgard_query_result_get_rows ()" link="MidgardQueryResult.html#midgard-query-result-get-rows" since="10.05.6"/>
+    <keyword type="struct" name="MidgardSqlQueryColumn" link="MidgardSqlQueryColumn.html#MidgardSqlQueryColumn-struct"/>
+    <keyword type="struct" name="struct MidgardSqlQueryColumnClass" link="MidgardSqlQueryColumn.html#MidgardSqlQueryColumnClass"/>
+    <keyword type="function" name="midgard_sql_query_column_new ()" link="MidgardSqlQueryColumn.html#midgard-sql-query-column-new" since="10.05.6"/>
+    <keyword type="property" name="The &quot;name&quot; property" link="MidgardSqlQueryColumn.html#MidgardSqlQueryColumn--name"/>
+    <keyword type="property" name="The &quot;qualifier&quot; property" link="MidgardSqlQueryColumn.html#MidgardSqlQueryColumn--qualifier"/>
+    <keyword type="property" name="The &quot;queryproperty&quot; property" link="MidgardSqlQueryColumn.html#MidgardSqlQueryColumn--queryproperty"/>
+    <keyword type="struct" name="struct MidgardSqlQueryConstraint" link="MidgardSqlQueryConstraint.html#MidgardSqlQueryConstraint-struct"/>
+    <keyword type="struct" name="struct MidgardSqlQueryConstraintClass" link="MidgardSqlQueryConstraint.html#MidgardSqlQueryConstraintClass"/>
+    <keyword type="function" name="midgard_sql_query_constraint_new ()" link="MidgardSqlQueryConstraint.html#midgard-sql-query-constraint-new" since="10.05.6"/>
+    <keyword type="function" name="midgard_sql_query_constraint_get_column ()" link="MidgardSqlQueryConstraint.html#midgard-sql-query-constraint-get-column" since="10.05.6"/>
+    <keyword type="function" name="midgard_sql_query_constraint_set_column ()" link="MidgardSqlQueryConstraint.html#midgard-sql-query-constraint-set-column" since="10.05.6"/>
+    <keyword type="function" name="midgard_sql_query_constraint_get_operator ()" link="MidgardSqlQueryConstraint.html#midgard-sql-query-constraint-get-operator" since="10.05.6"/>
+    <keyword type="function" name="midgard_sql_query_constraint_set_operator ()" link="MidgardSqlQueryConstraint.html#midgard-sql-query-constraint-set-operator" since="10.05.6"/>
+    <keyword type="function" name="midgard_sql_query_constraint_get_holder ()" link="MidgardSqlQueryConstraint.html#midgard-sql-query-constraint-get-holder" since="10.05.6"/>
+    <keyword type="property" name="The &quot;column&quot; property" link="MidgardSqlQueryConstraint.html#MidgardSqlQueryConstraint--column"/>
+    <keyword type="property" name="The &quot;holder&quot; property" link="MidgardSqlQueryConstraint.html#MidgardSqlQueryConstraint--holder"/>
+    <keyword type="property" name="The &quot;operator&quot; property" link="MidgardSqlQueryConstraint.html#MidgardSqlQueryConstraint--operator"/>
+    <keyword type="struct" name="MidgardSqlQueryResult" link="MidgardSqlQueryResult.html#MidgardSqlQueryResult-struct"/>
+    <keyword type="struct" name="struct MidgardSqlQueryResultClass" link="MidgardSqlQueryResult.html#MidgardSqlQueryResultClass"/>
+    <keyword type="function" name="midgard_sql_query_result_new ()" link="MidgardSqlQueryResult.html#midgard-sql-query-result-new" since="10.05.6"/>
+    <keyword type="function" name="midgard_sql_query_result_set_columns ()" link="MidgardSqlQueryResult.html#midgard-sql-query-result-set-columns"/>
+    <keyword type="property" name="The &quot;model&quot; property" link="MidgardSqlQueryResult.html#MidgardSqlQueryResult--model"/>
+    <keyword type="property" name="The &quot;selector&quot; property" link="MidgardSqlQueryResult.html#MidgardSqlQueryResult--selector"/>
+    <keyword type="struct" name="MidgardSqlQueryRow" link="MidgardSqlQueryRow.html#MidgardSqlQueryRow-struct"/>
+    <keyword type="struct" name="struct MidgardSqlQueryRowClass" link="MidgardSqlQueryRow.html#MidgardSqlQueryRowClass"/>
+    <keyword type="function" name="midgard_sql_query_row_new ()" link="MidgardSqlQueryRow.html#midgard-sql-query-row-new" since="10.05.6"/>
+    <keyword type="property" name="The &quot;connection&quot; property" link="MidgardSqlQueryRow.html#MidgardSqlQueryRow--connection"/>
+    <keyword type="property" name="The &quot;model&quot; property" link="MidgardSqlQueryRow.html#MidgardSqlQueryRow--model"/>
+    <keyword type="property" name="The &quot;row&quot; property" link="MidgardSqlQueryRow.html#MidgardSqlQueryRow--row"/>
+    <keyword type="struct" name="MidgardSqlQuerySelectData" link="MidgardSqlQuerySelectData.html#MidgardSqlQuerySelectData-struct"/>
+    <keyword type="struct" name="struct MidgardSqlQuerySelectDataClass" link="MidgardSqlQuerySelectData.html#MidgardSqlQuerySelectDataClass"/>
+    <keyword type="function" name="midgard_sql_query_select_data_new ()" link="MidgardSqlQuerySelectData.html#midgard-sql-query-select-data-new" since="10.05.6"/>
+    <keyword type="function" name="midgard_sql_query_select_data_add_column ()" link="MidgardSqlQuerySelectData.html#midgard-sql-query-select-data-add-column" since="10.05.6"/>
+    <keyword type="function" name="midgard_sql_query_select_data_get_columns ()" link="MidgardSqlQuerySelectData.html#midgard-sql-query-select-data-get-columns" since="10.05.6"/>
+    <keyword type="property" name="The &quot;connection&quot; property" link="MidgardSqlQuerySelectData.html#MidgardSqlQuerySelectData--connection"/>
+    <keyword type="struct" name="struct MidgardReflectorProperty" link="MidgardReflectorProperty.html#MidgardReflectorProperty-struct"/>
+    <keyword type="function" name="midgard_reflector_property_new ()" link="MidgardReflectorProperty.html#midgard-reflector-property-new" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_property_get_midgard_type ()" link="MidgardReflectorProperty.html#midgard-reflector-property-get-midgard-type" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_property_is_link ()" link="MidgardReflectorProperty.html#midgard-reflector-property-is-link" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_property_is_linked ()" link="MidgardReflectorProperty.html#midgard-reflector-property-is-linked" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_property_get_link_class ()" link="MidgardReflectorProperty.html#midgard-reflector-property-get-link-class" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_property_get_link_name ()" link="MidgardReflectorProperty.html#midgard-reflector-property-get-link-name" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_property_get_link_target ()" link="MidgardReflectorProperty.html#midgard-reflector-property-get-link-target" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_property_description ()" link="MidgardReflectorProperty.html#midgard-reflector-property-description" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_property_get_user_value ()" link="MidgardReflectorProperty.html#midgard-reflector-property-get-user-value" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_property_is_private ()" link="MidgardReflectorProperty.html#midgard-reflector-property-is-private" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_property_is_unique ()" link="MidgardReflectorProperty.html#midgard-reflector-property-is-unique" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_property_is_primary ()" link="MidgardReflectorProperty.html#midgard-reflector-property-is-primary" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_property_has_default_value ()" link="MidgardReflectorProperty.html#midgard-reflector-property-has-default-value" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_property_get_default_value ()" link="MidgardReflectorProperty.html#midgard-reflector-property-get-default-value" since="10.05"/>
+    <keyword type="property" name="The &quot;dbclass&quot; property" link="MidgardReflectorProperty.html#MidgardReflectorProperty--dbclass"/>
+    <keyword type="struct" name="struct MidgardReflectorObject" link="MidgardReflectorObject.html#MidgardReflectorObject-struct"/>
+    <keyword type="function" name="midgard_reflector_object_get_property_primary ()" link="MidgardReflectorObject.html#midgard-reflector-object-get-property-primary" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_object_get_property_up ()" link="MidgardReflectorObject.html#midgard-reflector-object-get-property-up" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_object_get_property_parent ()" link="MidgardReflectorObject.html#midgard-reflector-object-get-property-parent" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_object_get_property_unique ()" link="MidgardReflectorObject.html#midgard-reflector-object-get-property-unique" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_object_list_children ()" link="MidgardReflectorObject.html#midgard-reflector-object-list-children" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_object_has_metadata_class ()" link="MidgardReflectorObject.html#midgard-reflector-object-has-metadata-class"/>
+    <keyword type="function" name="midgard_reflector_object_get_metadata_class ()" link="MidgardReflectorObject.html#midgard-reflector-object-get-metadata-class" since="10.05"/>
+    <keyword type="function" name="midgard_reflector_object_get_schema_value ()" link="MidgardReflectorObject.html#midgard-reflector-object-get-schema-value" since="10.05"/>
+    <keyword type="struct" name="MidgardReplicatorPrivate" link="midgard-2.0-midgard-replicator.html#MidgardReplicatorPrivate"/>
+    <keyword type="struct" name="struct MidgardReplicator" link="midgard-2.0-midgard-replicator.html#MidgardReplicator"/>
+    <keyword type="typedef" name="MidgardReplicatorClass" link="midgard-2.0-midgard-replicator.html#MidgardReplicatorClass"/>
+    <keyword type="function" name="midgard_replicator_serialize ()" link="midgard-2.0-midgard-replicator.html#midgard-replicator-serialize"/>
+    <keyword type="function" name="midgard_replicator_export ()" link="midgard-2.0-midgard-replicator.html#midgard-replicator-export"/>
+    <keyword type="function" name="midgard_replicator_export_purged ()" link="midgard-2.0-midgard-replicator.html#midgard-replicator-export-purged"/>
+    <keyword type="function" name="midgard_replicator_serialize_blob ()" link="midgard-2.0-midgard-replicator.html#midgard-replicator-serialize-blob"/>
+    <keyword type="function" name="midgard_replicator_export_blob ()" link="midgard-2.0-midgard-replicator.html#midgard-replicator-export-blob"/>
+    <keyword type="function" name="midgard_replicator_export_by_guid ()" link="midgard-2.0-midgard-replicator.html#midgard-replicator-export-by-guid"/>
+    <keyword type="function" name="midgard_replicator_export_media ()" link="midgard-2.0-midgard-replicator.html#midgard-replicator-export-media"/>
+    <keyword type="function" name="midgard_replicator_unserialize ()" link="midgard-2.0-midgard-replicator.html#midgard-replicator-unserialize"/>
+    <keyword type="function" name="midgard_replicator_import_object ()" link="midgard-2.0-midgard-replicator.html#midgard-replicator-import-object"/>
+    <keyword type="function" name="midgard_replicator_import_from_xml ()" link="midgard-2.0-midgard-replicator.html#midgard-replicator-import-from-xml"/>
+    <keyword type="struct" name="MidgardRepligard" link="MidgardRepligard.html#MidgardRepligard-struct"/>
+    <keyword type="struct" name="struct MidgardRepligardClass" link="MidgardRepligard.html#MidgardRepligardClass"/>
+    <keyword type="function" name="midgard_repligard_new ()" link="MidgardRepligard.html#midgard-repligard-new" since="10.05.5"/>
+    <keyword type="function" name="midgard_repligard_create_object_info ()" link="MidgardRepligard.html#midgard-repligard-create-object-info" since="10.05.5"/>
+    <keyword type="function" name="midgard_repligard_update_object_info ()" link="MidgardRepligard.html#midgard-repligard-update-object-info" since="10.05.5"/>
+    <keyword type="property" name="The &quot;action&quot; property" link="MidgardRepligard.html#MidgardRepligard--action"/>
+    <keyword type="property" name="The &quot;reference&quot; property" link="MidgardRepligard.html#MidgardRepligard--reference"/>
+    <keyword type="property" name="The &quot;type&quot; property" link="MidgardRepligard.html#MidgardRepligard--type"/>
+    <keyword type="property" name="The &quot;workspace&quot; property" link="MidgardRepligard.html#MidgardRepligard--workspace"/>
+    <keyword type="property" name="The &quot;workspaceoid&quot; property" link="MidgardRepligard.html#MidgardRepligard--workspaceoid"/>
+    <keyword type="struct" name="MidgardDbus" link="MidgardDbus.html#MidgardDbus-struct"/>
+    <keyword type="struct" name="struct MidgardDbusClass" link="MidgardDbus.html#MidgardDbusClass"/>
+    <keyword type="function" name="midgard_dbus_new ()" link="MidgardDbus.html#midgard-dbus-new"/>
+    <keyword type="function" name="midgard_dbus_is_enabled ()" link="MidgardDbus.html#midgard-dbus-is-enabled" since="10.05.1"/>
+    <keyword type="function" name="midgard_dbus_create_dbus ()" link="MidgardDbus.html#midgard-dbus-create-dbus" since="10.05.1"/>
+    <keyword type="function" name="midgard_dbus_send ()" link="MidgardDbus.html#midgard-dbus-send"/>
+    <keyword type="function" name="midgard_dbus_get_message ()" link="MidgardDbus.html#midgard-dbus-get-message"/>
+    <keyword type="signal" name="The &quot;notified&quot; signal" link="MidgardDbus.html#MidgardDbus-notified"/>
+    <keyword type="struct" name="MidgardValidable" link="MidgardValidable.html#MidgardValidable-struct"/>
+    <keyword type="function" name="midgard_validable_validate ()" link="MidgardValidable.html#midgard-validable-validate" since="10.05.5"/>
+    <keyword type="function" name="midgard_validable_is_valid ()" link="MidgardValidable.html#midgard-validable-is-valid" since="10.05.5"/>
+    <keyword type="struct" name="MidgardExecutable" link="MidgardExecutable.html#MidgardExecutable-struct"/>
+    <keyword type="function" name="midgard_executable_execute ()" link="MidgardExecutable.html#midgard-executable-execute" since="10.05.5"/>
+    <keyword type="macro" name="MGD_TYPE_LONGTEXT" link="midgard-2.0-midgard-type.html#MGD-TYPE-LONGTEXT:CAPS"/>
+    <keyword type="macro" name="MGD_TYPE_PARAM_LONGTEXT" link="midgard-2.0-midgard-type.html#MGD-TYPE-PARAM-LONGTEXT:CAPS"/>
+    <keyword type="function" name="midgard_param_longtext_get_type ()" link="midgard-2.0-midgard-type.html#midgard-param-longtext-get-type"/>
+    <keyword type="macro" name="MGD_TYPE_TIMESTAMP" link="midgard-2.0-midgard-type.html#MGD-TYPE-TIMESTAMP:CAPS"/>
+    <keyword type="function" name="midgard_timestamp_get_type ()" link="midgard-2.0-midgard-type.html#midgard-timestamp-get-type"/>
+    <keyword type="macro" name="MGD_TYPE_GUID" link="midgard-2.0-midgard-type.html#MGD-TYPE-GUID:CAPS"/>
+    <keyword type="function" name="midgard_guid_get_type ()" link="midgard-2.0-midgard-type.html#midgard-guid-get-type"/>
+    <keyword type="macro" name="MGD_TYPE_NONE" link="midgard-2.0-midgard-type.html#MGD-TYPE-NONE:CAPS"/>
+    <keyword type="macro" name="MGD_TYPE_STRING" link="midgard-2.0-midgard-type.html#MGD-TYPE-STRING:CAPS"/>
+    <keyword type="macro" name="MGD_TYPE_UINT" link="midgard-2.0-midgard-type.html#MGD-TYPE-UINT:CAPS"/>
+    <keyword type="macro" name="MGD_TYPE_FLOAT" link="midgard-2.0-midgard-type.html#MGD-TYPE-FLOAT:CAPS"/>
+    <keyword type="macro" name="MGD_TYPE_BOOLEAN" link="midgard-2.0-midgard-type.html#MGD-TYPE-BOOLEAN:CAPS"/>
+    <keyword type="macro" name="MGD_TYPE_INT" link="midgard-2.0-midgard-type.html#MGD-TYPE-INT:CAPS"/>
+    <keyword type="macro" name="MIDGARD_TYPE_TIMESTAMP" link="midgard-2.0-midgard-timestamp.html#MIDGARD-TYPE-TIMESTAMP:CAPS"/>
+    <keyword type="function" name="midgard_timestamp_get_type ()" link="midgard-2.0-midgard-timestamp.html#midgard-timestamp-get-type"/>
+    <keyword type="function" name="midgard_version ()" link="midgard-2.0-midgard.html#midgard-version"/>
+    <keyword type="function" name="midgard_init ()" link="midgard-2.0-midgard.html#midgard-init"/>
+    <keyword type="function" name="midgard_is_uuid ()" link="midgard-2.0-uuid.html#midgard-is-uuid"/>
+    <keyword type="function" name="midgard_uuid_new ()" link="midgard-2.0-uuid.html#midgard-uuid-new"/>
+    <keyword type="function" name="midgard_uuid_external ()" link="midgard-2.0-uuid.html#midgard-uuid-external"/>
+    <keyword type="function" name="midgard_is_guid ()" link="midgard-2.0-guid.html#midgard-is-guid"/>
+    <keyword type="function" name="midgard_guid_new ()" link="midgard-2.0-guid.html#midgard-guid-new"/>
+    <keyword type="function" name="midgard_guid_external ()" link="midgard-2.0-guid.html#midgard-guid-external"/>
+    <keyword type="function" name="mgd_create_guid ()" link="midgard-2.0-guid.html#mgd-create-guid"/>
+    <keyword type="macro" name="MIDGARD_LIB_PREFIX" link="midgard-2.0-midgard-config-auto.html#MIDGARD-LIB-PREFIX:CAPS"/>
+    <keyword type="macro" name="MIDGARD_GLOBAL_SCHEMA" link="midgard-2.0-midgard-config-auto.html#MIDGARD-GLOBAL-SCHEMA:CAPS"/>
+    <keyword type="macro" name="MIDGARD_LSCHEMA_DIR" link="midgard-2.0-midgard-config-auto.html#MIDGARD-LSCHEMA-DIR:CAPS"/>
+    <keyword type="macro" name="MIDGARD_SHARE_DIR" link="midgard-2.0-midgard-config-auto.html#MIDGARD-SHARE-DIR:CAPS"/>
+    <keyword type="macro" name="MIDGARD_LIB_VERSION" link="midgard-2.0-midgard-config-auto.html#MIDGARD-LIB-VERSION:CAPS"/>
+    <keyword type="macro" name="MIDGARD_LIB_VERSION_STRING" link="midgard-2.0-midgard-config-auto.html#MIDGARD-LIB-VERSION-STRING:CAPS"/>
+  </functions>
+</book>
