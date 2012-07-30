@@ -17,7 +17,7 @@ There are couple of ways to set up the directory which contains schema files wit
 
 ### Core's prefix
 
-By default, all schemas will be read from the share dir (e.g: '/usr/share','/usr/local/share'). So if these types has to be registered,there's no need to alter configuration.
+By default, all schemas will be read from the share dir (e.g: `/usr/share`, `/usr/local/share`). So if these types has to be registered,there's no need to alter configuration.
 
 ### Setting share dir with environmental variable
 
@@ -38,11 +38,13 @@ In virtual host configuration:
 
     php_admin_value midgard.configuration 'midgard'
 
-The configuration file 'midgard' must exists in system configuration directory ('/etc/midgard2/conf.d').
+The configuration file `midgard` must exists in system configuration directory (`/etc/midgard2/conf.d`). You can also specify a config file from an arbitrary path:
 
-In apache httpd environment, all files existing in '/etc/midgard2/conf.d' will be read upon module startup, all classes will be registered and for every configuration,new connection will be implicitly established. Classes will be registered "globally", which means every class will be available for every virtual host. Connection will be available thanks to php_admin_value being set in virtual host, and as identified by name, it'll be shared among different virtual hosts with the same configuration name specified.
+    php_admin_value midgard.configuration_file '/full/path/to/config/file'
 
-This way is recommended also for safety reasons. All files in '/etc/midgard2/conf.d' directory can be readable only by root user. And as apache httpd server starts up it's able to read every single configuration with root privileges, and as soon as all its modules (including php) are loaded, the privileges are dropped, so it's not possible to read those files from any code executed within virtual hosts. 
+In apache httpd environment, all files existing in `/etc/midgard2/conf.d` will be read upon module startup, all classes will be registered and for every configuration,new connection will be implicitly established. Classes will be registered "globally", which means every class will be available for every virtual host. Connection will be available thanks to `php_admin_value` being set in virtual host, and as identified by name, it'll be shared among different virtual hosts with the same configuration name specified.
+
+This way is recommended also for safety reasons. All files in `/etc/midgard2/conf.d` directory can be readable only by root user. And as apache httpd server starts up it's able to read every single configuration with root privileges, and as soon as all its modules (including php) are loaded, the privileges are dropped, so it's not possible to read those files from any code executed within virtual hosts. 
 
 ### Setting the sharedir in configuration file for one host or one application.
 
@@ -54,4 +56,4 @@ In php.ini (or midgard2.ini) these config keys must be added:
     midgard.engine On
     midgard.configuration_file "/absolute/path/to/configuration"
 
-'midgard.http' directive set to Off disables opening new multiple connections implicitly when php module is loaded, but allows to register all classes found in share directory defined in configuration and establish only one connection for given config file.
+`midgard.http` directive set to Off disables opening new multiple connections implicitly when php module is loaded, but allows to register all classes found in share directory defined in configuration and establish only one connection for given config file.
