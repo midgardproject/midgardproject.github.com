@@ -54,4 +54,6 @@ In php.ini (or midgard2.ini) these config keys must be added:
     midgard.engine On
     midgard.configuration_file "/absolute/path/to/configuration"
 
-'midgard.http' directive set to Off disables opening new multiple connections implicitly when php module is loaded, but allows to register all classes found in share directory defined in configuration and establish only one connection for given config file.
+'midgard.configuration_file' directive takes precedence, so in case of virtual host, if such is configured, it'll be used to establish connection for that host. 
+
+'midgard.http' directive set to Off disables opening new multiple connections implicitly when php module is loaded, and establishes connection for given config file during the first request made.
