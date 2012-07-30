@@ -7,7 +7,7 @@ __Sitegroups__ provide a method of hosting multiple organizations within one Mid
 Every record in the database is tagged as belonging to a specific sitegroup. The effect is much the same as storing sites for separate clients in separate databases in that resources can't be accessed across Sitegroups and has the following benefits:
 
 * Sitegroups reduce the number of persistent database connections. When storing hosts in distinct databases, each Apache handler process opens a persistent connection to every database. It is not unusual to have 20-30 handler processes active per Host. Which, when multiplied by the number of clients, surpasses the default MySQL configuration for 100 connections.
-* One special Sitegroup, _Sitegroup 0_ (_SG0_), is read-only for all other Sitegroups and merges transparently with any other Sitegroup. You can therefore [Installing Additional Packages|install] one single [Midgard administrative interfaces|administration interface] that is available to all while still maintaining the separation between several sites. Also, upgrades to the administration interface will immediately be available to everybody.
+* One special Sitegroup, _Sitegroup 0_ (_SG0_), is read-only for all other Sitegroups and merges transparently with any other Sitegroup. You can therefore install one single administration interface that is available to all while still maintaining the separation between several sites. Also, upgrades to the administration interface will immediately be available to everybody.
 * You can grant separate administration privileges for each Sitegroup.
 * You can easily limit the Disk Quota and number of allowed MgdSchema objects of a specific type for each Sitegroup
 * Sitegroups and websites are easy to create using the Midgard Site Wizard
@@ -16,7 +16,7 @@ Sitegroups account for three categories of Midgard users depending on their acce
 
 * Root level users ( __Root users__) have full access to every resource within every Sitegroup, including SG0.
 * Admin level users ( __Administrators__ ) have almost full access to every resource in one Sitegroup. They may be seen as sites administrators, although there may be several sites in one Sitegroup.
-* User level users ( __Users__ ), whose privileges are described in [Permissions in Midgard|Midgard Permissions] documentation
+* User level users ( __Users__ ), whose privileges are described in documentation
 
 ## The Administrator Group: root level users
 
