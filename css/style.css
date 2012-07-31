@@ -188,6 +188,18 @@ article .tabs{
 	font-size: 11px;
 }
 
+article .update {
+  background-color: #73d216;
+  padding: 1em;
+  text-align: center;
+  border-radius: 6px;
+}
+
+article .update a {
+  color: #000000;
+  text-decoration: underline;
+}
+
 /*---------------------------------------------------*/
 .newslist ul{
 	list-style: none;
