@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<header> 
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navigation"><a href="index.html">Home</a></div>
+<h1> Class: MidgardConnection</h1><p>midgard_connection class represents connection to underlying data-source and is responsible for holding and setting environmental variables (like error, authenticated user, debug level, etc.)</p><h2>Methods</h2><span class="reserved_word"> </span> <a href="MidgardConnection___construct.html">__construct</a> ()</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection___destruct.html">__destruct</a> ()</br>
+<span class="reserved_word">public static</span> <a href="MidgardConnection_get_instance.html">get_instance</a> ()</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_copy.html">copy</a> ()</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_open.html">open</a> (name)</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_reopen.html">reopen</a> ()</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_open_config.html">open_config</a> (config)</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_is_connected.html">is_connected</a> ()</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_connect.html">connect</a> (signal, callback, [userdata])</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_get_error.html">get_error</a> ()</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_set_error.html">set_error</a> (errorcode)</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_get_error_string.html">get_error_string</a> ()</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_get_user.html">get_user</a> ()</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_set_loglevel.html">set_loglevel</a> (level, [callback])</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_list_auth_types.html">list_auth_types</a> ()</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_enable_workspace.html">enable_workspace</a> (toggle)</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_is_enabled_workspace.html">is_enabled_workspace</a> ()</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_enable_replication.html">enable_replication</a> (toggle)</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_is_enabled_replication.html">is_enabled_replication</a> ()</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_enable_dbus.html">enable_dbus</a> (toggle)</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_is_enabled_dbus.html">is_enabled_dbus</a> ()</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_enable_quota.html">enable_quota</a> (toggle)</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_is_enabled_quota.html">is_enabled_quota</a> ()</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_get_workspace.html">get_workspace</a> ()</br>
+<span class="reserved_word">public </span> <a href="MidgardConnection_set_workspace.html">set_workspace</a> (workspace)</br>
+<h2>Signals</h2>error</br>auth-changed</br>lost-provider</br>connected</br>disconnected</br>

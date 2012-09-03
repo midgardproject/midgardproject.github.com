@@ -11,6 +11,10 @@ product_categories:
         label: Midgard2 core
         tagline: "C (GObject) API"
         url: "/docs/api/core/ratatoskr"
+      -
+        label: PHP extension
+        tagline: "PHP5 language bindings"
+        url: "/docs/api/php/ratatoskr"
 
 title: "The Midgard Project"
 ---
