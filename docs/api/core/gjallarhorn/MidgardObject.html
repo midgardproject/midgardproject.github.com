@@ -1,0 +1,1743 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardObject</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Schema-User-Defined-Types.html" title="Midgard Schema User Defined Types">
+<link rel="prev" href="midgard-Midgard-Schema-User-Defined-Types.html" title="Midgard Schema User Defined Types">
+<link rel="next" href="midgard-2.0-midgard-metadata.html" title="MidgardMetadata">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="midgard-Midgard-Schema-User-Defined-Types.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Schema-User-Defined-Types.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="midgard-2.0-midgard-metadata.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardObject.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardObject.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardObject.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardObject.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#MidgardObject.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardObject"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardObject.top_of_page"></a>MidgardObject</span></h2>
+<p>MidgardObject</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardObject.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+#define             <a class="link" href="MidgardObject.html#MIDGARD-OBJECT-GET-CLASS-BY-NAME:CAPS" title="MIDGARD_OBJECT_GET_CLASS_BY_NAME()">MIDGARD_OBJECT_GET_CLASS_BY_NAME</a>    (name)
+struct              <a class="link" href="MidgardObject.html#MidgardObject-struct" title="struct MidgardObject">MidgardObject</a>;
+                    <a class="link" href="MidgardObject.html#MidgardObjectPrivate" title="MidgardObjectPrivate">MidgardObjectPrivate</a>;
+                    <a class="link" href="MidgardObject.html#MidgardObjectClassPrivate" title="MidgardObjectClassPrivate">MidgardObjectClassPrivate</a>;
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> *     <a class="link" href="MidgardObject.html#midgard-object-new" title="midgard_object_new ()">midgard_object_new</a>                  (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *value</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardObject.html#midgard-object-get-by-id" title="midgard_object_get_by_id ()">midgard_object_get_by_id</a>            (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> id</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardObject.html#midgard-object-save" title="midgard_object_save ()">midgard_object_save</a>                 (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardObject.html#midgard-object-update" title="midgard_object_update ()">midgard_object_update</a>               (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardObject.html#midgard-object-create" title="midgard_object_create ()">midgard_object_create</a>               (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardObject.html#midgard-object-get-by-guid" title="midgard_object_get_by_guid ()">midgard_object_get_by_guid</a>          (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *guid</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardObject.html#midgard-object-delete" title="midgard_object_delete ()">midgard_object_delete</a>               (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> check_dependents</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardObject.html#midgard-object-purge" title="midgard_object_purge ()">midgard_object_purge</a>                (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> check_dependents</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardObject.html#midgard-object-get-by-path" title="midgard_object_get_by_path ()">midgard_object_get_by_path</a>          (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardObject.html#midgard-object-set-guid" title="midgard_object_set_guid ()">midgard_object_set_guid</a>             (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *guid</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardObject.html#midgard-object-set-connection" title="midgard_object_set_connection ()">midgard_object_set_connection</a>       (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardObject.html#midgard-object-lock" title="midgard_object_lock ()">midgard_object_lock</a>                 (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardObject.html#midgard-object-unlock" title="midgard_object_unlock ()">midgard_object_unlock</a>               (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardObject.html#midgard-object-is-locked" title="midgard_object_is_locked ()">midgard_object_is_locked</a>            (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardObject.html#midgard-object-approve" title="midgard_object_approve ()">midgard_object_approve</a>              (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardObject.html#midgard-object-unapprove" title="midgard_object_unapprove ()">midgard_object_unapprove</a>            (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardObject.html#midgard-object-is-approved" title="midgard_object_is_approved ()">midgard_object_is_approved</a>          (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);
+<a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="returnvalue">MidgardWorkspace</span></a> *  <a class="link" href="MidgardObject.html#midgard-object-get-workspace" title="midgard_object_get_workspace ()">midgard_object_get_workspace</a>        (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardObject.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject">MidgardDBObject</a>
+         +----MidgardObject
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardObject.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardObject.html#MidgardObject--action" title='The "action" property'>action</a>"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="MidgardObject.html#MidgardObject--guid" title='The "guid" property'>guid</a>"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read
+  "<a class="link" href="MidgardObject.html#MidgardObject--metadata" title='The "metadata" property'>metadata</a>"                 <a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata"><span class="type">MidgardMetadata</span></a>*      : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardObject.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-approve" title='The "action-approve" signal'>action-approve</a>"                                 : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-approve-hook" title='The "action-approve-hook" signal'>action-approve-hook</a>"                            : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-approved" title='The "action-approved" signal'>action-approved</a>"                                : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-create" title='The "action-create" signal'>action-create</a>"                                  : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-create-hook" title='The "action-create-hook" signal'>action-create-hook</a>"                             : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-created" title='The "action-created" signal'>action-created</a>"                                 : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-delete" title='The "action-delete" signal'>action-delete</a>"                                  : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-delete-hook" title='The "action-delete-hook" signal'>action-delete-hook</a>"                             : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-deleted" title='The "action-deleted" signal'>action-deleted</a>"                                 : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-export" title='The "action-export" signal'>action-export</a>"                                  : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-export-hook" title='The "action-export-hook" signal'>action-export-hook</a>"                             : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-exported" title='The "action-exported" signal'>action-exported</a>"                                : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-import" title='The "action-import" signal'>action-import</a>"                                  : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-import-hook" title='The "action-import-hook" signal'>action-import-hook</a>"                             : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-imported" title='The "action-imported" signal'>action-imported</a>"                                : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-load" title='The "action-load" signal'>action-load</a>"                                    : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-loaded" title='The "action-loaded" signal'>action-loaded</a>"                                  : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-loaded-hook" title='The "action-loaded-hook" signal'>action-loaded-hook</a>"                             : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-lock" title='The "action-lock" signal'>action-lock</a>"                                    : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-lock-hook" title='The "action-lock-hook" signal'>action-lock-hook</a>"                               : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-locked" title='The "action-locked" signal'>action-locked</a>"                                  : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-purge" title='The "action-purge" signal'>action-purge</a>"                                   : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-purge-hook" title='The "action-purge-hook" signal'>action-purge-hook</a>"                              : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-purged" title='The "action-purged" signal'>action-purged</a>"                                  : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-unapprove" title='The "action-unapprove" signal'>action-unapprove</a>"                               : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-unapprove-hook" title='The "action-unapprove-hook" signal'>action-unapprove-hook</a>"                          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-unapproved" title='The "action-unapproved" signal'>action-unapproved</a>"                              : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-unlock" title='The "action-unlock" signal'>action-unlock</a>"                                  : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-unlock-hook" title='The "action-unlock-hook" signal'>action-unlock-hook</a>"                             : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-unlocked" title='The "action-unlocked" signal'>action-unlocked</a>"                                : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-update" title='The "action-update" signal'>action-update</a>"                                  : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-update-hook" title='The "action-update-hook" signal'>action-update-hook</a>"                             : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+  "<a class="link" href="MidgardObject.html#MidgardObject-action-updated" title='The "action-updated" signal'>action-updated</a>"                                 : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardObject.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardObject.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MIDGARD-OBJECT-GET-CLASS-BY-NAME:CAPS"></a><h3>MIDGARD_OBJECT_GET_CLASS_BY_NAME()</h3>
+<pre class="programlisting">#define MIDGARD_OBJECT_GET_CLASS_BY_NAME(name) ((MidgardObjectClass*) g_type_class_peek(g_type_from_name(name)))
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-struct"></a><h3>struct MidgardObject</h3>
+<pre class="programlisting">struct MidgardObject;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObjectPrivate"></a><h3>MidgardObjectPrivate</h3>
+<pre class="programlisting">typedef struct _MidgardObjectPrivate MidgardObjectPrivate;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObjectClassPrivate"></a><h3>MidgardObjectClassPrivate</h3>
+<pre class="programlisting">typedef struct _MidgardObjectClassPrivate MidgardObjectClassPrivate;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-new"></a><h3>midgard_object_new ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> *     midgard_object_new                  (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *value</code></em>);</pre>
+<p>
+Creates new MidgardObject object instance.
+</p>
+<p>
+This function is mandatory one for new midgard object initialization.
+Unlike g_object_new ( which is typical function to create new GObject 
+instance ), midgard_object_new initializes data which are accessible
+internally by object instance itself or by object's class:
+</p>
+<p>
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>midgard connection handler is associated with object</p></li></ul></div>
+<p>
+</p>
+<p>
+Sitegroup value is returned from midgard connection handler and may 
+be overwritten only by SG0 Midgard Administrator only when object
+is created. Setting this property is forbidden when object is already
+fetched from database. 
+</p>
+<p>
+Object's contructor tries to determine third optional parameter value.
+If it's of <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#G-TYPE-STRING:CAPS"><span class="type">G_TYPE_STRING</span></a> type , then <a class="link" href="midgard-2.0-guid.html#midgard-is-guid" title="midgard_is_guid ()"><code class="function">midgard_is_guid()</code></a> is called to check 
+weather passed string is a guid , in any other case id property is used 
+with <a href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#G-TYPE-UINT:CAPS"><span class="type">G_TYPE_UINT</span></a> type. New "empty" instance is created (without fetching 
+data from database) if <em class="parameter"><code>value</code></em> parameter is explicitly set to NULL.
+Or if given string is empty one, or given integer is 0.
+</p>
+<p>
+Any object instance created with this function should be freed using typical
+<a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#g-object-unref"><span class="type">g_object_unref</span></a> function.
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>:
+</p>
+<div class="itemizedlist">
+<div class="itemizedlist"><ul class="itemizedlist" type="circle">
+<li class="listitem"><p>
+<em class="parameter"><code>value</code></em> holds string but it's not a valid guid
+</p></li>
+<li class="listitem"><p>
+<em class="parameter"><code>value</code></em> holds valid id or guid but object doesn't exists in database ( MGD_ERR_NOT_EXISTS )
+</p></li>
+<li class="listitem"><p>
+unspecified internal error ( MGD_ERR_INTERNAL ) 
+</p></li>
+</ul></div>
+<ul class="itemizedlist" type="disc"></ul>
+</div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> handler</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>name of the class</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>optional value which holds id or guid of an object. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>New <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> object or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-get-by-id"></a><h3>midgard_object_get_by_id ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_get_by_id            (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> id</code></em>);</pre>
+<p>
+Fetch object's record(s) from database using 'id' property.
+</p>
+<p>
+This is common practice to use 'id' property with integer type when table's
+id column stores unique, primary key value which identifies object and its record(s).
+However primary property with integer type is freely defined by user.
+</p>
+<p>
+MidgardObject object instance must be created with midgard_object_new function.
+When midgard connection handler is not associated with object instance, 
+application is terminated with 'assertion fails' error message being logged. 
+</p>
+<p>
+Object instance created with this function should be freed using <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#g-object-unref"><span class="type">g_object_unref</span></a>.
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+There's no 'id' primary property registered for object's class ( MGD_ERR_INTERNAL )
+</p></li>
+<li class="listitem"><p>
+Object's record can not be fetched from database ( MGD_ERR_NOT_EXISTS ) 
+</p></li>
+<li class="listitem"><p>
+unspecified internal error ( MGD_ERR_INTERNAL )   
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>object's integer identifier</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if object is successfully fetched from database, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-save"></a><h3>midgard_object_save ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_save                 (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);</pre>
+<p>
+This method combines update and create routines.
+It tries to update object, and if this one fails because object's record doesn't exist, 
+it creates it. It's helper routine for application which needs to store object, though
+it might be a bit slower than create or update method.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-update"></a><h3>midgard_object_update ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_update               (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);</pre>
+<p>
+Update object's record(s).
+</p>
+<p>
+Internally such metadata properties are set (overwritten):
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+revisor 
+</p></li>
+<li class="listitem"><p>
+revision ( increased by one ) 
+</p></li>
+<li class="listitem"><p>
+revised 
+</p></li>
+</ul></div>
+<p>
+ 
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+Property registered with <a class="link" href="midgard-2.0-midgard-type.html#MGD-TYPE-GUID:CAPS" title="MGD_TYPE_GUID"><span class="type">MGD_TYPE_GUID</span></a> doesn't hold valid guid ( MGD_ERR_INVALID_PROPERTY_VALUE ) 
+</p></li>
+<li class="listitem"><p>
+Object's class is registered with tree facilities and there is already such object in midgard tree ( MGD_ERR_DUPLICATE ) 
+</p></li>
+<li class="listitem"><p>
+Quota is activated and its limit is reached ( MGD_ERR_QUOTA ) 
+</p></li>
+<li class="listitem"><p>
+Unspecified internal error ( MGD_ERR_INTERNAL ) 
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if object's record(s) is successfully updated, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-create"></a><h3>midgard_object_create ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_create               (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>);</pre>
+<p>
+Creates new database record(s) for object.
+</p>
+<p>
+Internally such properties are set (overwritten):
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+guid (if not set by root)
+</p></li>
+<li class="listitem"><p>
+id (if set as primary property)
+</p></li>
+</ul></div>
+<p> 
+</p>
+<p>
+Metadata overwritten properties:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+creator
+</p></li>
+<li class="listitem"><p>
+created
+</p></li>
+<li class="listitem"><p>
+revisor
+</p></li>
+<li class="listitem"><p>
+revised
+</p></li>
+<li class="listitem"><p>
+revision
+</p></li>
+<li class="listitem"><p>
+published ( set only, if not defined by user ) 
+</p></li>
+</ul></div>
+<p> 
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+Property registered with <a class="link" href="midgard-2.0-midgard-type.html#MGD-TYPE-GUID:CAPS" title="MGD_TYPE_GUID"><span class="type">MGD_TYPE_GUID</span></a> doesn't hold valid guid ( MGD_ERR_INVALID_PROPERTY_VALUE ) 
+</p></li>
+<li class="listitem"><p>
+Object's class is registered with tree facilities and there is already object with the same name in midgard tree. ( MGD_ERR_DUPLICATE ) 
+</p></li>
+<li class="listitem"><p>
+Object has guid property set already. ( MGD_ERR_DUPLICATE ) 
+</p></li>
+<li class="listitem"><p>
+Quota is activated and its limit is reached ( MGD_ERR_QUOTA ) 
+</p></li>
+<li class="listitem"><p>
+Unspecified internal error ( MGD_ERR_INTERNAL ) 
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-get-by-guid"></a><h3>midgard_object_get_by_guid ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_get_by_guid          (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *guid</code></em>);</pre>
+<p>
+Fetch object's record(s) from database using 'guid' property constraint.
+</p>
+<p>
+MidgardObject object instance must be created with midgard_object_new function.
+When midgard connection handler is not associated with object instance, 
+application is terminated with 'assertion fails' error message being logged. 
+</p>
+<p>
+Object instance created with this function should be freed using g_object_unref.
+ 
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+Object's record can not be fetched from database ( MGD_ERR_NOT_EXISTS ) 
+</p></li>
+<li class="listitem"><p>
+unspecified internal error ( MGD_ERR_INTERNAL ) 
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>guid</code></em> :</span></p></td>
+<td>string value which should identify object</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if object is successfully fetched from database, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-delete"></a><h3>midgard_object_delete ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_delete               (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> check_dependents</code></em>);</pre>
+<p>
+Delete object's record(s) from database, but object's record is not fully deleted 
+from database. Instead, it is marked as deleted , thus it is possible to undelete 
+object later with <a class="link" href="MidgardSchemaObjectFactory.html#midgard-schema-object-factory-object-undelete" title="midgard_schema_object_factory_object_undelete ()"><code class="function">midgard_schema_object_factory_object_undelete()</code></a>.
+</p>
+<p>
+To perform valid delete operation, object's class has to have either 'metadata' 
+(of <a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata"><span class="type">MidgardMetadata</span></a> type) or 'delete' property installed. The latter is not taken into 
+account if metadata object provides own 'deleted' property.
+</p>
+<p>
+If <em class="parameter"><code>check_dependents</code></em> toggle is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, parameters and attachments storage will be queried,
+if any of such exist and depend on deleted object.
+</p>
+<p>
+If given object's class has no metadata defined, object will be purged.
+</p>
+<p>
+Use <a class="link" href="MidgardObject.html#midgard-object-purge" title="midgard_object_purge ()"><code class="function">midgard_object_purge()</code></a> if you need to purge object's data from database.
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+Object's has no storage defined ( MGD_ERR_OBJECT_NO_STORAGE )
+</p></li>
+<li class="listitem"><p>
+Object's property guid is empty ( MGD_ERR_INVALID_PROPERTY_VALUE )
+</p></li>
+<li class="listitem"><p>
+Object's class has neither metadata nor deleted property installed ( MGD_ERR_INVALID_PROPERTY_VALUE )
+</p></li>
+<li class="listitem"><p>
+There are still dependent objects in database ( MGD_ERR_HAS_DEPENDENTS )
+</p></li>
+<li class="listitem"><p>
+Unspecified internal error ( MGD_ERR_INTERNAL ) 
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>check_dependents</code></em> :</span></p></td>
+<td>dependents' check toggle</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if object is successfully marked as deleted, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-purge"></a><h3>midgard_object_purge ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_purge                (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> check_dependents</code></em>);</pre>
+<p>
+Purge object's record(s) from database.
+</p>
+<p>
+If <em class="parameter"><code>check_dependents</code></em> toggle is <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, parameters and attachments storage will be queried,
+if any of such exist and depend on deleted object.
+</p>
+<p>
+Object's record(s) are purged from database without any possibility to recover.
+After successfull call, only repligard table holds information about object's state.
+Use <a class="link" href="MidgardObject.html#midgard-object-delete" title="midgard_object_delete ()"><code class="function">midgard_object_delete()</code></a>, if undelete facility is needed.
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+Object has no storage defined ( MGD_ERR_OBJECT_NO_STORAGE )
+</p></li>
+<li class="listitem"><p>
+Object's property guid value is empty ( MGD_ERR_INVALID_PROPERTY_VALUE ) 
+</p></li>
+<li class="listitem"><p>
+There are still dependent objects in database ( MGD_ERR_HAS_DEPENDANTS )
+</p></li>
+<li class="listitem"><p>
+No record has been deleted from database ( MGD_ERR_NOT_EXISTS )
+</p></li>
+<li class="listitem"><p>
+Unspecified internal error ( MGD_ERR_INTERNAL ) 
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>check_dependents</code></em> :</span></p></td>
+<td>dependents' check toggle</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if object has been succesfully purged from database, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-get-by-path"></a><h3>midgard_object_get_by_path ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_get_by_path          (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>);</pre>
+<p>
+Fetch object's record by path
+</p>
+<p>
+This function is slower than midgard_object_class_get_object_by_path, 
+as it has to create new object instance and copy all properties.
+</p>
+<p>
+<span class="type">MidgardErrorGeneric</span> is set by midgard_schema_object_factory_get_object_by_path in this case.
+Read about <a class="link" href="MidgardSchemaObjectFactory.html#midgard-schema-object-factory-get-object-by-path" title="midgard_schema_object_factory_get_object_by_path ()"><code class="function">midgard_schema_object_factory_get_object_by_path()</code></a> for more details.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>path at which object should be found</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if object is found, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-set-guid"></a><h3>midgard_object_set_guid ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_set_guid             (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *guid</code></em>);</pre>
+<p>
+Sets object's guid
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+given guid already exists in database ( MGD_ERR_DUPLICATE ) 
+</p></li>
+<li class="listitem"><p>
+given guid is invalid ( MGD_ERR_INVALID_PROPERTY_VALUE )
+</p></li>
+<li class="listitem"><p>
+object has already set guid property ( MGD_ERR_INVALID_PROPERTY_VALUE ) 
+</p></li>
+<li class="listitem"><p>
+object is deleted or purged ( MGD_ERR_OBJECT_DELETED or MGD_ERR_OBJECT_PURGED ) 
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>guid</code></em> :</span></p></td>
+<td>guid to set</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-set-connection"></a><h3>midgard_object_set_connection ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_object_set_connection       (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>);</pre>
+<p>
+Set object's connection.
+</p>
+<p>
+This method associate object with connection being already initialized.
+It's not required to use it in every aplication, however it's mandatory
+when object has been initialized by some underlying library. For example, 
+object pointer is available from g_object_new instead of midgard_object_new.
+</p>
+<p>
+Already associated connection is silently ignored.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-lock"></a><h3>midgard_object_lock ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_lock                 (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);</pre>
+<p>
+Lock object.
+</p>
+<p>
+This method doesn't affect any core's functionality like midgard_object_approve.
+You should create own locking workflow and logic with methods:
+<a class="link" href="MidgardObject.html#midgard-object-is-locked" title="midgard_object_is_locked ()"><code class="function">midgard_object_is_locked()</code></a>, <a class="link" href="MidgardObject.html#midgard-object-unlock" title="midgard_object_unlock ()"><code class="function">midgard_object_unlock()</code></a> and this one.
+</p>
+<p>
+Updates metadata properties:
+locker, locked, revisor, revised and revision
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+No user logged in ( MGD_ERR_ACCESS_DENIED ) 
+</p></li>
+<li class="listitem"><p>
+Metadata class not defined for given object's class ( MGD_ERR_NO_METADATA ) 
+</p></li>
+<li class="listitem"><p>
+Object is already locked ( MGD_ERR_OBJECT_IS_LOCKED )
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-unlock"></a><h3>midgard_object_unlock ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_unlock               (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);</pre>
+<p>
+Unlock object.
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+No user logged in ( MGD_ERR_ACCESS_DENIED ) 
+</p></li>
+<li class="listitem"><p>
+Object is not locked ( FIXME )
+</p></li>
+<li class="listitem"><p>
+Metadata class not defined for given object's class ( MGD_ERR_NO_METADATA ) 
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-is-locked"></a><h3>midgard_object_is_locked ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_is_locked            (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);</pre>
+<p>
+Check whether object is locked
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>
+Metadata class not defined for given object's class ( MGD_ERR_NO_METADATA ) 
+</p></li></ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-approve"></a><h3>midgard_object_approve ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_approve              (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);</pre>
+<p>
+Approve object.
+</p>
+<p>
+Approval functionality is not used by midgard core itself. 
+Instead, it supports higher level's applications. It means, 
+that there are no core methods ( like update or delete ) which 
+do real check if object is approved. You should create own approval
+workflow and logic with methods: <a class="link" href="MidgardObject.html#midgard-object-is-approved" title="midgard_object_is_approved ()"><code class="function">midgard_object_is_approved()</code></a>, 
+<a class="link" href="MidgardObject.html#midgard-object-unapprove" title="midgard_object_unapprove ()"><code class="function">midgard_object_unapprove()</code></a> and this one.
+</p>
+<p>
+This method updates metadata properties: 
+revisor, revised, revision, approver and approved.
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+No user logged in ( MGD_ERR_ACCESS_DENIED ) 
+</p></li>
+<li class="listitem"><p>
+No active person ( MGD_ERR_INTERNAL ) 
+</p></li>
+<li class="listitem"><p>
+Object is already approved
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if object has been approved, FALSE otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-unapprove"></a><h3>midgard_object_unapprove ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_unapprove            (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);</pre>
+<p>
+Simply unapprove object. It doesn't affect any core functionality, 
+like <a class="link" href="MidgardObject.html#midgard-object-approve" title="midgard_object_approve ()"><code class="function">midgard_object_approve()</code></a>.
+</p>
+<p>
+This method updates metadata properties:
+revisor, revised, revision, approver and approved
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+No user logged in ( MGD_ERR_ACCESS_DENIED ) 
+</p></li>
+<li class="listitem"><p>
+Object is not approved
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-is-approved"></a><h3>midgard_object_is_approved ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_object_is_approved          (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);</pre>
+<p>
+Check whether object is approved.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if object is approved, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-get-workspace"></a><h3>midgard_object_get_workspace ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="returnvalue">MidgardWorkspace</span></a> *  midgard_object_get_workspace        (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> object or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardObject.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardObject--action"></a><h3>The <code class="literal">"action"</code> property</h3>
+<pre class="programlisting">  "action"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p>Last action done to the object.</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject--guid"></a><h3>The <code class="literal">"guid"</code> property</h3>
+<pre class="programlisting">  "guid"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read</pre>
+<p>GUID identifier of the object.</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject--metadata"></a><h3>The <code class="literal">"metadata"</code> property</h3>
+<pre class="programlisting">  "metadata"                 <a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata"><span class="type">MidgardMetadata</span></a>*      : Read / Write</pre>
+<p>midgard_metadata for the object.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardObject.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="MidgardObject-action-approve"></a><h3>The <code class="literal">"action-approve"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-approve-hook"></a><h3>The <code class="literal">"action-approve-hook"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-approved"></a><h3>The <code class="literal">"action-approved"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-create"></a><h3>The <code class="literal">"action-create"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-create-hook"></a><h3>The <code class="literal">"action-create-hook"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-created"></a><h3>The <code class="literal">"action-created"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-delete"></a><h3>The <code class="literal">"action-delete"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-delete-hook"></a><h3>The <code class="literal">"action-delete-hook"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-deleted"></a><h3>The <code class="literal">"action-deleted"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-export"></a><h3>The <code class="literal">"action-export"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-export-hook"></a><h3>The <code class="literal">"action-export-hook"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-exported"></a><h3>The <code class="literal">"action-exported"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-import"></a><h3>The <code class="literal">"action-import"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-import-hook"></a><h3>The <code class="literal">"action-import-hook"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-imported"></a><h3>The <code class="literal">"action-imported"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-load"></a><h3>The <code class="literal">"action-load"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-loaded"></a><h3>The <code class="literal">"action-loaded"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-loaded-hook"></a><h3>The <code class="literal">"action-loaded-hook"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-lock"></a><h3>The <code class="literal">"action-lock"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-lock-hook"></a><h3>The <code class="literal">"action-lock-hook"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-locked"></a><h3>The <code class="literal">"action-locked"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-purge"></a><h3>The <code class="literal">"action-purge"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-purge-hook"></a><h3>The <code class="literal">"action-purge-hook"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-purged"></a><h3>The <code class="literal">"action-purged"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-unapprove"></a><h3>The <code class="literal">"action-unapprove"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-unapprove-hook"></a><h3>The <code class="literal">"action-unapprove-hook"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-unapproved"></a><h3>The <code class="literal">"action-unapproved"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-unlock"></a><h3>The <code class="literal">"action-unlock"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-unlock-hook"></a><h3>The <code class="literal">"action-unlock-hook"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-unlocked"></a><h3>The <code class="literal">"action-unlocked"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-update"></a><h3>The <code class="literal">"action-update"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-update-hook"></a><h3>The <code class="literal">"action-update-hook"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObject-action-updated"></a><h3>The <code class="literal">"action-updated"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *midgardobject,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-ACTION:CAPS"><code class="literal">Action</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardobject</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardSchemaObjectTree</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Basic.html" title="Midgard Basic Types">
+<link rel="prev" href="midgard-2.0-midgard-error.html" title="midgard_error">
+<link rel="next" href="MidgardSchemaObjectFactory.html" title="MidgardSchemaObjectFactory">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="midgard-2.0-midgard-error.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Basic.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardSchemaObjectFactory.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#midgard-2.0-MidgardSchemaObjectTree.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#midgard-2.0-MidgardSchemaObjectTree.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="midgard-2.0-MidgardSchemaObjectTree"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="midgard-2.0-MidgardSchemaObjectTree.top_of_page"></a>MidgardSchemaObjectTree</span></h2>
+<p>MidgardSchemaObjectTree</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="midgard-2.0-MidgardSchemaObjectTree.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+struct              <a class="link" href="midgard-2.0-MidgardSchemaObjectTree.html#MidgardSchemaObjectTree" title="struct MidgardSchemaObjectTree">MidgardSchemaObjectTree</a>;
+struct              <a class="link" href="midgard-2.0-MidgardSchemaObjectTree.html#MidgardSchemaObjectTreeClass" title="struct MidgardSchemaObjectTreeClass">MidgardSchemaObjectTreeClass</a>;
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-MidgardSchemaObjectTree.html#midgard-schema-object-tree-is-in-tree" title="midgard_schema_object_tree_is_in_tree ()">midgard_schema_object_tree_is_in_tree</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *parent_object</code></em>);
+const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="midgard-2.0-MidgardSchemaObjectTree.html#midgard-schema-object-tree-get-parent-name" title="midgard_schema_object_tree_get_parent_name ()">midgard_schema_object_tree_get_parent_name</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>);
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> *     <a class="link" href="midgard-2.0-MidgardSchemaObjectTree.html#midgard-schema-object-tree-get-parent-object" title="midgard_schema_object_tree_get_parent_object ()">midgard_schema_object_tree_get_parent_object</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>);
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> **    <a class="link" href="midgard-2.0-MidgardSchemaObjectTree.html#midgard-schema-object-tree-list-objects" title="midgard_schema_object_tree_list_objects ()">midgard_schema_object_tree_list_objects</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_objects</code></em>);
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> **    <a class="link" href="midgard-2.0-MidgardSchemaObjectTree.html#midgard-schema-object-tree-list-children-objects" title="midgard_schema_object_tree_list_children_objects ()">midgard_schema_object_tree_list_children_objects</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *classname</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_objects</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-MidgardSchemaObjectTree.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-MidgardSchemaObjectTree.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardSchemaObjectTree"></a><h3>struct MidgardSchemaObjectTree</h3>
+<pre class="programlisting">struct MidgardSchemaObjectTree {
+	GObject parent;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardSchemaObjectTreeClass"></a><h3>struct MidgardSchemaObjectTreeClass</h3>
+<pre class="programlisting">struct MidgardSchemaObjectTreeClass {
+	GObjectClass parent;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-schema-object-tree-is-in-tree"></a><h3>midgard_schema_object_tree_is_in_tree ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_schema_object_tree_is_in_tree
+                                                        (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *parent_object</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance to check existance in tree</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent_object</code></em> :</span></p></td>
+<td>parent <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, if given <em class="parameter"><code>object</code></em> exists under <em class="parameter"><code>parent_object</code></em> in tree. <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-schema-object-tree-get-parent-name"></a><h3>midgard_schema_object_tree_get_parent_name ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       midgard_schema_object_tree_get_parent_name
+                                                        (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>classname which, in tree is a parent one for given <em class="parameter"><code>object</code></em>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-schema-object-tree-get-parent-object"></a><h3>midgard_schema_object_tree_get_parent_object ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> *     midgard_schema_object_tree_get_parent_object
+                                                        (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>);</pre>
+<p>
+Get tree parent object, of the given <em class="parameter"><code>object</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>parent object or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-schema-object-tree-list-objects"></a><h3>midgard_schema_object_tree_list_objects ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> **    midgard_schema_object_tree_list_objects
+                                                        (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_objects</code></em>);</pre>
+<p>
+List tree children objects, of given <em class="parameter"><code>object</code></em> type.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_objects</code></em> :</span></p></td>
+<td>pointer to store number of returned objects. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>newly allocated array of <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> objects. <span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_objects][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-schema-object-tree-list-children-objects"></a><h3>midgard_schema_object_tree_list_children_objects ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> **    midgard_schema_object_tree_list_children_objects
+                                                        (<em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *classname</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_objects</code></em>);</pre>
+<p>
+List all <em class="parameter"><code>classname</code></em> objects, if exist and are tree children of given <em class="parameter"><code>object</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>classname</code></em> :</span></p></td>
+<td>name of the tree child class</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_objects</code></em> :</span></p></td>
+<td>pointer to store number of returned objects. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>array of <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> objects, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_objects][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

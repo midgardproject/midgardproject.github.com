@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardObjectReference</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Model-User-Defined-Types.html" title="Midgard Model User Defined Types">
+<link rel="prev" href="MidgardModelReference.html" title="MidgardModelReference">
+<link rel="next" href="midgard-Persist-Operations.html" title="Midgard Persist Operations">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardModelReference.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Model-User-Defined-Types.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="midgard-Persist-Operations.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardObjectReference.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardObjectReference.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardObjectReference.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardObjectReference.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#MidgardObjectReference.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardObjectReference"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardObjectReference.top_of_page"></a>MidgardObjectReference</span></h2>
+<p>MidgardObjectReference</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardObjectReference.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+struct              <a class="link" href="MidgardObjectReference.html#MidgardObjectReference-struct" title="struct MidgardObjectReference">MidgardObjectReference</a>;
+struct              <a class="link" href="MidgardObjectReference.html#MidgardObjectReferenceClass" title="struct MidgardObjectReferenceClass">MidgardObjectReferenceClass</a>;
+<a class="link" href="MidgardObjectReference.html" title="MidgardObjectReference"><span class="returnvalue">MidgardObjectReference</span></a> * <a class="link" href="MidgardObjectReference.html#midgard-object-reference-new" title="midgard_object_reference_new ()">midgard_object_reference_new</a>   (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> *Workspace</code></em>);
+<a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="returnvalue">MidgardWorkspace</span></a> *  <a class="link" href="MidgardObjectReference.html#midgard-object-reference-get-workspace" title="midgard_object_reference_get_workspace ()">midgard_object_reference_get_workspace</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardObjectReference.html" title="MidgardObjectReference"><span class="type">MidgardObjectReference</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardObjectReference.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----MidgardObjectReference
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardObjectReference.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+MidgardObjectReference implements
+ <a class="link" href="MidgardModel.html" title="MidgardModel">MidgardModel</a> and  <a class="link" href="MidgardModelReference.html" title="MidgardModelReference">MidgardModelReference</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardObjectReference.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardObjectReference.html#MidgardObjectReference--id" title='The "id" property'>id</a>"                       <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only
+  "<a class="link" href="MidgardObjectReference.html#MidgardObjectReference--name" title='The "name" property'>name</a>"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only
+  "<a class="link" href="MidgardObjectReference.html#MidgardObjectReference--workspace" title='The "workspace" property'>workspace</a>"                <a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a>*     : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardObjectReference.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardObjectReference.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardObjectReference-struct"></a><h3>struct MidgardObjectReference</h3>
+<pre class="programlisting">struct MidgardObjectReference;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObjectReferenceClass"></a><h3>struct MidgardObjectReferenceClass</h3>
+<pre class="programlisting">struct MidgardObjectReferenceClass {
+	GObjectClass parent;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-reference-new"></a><h3>midgard_object_reference_new ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardObjectReference.html" title="MidgardObjectReference"><span class="returnvalue">MidgardObjectReference</span></a> * midgard_object_reference_new   (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> *Workspace</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>object's identifier</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the name of the reference. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>Workspace</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> instance. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="MidgardObjectReference.html" title="MidgardObjectReference"><span class="type">MidgardObjectReference</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 12.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-object-reference-get-workspace"></a><h3>midgard_object_reference_get_workspace ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="returnvalue">MidgardWorkspace</span></a> *  midgard_object_reference_get_workspace
+                                                        (<em class="parameter"><code><a class="link" href="MidgardObjectReference.html" title="MidgardObjectReference"><span class="type">MidgardObjectReference</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObjectReference.html" title="MidgardObjectReference"><span class="type">MidgardObjectReference</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store returned error</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> instance or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 12.09</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardObjectReference.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardObjectReference--id"></a><h3>The <code class="literal">"id"</code> property</h3>
+<pre class="programlisting">  "id"                       <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
+<p></p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObjectReference--name"></a><h3>The <code class="literal">"name"</code> property</h3>
+<pre class="programlisting">  "name"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
+<p></p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardObjectReference--workspace"></a><h3>The <code class="literal">"workspace"</code> property</h3>
+<pre class="programlisting">  "workspace"                <a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a>*     : Read / Write / Construct Only</pre>
+<p></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

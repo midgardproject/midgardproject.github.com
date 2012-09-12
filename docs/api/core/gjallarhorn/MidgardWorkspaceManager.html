@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardWorkspaceManager</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Workspaces-And-Data-Contexts.html" title="Workspaces and Data Contexts">
+<link rel="prev" href="MidgardWorkspace.html" title="MidgardWorkspace">
+<link rel="next" href="midgard-Midgard-Query.html" title="Midgard Query">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardWorkspace.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Workspaces-And-Data-Contexts.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="midgard-Midgard-Query.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardWorkspaceManager.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardWorkspaceManager.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardWorkspaceManager.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardWorkspaceManager.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardWorkspaceManager"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardWorkspaceManager.top_of_page"></a>MidgardWorkspaceManager</span></h2>
+<p>MidgardWorkspaceManager</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardWorkspaceManager.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+                    <a class="link" href="MidgardWorkspaceManager.html#MidgardWorkspaceManager-struct" title="MidgardWorkspaceManager">MidgardWorkspaceManager</a>;
+struct              <a class="link" href="MidgardWorkspaceManager.html#MidgardWorkspaceManagerClass" title="struct MidgardWorkspaceManagerClass">MidgardWorkspaceManagerClass</a>;
+<a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="returnvalue">MidgardWorkspaceManager</span></a> * <a class="link" href="MidgardWorkspaceManager.html#midgard-workspace-manager-new" title="midgard_workspace_manager_new ()">midgard_workspace_manager_new</a> (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardWorkspaceManager.html#midgard-workspace-manager-get-workspace-by-path" title="midgard_workspace_manager_get_workspace_by_path ()">midgard_workspace_manager_get_workspace_by_path</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *ws</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardWorkspaceManager.html#midgard-workspace-manager-create-workspace" title="midgard_workspace_manager_create_workspace ()">midgard_workspace_manager_create_workspace</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *ws</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardWorkspaceManager.html#midgard-workspace-manager-update-workspace" title="midgard_workspace_manager_update_workspace ()">midgard_workspace_manager_update_workspace</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *ws</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardWorkspaceManager.html#midgard-workspace-manager-path-exists" title="midgard_workspace_manager_path_exists ()">midgard_workspace_manager_path_exists</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardWorkspaceManager.html#midgard-workspace-manager-purge-workspace" title="midgard_workspace_manager_purge_workspace ()">midgard_workspace_manager_purge_workspace</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *ws</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardWorkspaceManager.html#midgard-workspace-manager-purge-content" title="midgard_workspace_manager_purge_content ()">midgard_workspace_manager_purge_content</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> *ws</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardWorkspaceManager.html#midgard-workspace-manager-move-content" title="midgard_workspace_manager_move_content ()">midgard_workspace_manager_move_content</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> *src</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> *dest</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspaceManager.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----MidgardWorkspaceManager
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspaceManager.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardWorkspaceManager.html#MidgardWorkspaceManager--connection" title='The "connection" property'>connection</a>"               <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a>*    : Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspaceManager.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspaceManager.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardWorkspaceManager-struct"></a><h3>MidgardWorkspaceManager</h3>
+<pre class="programlisting">typedef struct _MidgardWorkspaceManager MidgardWorkspaceManager;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardWorkspaceManagerClass"></a><h3>struct MidgardWorkspaceManagerClass</h3>
+<pre class="programlisting">struct MidgardWorkspaceManagerClass {
+	GObjectClass parent;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-workspace-manager-new"></a><h3>midgard_workspace_manager_new ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="returnvalue">MidgardWorkspaceManager</span></a> * midgard_workspace_manager_new (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> object</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-workspace-manager-get-workspace-by-path"></a><h3>midgard_workspace_manager_get_workspace_by_path ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_workspace_manager_get_workspace_by_path
+                                                        (<em class="parameter"><code>const <a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *ws</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Get given workspace by given path. 
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<p>
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+Invalid path given ( MIDGARD_WORKSPACE_STORAGE_ERROR_INVALID_PATH ) 
+</p></li>
+<li class="listitem"><p>
+Given workspace object doesn't exist in storage ( MIDGARD_WORKSPACE_STORAGE_ERROR_OBJECT_NOT_EXISTS ) 
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ws</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>workspace path</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store error. <span class="annotation">[<acronym title="Typed errors. Similar to throws in Java."><span class="acronym">error-domains</span></acronym> MIDGARD_WORKSPACE_STORAGE_ERROR]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-workspace-manager-create-workspace"></a><h3>midgard_workspace_manager_create_workspace ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_workspace_manager_create_workspace
+                                                        (<em class="parameter"><code>const <a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *ws</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Create given <a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> instance in underlying storage. 
+If given <a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> is <a class="link" href="MidgardWorkspaceContext.html" title="MidgardWorkspaceContext"><span class="type">MidgardWorkspaceContext</span></a>, then it's created 
+at given path and context's path is set. 
+If it's <a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a>, it's created at given path with its name, which also creates
+new context. (e.g. if the path is '/Organization/Branch' and workspace name is 'Private', 
+then its accessible with '/Organization/Branch/Private' path.)
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<p>
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+Invalid path given ( MIDGARD_WORKSPACE_STORAGE_ERROR_INVALID_PATH ) 
+</p></li>
+<li class="listitem"><p>
+Workspace at path already exists ( MIDGARD_WORKSPACE_STORAGE_ERROR_NAME_EXISTS ) 
+</p></li>
+<li class="listitem"><p>
+Workspace at path already exists ( MIDGARD_WORKSPACE_STORAGE_ERROR_PATH_EXISTS ) 
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ws</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> instance to create</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>path at which workspace object should be created</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store error. <span class="annotation">[<acronym title="Typed errors. Similar to throws in Java."><span class="acronym">error-domains</span></acronym> MIDGARD_WORKSPACE_STORAGE_ERROR]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-workspace-manager-update-workspace"></a><h3>midgard_workspace_manager_update_workspace ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_workspace_manager_update_workspace
+                                                        (<em class="parameter"><code>const <a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *ws</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Update <a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> instance in underlying storage. 
+A valid path should be set for given <em class="parameter"><code>ws</code></em> workspace object, and <em class="parameter"><code>ws</code></em> should be fetched from database.
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<p>
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+Invalid path given ( MIDGARD_WORKSPACE_STORAGE_ERROR_INVALID_PATH ) 
+</p></li>
+<li class="listitem"><p>
+Workspace at path already exists ( MIDGARD_WORKSPACE_STORAGE_ERROR_PATH_EXISTS ) 
+</p></li>
+<li class="listitem"><p>
+Given workspace object doesn't exist in storage ( MIDGARD_WORKSPACE_STORAGE_ERROR_OBJECT_NOT_EXISTS ) 
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ws</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store error. <span class="annotation">[<acronym title="Typed errors. Similar to throws in Java."><span class="acronym">error-domains</span></acronym> MIDGARD_WORKSPACE_STORAGE_ERROR]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-workspace-manager-path-exists"></a><h3>midgard_workspace_manager_path_exists ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_workspace_manager_path_exists
+                                                        (<em class="parameter"><code>const <a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>);</pre>
+<p>
+Check if given <em class="parameter"><code>path</code></em> exists.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>A path to check</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-workspace-manager-purge-workspace"></a><h3>midgard_workspace_manager_purge_workspace ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_workspace_manager_purge_workspace
+                                                        (<em class="parameter"><code>const <a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *ws</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Purge <a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> instance from underlying storage. 
+Given <em class="parameter"><code>ws</code></em> workspace object should be fetched from database.
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<p>
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>
+Given workspace object doesn't exist in storage ( MIDGARD_WORKSPACE_STORAGE_ERROR_OBJECT_NOT_EXISTS ) 
+</p></li></ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ws</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store error. <span class="annotation">[<acronym title="Typed errors. Similar to throws in Java."><span class="acronym">error-domains</span></acronym> MIDGARD_WORKSPACE_STORAGE_ERROR]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-workspace-manager-purge-content"></a><h3>midgard_workspace_manager_purge_content ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_workspace_manager_purge_content
+                                                        (<em class="parameter"><code>const <a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> *ws</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+From given <em class="parameter"><code>ws</code></em> workspace, removes entire content of given <em class="parameter"><code>type</code></em> name.
+There's no undelete available for this operation.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>the type name</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ws</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store returned error</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-workspace-manager-move-content"></a><h3>midgard_workspace_manager_move_content ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_workspace_manager_move_content
+                                                        (<em class="parameter"><code>const <a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> *src</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> *dest</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Moves the content of given <span class="type">type</span> name from <em class="parameter"><code>src</code></em>, source <a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> to 
+<em class="parameter"><code>dest</code></em>, destination one.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager"><span class="type">MidgardWorkspaceManager</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>the type name</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>source <a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest</code></em> :</span></p></td>
+<td>destination <a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store returned error</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspaceManager.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardWorkspaceManager--connection"></a><h3>The <code class="literal">"connection"</code> property</h3>
+<pre class="programlisting">  "connection"               <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a>*    : Write / Construct Only</pre>
+<p>
+Pointer to a connection, <em class="parameter"><code>manager</code></em> has been initialized for
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

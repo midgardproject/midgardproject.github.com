@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardQueryConstraintSimple</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Query.html" title="Midgard Query">
+<link rel="prev" href="MidgardQueryConstraint.html" title="MidgardQueryConstraint">
+<link rel="next" href="MidgardQueryConstraintGroup.html" title="MidgardQueryConstraintGroup">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardQueryConstraint.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Query.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardQueryConstraintGroup.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardQueryConstraintSimple.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardQueryConstraintSimple.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardQueryConstraintSimple.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardQueryConstraintSimple.prerequisites" class="shortcut">Prerequisites</a>
+                   | 
+                  <a href="#MidgardQueryConstraintSimple.implementations" class="shortcut">Known Implementations</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardQueryConstraintSimple"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardQueryConstraintSimple.top_of_page"></a>MidgardQueryConstraintSimple</span></h2>
+<p>MidgardQueryConstraintSimple</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardQueryConstraintSimple.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="MidgardQueryConstraintSimple.html#MidgardQueryConstraintSimple-struct" title="MidgardQueryConstraintSimple">MidgardQueryConstraintSimple</a>;
+<a class="link" href="MidgardQueryConstraintSimple.html" title="MidgardQueryConstraintSimple"><span class="returnvalue">MidgardQueryConstraintSimple</span></a> ** <a class="link" href="MidgardQueryConstraintSimple.html#midgard-query-constraint-simple-list-constraints" title="midgard_query_constraint_simple_list_constraints ()">midgard_query_constraint_simple_list_constraints</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardQueryConstraintSimple.html" title="MidgardQueryConstraintSimple"><span class="type">MidgardQueryConstraintSimple</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_objects</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryConstraintSimple.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GInterface
+   +----MidgardQueryConstraintSimple
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryConstraintSimple.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+MidgardQueryConstraintSimple requires
+ <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryConstraintSimple.implementations"></a><h2>Known Implementations</h2>
+<p>
+MidgardQueryConstraintSimple is implemented by
+ <a class="link" href="MidgardQueryConstraint.html" title="MidgardQueryConstraint">MidgardQueryConstraint</a>,  <a class="link" href="MidgardQueryConstraintGroup.html" title="MidgardQueryConstraintGroup">MidgardQueryConstraintGroup</a> and  <a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint">MidgardSqlQueryConstraint</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryConstraintSimple.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryConstraintSimple.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardQueryConstraintSimple-struct"></a><h3>MidgardQueryConstraintSimple</h3>
+<pre class="programlisting">typedef struct _MidgardQueryConstraintSimple MidgardQueryConstraintSimple;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-constraint-simple-list-constraints"></a><h3>midgard_query_constraint_simple_list_constraints ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardQueryConstraintSimple.html" title="MidgardQueryConstraintSimple"><span class="returnvalue">MidgardQueryConstraintSimple</span></a> ** midgard_query_constraint_simple_list_constraints
+                                                        (<em class="parameter"><code><a class="link" href="MidgardQueryConstraintSimple.html" title="MidgardQueryConstraintSimple"><span class="type">MidgardQueryConstraintSimple</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_objects</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryConstraintSimple.html" title="MidgardQueryConstraintSimple"><span class="type">MidgardQueryConstraintSimple</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_objects</code></em> :</span></p></td>
+<td>pointer to store numer of returned objects</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>array of <a class="link" href="MidgardQueryConstraintSimple.html" title="MidgardQueryConstraintSimple"><span class="type">MidgardQueryConstraintSimple</span></a> instances. <span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

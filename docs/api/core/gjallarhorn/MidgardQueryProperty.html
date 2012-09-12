@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardQueryProperty</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Query.html" title="Midgard Query">
+<link rel="prev" href="MidgardQueryValue.html" title="MidgardQueryValue">
+<link rel="next" href="MidgardQueryStorage.html" title="MidgardQueryStorage">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardQueryValue.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Query.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardQueryStorage.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardQueryProperty.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardQueryProperty.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardQueryProperty.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardQueryProperty.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#MidgardQueryProperty.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardQueryProperty"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardQueryProperty.top_of_page"></a>MidgardQueryProperty</span></h2>
+<p>MidgardQueryProperty</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardQueryProperty.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="MidgardQueryProperty.html#MidgardQueryProperty-struct" title="struct MidgardQueryProperty">MidgardQueryProperty</a>;
+struct              <a class="link" href="MidgardQueryProperty.html#MidgardQueryPropertyClass" title="struct MidgardQueryPropertyClass">MidgardQueryPropertyClass</a>;
+<a class="link" href="MidgardQueryProperty.html" title="MidgardQueryProperty"><span class="returnvalue">MidgardQueryProperty</span></a> * <a class="link" href="MidgardQueryProperty.html#midgard-query-property-new" title="midgard_query_property_new ()">midgard_query_property_new</a>       (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardQueryStorage.html" title="MidgardQueryStorage"><span class="type">MidgardQueryStorage</span></a> *storage</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryProperty.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----MidgardQueryProperty
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryProperty.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+MidgardQueryProperty implements
+ <a class="link" href="MidgardQueryHolder.html" title="MidgardQueryHolder">MidgardQueryHolder</a> and  <a class="link" href="MidgardValidable.html" title="MidgardValidable">MidgardValidable</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryProperty.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardQueryProperty.html#MidgardQueryProperty--property" title='The "property" property'>property</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="MidgardQueryProperty.html#MidgardQueryProperty--storage" title='The "storage" property'>storage</a>"                  <a class="link" href="MidgardQueryStorage.html" title="MidgardQueryStorage"><span class="type">MidgardQueryStorage</span></a>*  : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryProperty.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryProperty.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardQueryProperty-struct"></a><h3>struct MidgardQueryProperty</h3>
+<pre class="programlisting">struct MidgardQueryProperty;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardQueryPropertyClass"></a><h3>struct MidgardQueryPropertyClass</h3>
+<pre class="programlisting">struct MidgardQueryPropertyClass {
+	GObjectClass parent;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-query-property-new"></a><h3>midgard_query_property_new ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardQueryProperty.html" title="MidgardQueryProperty"><span class="returnvalue">MidgardQueryProperty</span></a> * midgard_query_property_new       (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *property</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardQueryStorage.html" title="MidgardQueryStorage"><span class="type">MidgardQueryStorage</span></a> *storage</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>property</code></em> :</span></p></td>
+<td>name of the property</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>storage</code></em> :</span></p></td>
+<td>optional storage for given property. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="MidgardQueryProperty.html" title="MidgardQueryProperty"><span class="type">MidgardQueryProperty</span></a> instance or NULL on failure</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardQueryProperty.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardQueryProperty--property"></a><h3>The <code class="literal">"property"</code> property</h3>
+<pre class="programlisting">  "property"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p></p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardQueryProperty--storage"></a><h3>The <code class="literal">"storage"</code> property</h3>
+<pre class="programlisting">  "storage"                  <a class="link" href="MidgardQueryStorage.html" title="MidgardQueryStorage"><span class="type">MidgardQueryStorage</span></a>*  : Read / Write</pre>
+<p></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

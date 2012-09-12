@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardWorkspaceContext</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Workspaces-And-Data-Contexts.html" title="Workspaces and Data Contexts">
+<link rel="prev" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage">
+<link rel="next" href="MidgardWorkspace.html" title="MidgardWorkspace">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardWorkspaceStorage.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Workspaces-And-Data-Contexts.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardWorkspace.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardWorkspaceContext.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardWorkspaceContext.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardWorkspaceContext.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardWorkspaceContext.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardWorkspaceContext"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardWorkspaceContext.top_of_page"></a>MidgardWorkspaceContext</span></h2>
+<p>MidgardWorkspaceContext</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardWorkspaceContext.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+                    <a class="link" href="MidgardWorkspaceContext.html#MidgardWorkspaceContext-struct" title="MidgardWorkspaceContext">MidgardWorkspaceContext</a>;
+struct              <a class="link" href="MidgardWorkspaceContext.html#MidgardWorkspaceContextClass" title="struct MidgardWorkspaceContextClass">MidgardWorkspaceContextClass</a>;
+<a class="link" href="MidgardWorkspaceContext.html" title="MidgardWorkspaceContext"><span class="returnvalue">MidgardWorkspaceContext</span></a> * <a class="link" href="MidgardWorkspaceContext.html#midgard-workspace-context-new" title="midgard_workspace_context_new ()">midgard_workspace_context_new</a> (<em class="parameter"><code><span class="type">void</span></code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardWorkspaceContext.html#midgard-workspace-context-has-workspace" title="midgard_workspace_context_has_workspace ()">midgard_workspace_context_has_workspace</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardWorkspaceContext.html" title="MidgardWorkspaceContext"><span class="type">MidgardWorkspaceContext</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> *workspace</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspaceContext.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----MidgardWorkspaceContext
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspaceContext.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+MidgardWorkspaceContext implements
+ <a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage">MidgardWorkspaceStorage</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspaceContext.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspaceContext.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardWorkspaceContext-struct"></a><h3>MidgardWorkspaceContext</h3>
+<pre class="programlisting">typedef struct _MidgardWorkspaceContext MidgardWorkspaceContext;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardWorkspaceContextClass"></a><h3>struct MidgardWorkspaceContextClass</h3>
+<pre class="programlisting">struct MidgardWorkspaceContextClass {
+	GObjectClass parent;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-workspace-context-new"></a><h3>midgard_workspace_context_new ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardWorkspaceContext.html" title="MidgardWorkspaceContext"><span class="returnvalue">MidgardWorkspaceContext</span></a> * midgard_workspace_context_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceContext.html" title="MidgardWorkspaceContext"><span class="type">MidgardWorkspaceContext</span></a> instance</td>
+</tr></tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-workspace-context-has-workspace"></a><h3>midgard_workspace_context_has_workspace ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_workspace_context_has_workspace
+                                                        (<em class="parameter"><code><a class="link" href="MidgardWorkspaceContext.html" title="MidgardWorkspaceContext"><span class="type">MidgardWorkspaceContext</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> *workspace</code></em>);</pre>
+<p>
+Check, whether given <em class="parameter"><code>workspace</code></em> is in given context
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceContext.html" title="MidgardWorkspaceContext"><span class="type">MidgardWorkspaceContext</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>workspace</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> to check</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

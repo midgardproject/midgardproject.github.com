@@ -1,0 +1,665 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardUser</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Basic.html" title="Midgard Basic Types">
+<link rel="prev" href="MidgardQueryBuilder.html" title="MidgardQueryBuilder">
+<link rel="next" href="midgard-2.0-midgard-collector.html" title="MidgardCollector">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardQueryBuilder.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Basic.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="midgard-2.0-midgard-collector.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#midgard-2.0-midgard-user.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-user.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-user.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-user.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="midgard-2.0-midgard-user"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="midgard-2.0-midgard-user.top_of_page"></a>MidgardUser</span></h2>
+<p>MidgardUser —  User account and authentication</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="midgard-2.0-midgard-user.synopsis"></a><h2>Synopsis</h2>
+<a name="MidgardUser"></a><pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+struct              <a class="link" href="midgard-2.0-midgard-user.html#MidgardUserClass" title="struct MidgardUserClass">MidgardUserClass</a>;
+                    <a class="link" href="midgard-2.0-midgard-user.html#MidgardUserPrivate" title="MidgardUserPrivate">MidgardUserPrivate</a>;
+                    <a class="link" href="midgard-2.0-midgard-user.html#MidgardUser-struct" title="MidgardUser">MidgardUser</a>;
+<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="returnvalue">MidgardUser</span></a> *       <a class="link" href="midgard-2.0-midgard-user.html#midgard-user-new" title="midgard_user_new ()">midgard_user_new</a>                    (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);
+<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="returnvalue">MidgardUser</span></a> *       <a class="link" href="midgard-2.0-midgard-user.html#midgard-user-get" title="midgard_user_get ()">midgard_user_get</a>                    (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);
+<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="returnvalue">MidgardUser</span></a> **      <a class="link" href="midgard-2.0-midgard-user.html#midgard-user-query" title="midgard_user_query ()">midgard_user_query</a>                  (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-user.html#midgard-user-create" title="midgard_user_create ()">midgard_user_create</a>                 (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-user.html#midgard-user-update" title="midgard_user_update ()">midgard_user_update</a>                 (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-user.html#midgard-user-delete" title="midgard_user_delete ()">midgard_user_delete</a>                 (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-user.html#midgard-user-log-in" title="midgard_user_log_in ()">midgard_user_log_in</a>                 (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-user.html#midgard-user-log-out" title="midgard_user_log_out ()">midgard_user_log_out</a>                (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-user.html#midgard-user-is-user" title="midgard_user_is_user ()">midgard_user_is_user</a>                (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-user.html#midgard-user-is-admin" title="midgard_user_is_admin ()">midgard_user_is_admin</a>               (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>);
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> *     <a class="link" href="midgard-2.0-midgard-user.html#midgard-user-get-person" title="midgard_user_get_person ()">midgard_user_get_person</a>             (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-midgard-user.html#midgard-user-set-person" title="midgard_user_set_person ()">midgard_user_set_person</a>             (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *person</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-user.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject">MidgardDBObject</a>
+         +----MidgardUser
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-user.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser--active" title='The "active" property'>active</a>"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser--authtype" title='The "authtype" property'>authtype</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser--authtypeid" title='The "authtypeid" property'>authtypeid</a>"               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read
+  "<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser--guid" title='The "guid" property'>guid</a>"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read
+  "<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser--login" title='The "login" property'>login</a>"                    <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser--password" title='The "password" property'>password</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser--person" title='The "person" property'>person</a>"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read
+  "<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser--usertype" title='The "usertype" property'>usertype</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-user.description"></a><h2>Description</h2>
+<p>
+ <a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> (midgard_user) class is a special class which let's you authenticate any
+ user into Midgard system. Class itself (and its implementation) doesn't provide any special
+ security routines. Instead, it provides easy to use interfaces to implement many derived ones.
+</p>
+<p>
+ Valid user (from Midgard core point of view) is an object which can be stored in underlying storage,
+ and can be identified by unique guid, unique login name and authentication type. It's very important
+ to notice that user's guid is unique per storage, while login name is unique with particular
+ authentication type. Which means, the same login name can be used with different authentication types.
+</p>
+<p>
+ Valid authentication types are read from shared data directory (e.g. /usr/local/share/midgard2)
+ and initialized when application is initialized. New authentication types are always defined in shared, midgard_auth_types.xml file.
+</p>
+<p>
+ <a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> class doesn't do any password validation or doesn't support password encryption or decryption.
+ For such, proper implementation should be made for derived class. An exception is legacy and backward
+ compatible authentication which is supported by unix encrypt utils in the background.
+</p>
+<p>
+ <a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> provides very basic and low level access control system.
+</p>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-user.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardUserClass"></a><h3>struct MidgardUserClass</h3>
+<pre class="programlisting">struct MidgardUserClass {
+	MidgardDBObjectClass parent;
+	
+	/* methods */
+	const MidgardConnection *(*get_connection) (MidgardDBObject *);
+	
+	/* API methods */
+	MidgardObject *(*get_person)		(MidgardUser *self);
+	gboolean        (*log_in)              	(MidgardUser *self);
+	gboolean        (*log_out)             	(MidgardUser *self);
+	MidgardUser     *(*get)               	(MidgardConnection *mgd, guint n_params, const GParameter *parameters);
+	MidgardUser     **(*query) 		(MidgardConnection *mgd, guint n_params, const GParameter *parameters);
+	gboolean        (*create)           	(MidgardUser *self);
+	gboolean        (*update)             	(MidgardUser *self);
+	gboolean 	(*delete_record) (MidgardUser *self);
+	gboolean 	(*is_user)		(MidgardUser *self);
+	gboolean 	(*is_admin)		(MidgardUser *self);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardUserPrivate"></a><h3>MidgardUserPrivate</h3>
+<pre class="programlisting">typedef struct _MidgardUserPrivate MidgardUserPrivate;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardUser-struct"></a><h3>MidgardUser</h3>
+<pre class="programlisting">typedef struct _MidgardUser MidgardUser;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-user-new"></a><h3>midgard_user_new ()</h3>
+<pre class="programlisting"><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="returnvalue">MidgardUser</span></a> *       midgard_user_new                    (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);</pre>
+<p>
+<em class="parameter"><code>parameters</code></em> and <em class="parameter"><code>n_params</code></em> arguments are optional. <a class="link" href="midgard-2.0-midgard-user.html#midgard-user-get" title="midgard_user_get ()"><code class="function">midgard_user_get()</code></a> will be invoked 
+in constructor if <em class="parameter"><code>parameters</code></em> argument will be set to not <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> value.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_params</code></em> :</span></p></td>
+<td>number of parameters</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parameters</code></em> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> with <a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> properties</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> object or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-user-get"></a><h3>midgard_user_get ()</h3>
+<pre class="programlisting"><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="returnvalue">MidgardUser</span></a> *       midgard_user_get                    (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);</pre>
+<p>
+Fetch <a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> object from storage. 
+At least 'login' and 'authtype' property are required to be set in parameters.
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+'login' or 'authtype' properties do not exist in given parameters (MGD_ERR_INVALID_PROPERTY_VALUE)
+</p></li>
+<li class="listitem"><p>
+There's no user object which match given parameters (MGD_ERR_NOT_EXISTS)
+</p></li>
+<li class="listitem"><p>
+More than one record found in database (MGD_ERR_INTERNAL)
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_params</code></em> :</span></p></td>
+<td>number of parameters</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parameters</code></em> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> with <a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> properties</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> instance or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> in case of failure
+Since 9.09. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-user-query"></a><h3>midgard_user_query ()</h3>
+<pre class="programlisting"><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="returnvalue">MidgardUser</span></a> **      midgard_user_query                  (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_params</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> *parameters</code></em>);</pre>
+<p>
+Fetch <a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> objects from storage. 
+At least 'login' and 'authtype' property are required to be set in parameters.
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>
+There are no user objects which match given parameters (MGD_ERR_NOT_EXISTS)
+</p></li></ul></div>
+<p>
+</p>
+<p>
+Returned array should be freed (<a href="/usr/share/gtk-doc/html/glib/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>) when no longer needed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_params</code></em> :</span></p></td>
+<td>number of parameters</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parameters</code></em> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GParameter"><span class="type">GParameter</span></a> with <a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> properties</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>newly allocated and NULL terminated array of <a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> objects or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+Since 9.09. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-user-create"></a><h3>midgard_user_create ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_user_create                 (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>);</pre>
+<p>
+Creates database record for given user.
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+User with such login and authentication type already exists ( MGD_ERR_DUPLICATE ) 
+</p></li>
+<li class="listitem"><p>
+User's guid is already set ( MGD_ERR_INVALID_PROPERTY_VALUE )
+</p></li>
+<li class="listitem"><p>
+'authtype' property is empty or NULL ( MGD_ERR_INVALID_PROPERTY_VALUE )
+</p></li>
+<li class="listitem"><p>
+'authtype' property value is invalid ( MGD_ERR_INTERNAL )
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 9.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-user-update"></a><h3>midgard_user_update ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_user_update                 (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>);</pre>
+<p>
+Updates user storage record
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+User with such login and authentication type already exists ( MGD_ERR_DUPLICATE ) 
+</p></li>
+<li class="listitem"><p>
+User's guid is not set ( MGD_ERR_INVALID_PROPERTY_VALUE )
+</p></li>
+<li class="listitem"><p>
+'authtype' property is empty or NULL ( MGD_ERR_INVALID_PROPERTY_VALUE )
+</p></li>
+<li class="listitem"><p>
+User record hasn't been found ( MGD_ERR_INTERNAL )
+</p></li>
+<li class="listitem"><p>
+Failed to update storage record ( MGD_ERR_INTERNAL )
+</p></li>
+<li class="listitem"><p>
+'authtype' property value is invalid ( MGD_ERR_INTERNAL )
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 9.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-user-delete"></a><h3>midgard_user_delete ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_user_delete                 (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>);</pre>
+<p>
+Delete user's storage record.
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+User's guid is not set ( MGD_ERR_INVALID_PROPERTY_VALUE )
+</p></li>
+<li class="listitem"><p>
+Failed to delete storage record ( MGD_ERR_INTERNAL )
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<em class="parameter"><code>TRUE</code></em> on success, <em class="parameter"><code>FALSE</code></em> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 9.09.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-user-log-in"></a><h3>midgard_user_log_in ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_user_log_in                 (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>);</pre>
+<p>
+Logs in user instance, if given one is valid. 
+A valid user object must have (at least) guid set. 
+Which means, <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> must be fetched from database.
+Either with <a class="link" href="midgard-2.0-midgard-user.html#midgard-user-get" title="midgard_user_get ()"><code class="function">midgard_user_get()</code></a> or with <a class="link" href="midgard-2.0-midgard-user.html#midgard-user-query" title="midgard_user_query ()"><code class="function">midgard_user_query()</code></a>.
+</p>
+<p>
+This method silently returns with success when given user is already logged in.
+</p>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>
+User's guid is not set ( MGD_ERR_INVALID_PROPERTY_VALUE )
+</p></li></ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if user has been logged in, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 9.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-user-log-out"></a><h3>midgard_user_log_out ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_user_log_out                (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>);</pre>
+<p>
+Cases to return <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>
+There's no user logged in (MGD_ERR_INTERNAL)
+</p></li>
+<li class="listitem"><p>
+User is not recently logged in (MGD_ERR_INTERNAL)
+</p></li>
+</ul></div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if user successfully logs out, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 9.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-user-is-user"></a><h3>midgard_user_is_user ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_user_is_user                (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>);</pre>
+<p>
+Checks if given user is a user.
+For example, function will return FALSE for user who is logged in as admin or root.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if user is a user, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-user-is-admin"></a><h3>midgard_user_is_admin ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_user_is_admin               (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>);</pre>
+<p>
+Checks if given user is an admin.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if user is an admin, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-user-get-person"></a><h3>midgard_user_get_person ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="returnvalue">MidgardObject</span></a> *     midgard_user_get_person             (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>);</pre>
+<p>
+Returned object should not be unref.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> of "midgard_person" type, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if none associated. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-user-set-person"></a><h3>midgard_user_set_person ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_user_set_person             (<em class="parameter"><code><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> *person</code></em>);</pre>
+<p>
+Associates given <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> person with <em class="parameter"><code>self</code></em> <a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a>.
+Sets person property and updates user storage record.
+</p>
+<p>
+<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> <em class="parameter"><code>self</code></em> takes ownership of the given <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> ('midgard_person' type) reference, 
+and increases person's object reference count. 
+</p>
+<p>
+See <a class="link" href="midgard-2.0-midgard-user.html#midgard-user-update" title="midgard_user_update ()"><code class="function">midgard_user_update()</code></a> for returned error details.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>person</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-user.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardUser--active"></a><h3>The <code class="literal">"active"</code> property</h3>
+<pre class="programlisting">  "active"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
+<p></p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardUser--authtype"></a><h3>The <code class="literal">"authtype"</code> property</h3>
+<pre class="programlisting">  "authtype"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p></p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardUser--authtypeid"></a><h3>The <code class="literal">"authtypeid"</code> property</h3>
+<pre class="programlisting">  "authtypeid"               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read</pre>
+<p></p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardUser--guid"></a><h3>The <code class="literal">"guid"</code> property</h3>
+<pre class="programlisting">  "guid"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read</pre>
+<p></p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardUser--login"></a><h3>The <code class="literal">"login"</code> property</h3>
+<pre class="programlisting">  "login"                    <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p></p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardUser--password"></a><h3>The <code class="literal">"password"</code> property</h3>
+<pre class="programlisting">  "password"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p></p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardUser--person"></a><h3>The <code class="literal">"person"</code> property</h3>
+<pre class="programlisting">  "person"                   <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read</pre>
+<p></p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardUser--usertype"></a><h3>The <code class="literal">"usertype"</code> property</h3>
+<pre class="programlisting">  "usertype"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write</pre>
+<p></p>
+<p>Default value: 0</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

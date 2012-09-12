@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardPool</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Resources-Pool.html" title="Midgard Resources Pool">
+<link rel="prev" href="midgard-Resources-Pool.html" title="Midgard Resources Pool">
+<link rel="next" href="MidgardExecutionPool.html" title="MidgardExecutionPool">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="midgard-Resources-Pool.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Resources-Pool.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardExecutionPool.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardPool.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardPool.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardPool.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardPool.prerequisites" class="shortcut">Prerequisites</a>
+                   | 
+                  <a href="#MidgardPool.implementations" class="shortcut">Known Implementations</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardPool"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardPool.top_of_page"></a>MidgardPool</span></h2>
+<p>MidgardPool — An interface for pool of resources.</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardPool.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="MidgardPool.html#MidgardPool-struct" title="MidgardPool">MidgardPool</a>;
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="MidgardPool.html#midgard-pool-get-max-n-resources" title="midgard_pool_get_max_n_resources ()">midgard_pool_get_max_n_resources</a>    (<em class="parameter"><code><a class="link" href="MidgardPool.html" title="MidgardPool"><span class="type">MidgardPool</span></a> *self</code></em>);
+<a class="link" href="MidgardPool.html" title="MidgardPool"><span class="returnvalue">MidgardPool</span></a> *       <a class="link" href="MidgardPool.html#midgard-pool-set-max-n-resources" title="midgard_pool_set_max_n_resources ()">midgard_pool_set_max_n_resources</a>    (<em class="parameter"><code><a class="link" href="MidgardPool.html" title="MidgardPool"><span class="type">MidgardPool</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_resources</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="MidgardPool.html#midgard-pool-get-n-resources" title="midgard_pool_get_n_resources ()">midgard_pool_get_n_resources</a>        (<em class="parameter"><code><a class="link" href="MidgardPool.html" title="MidgardPool"><span class="type">MidgardPool</span></a> *self</code></em>);
+<a class="link" href="MidgardPool.html" title="MidgardPool"><span class="returnvalue">MidgardPool</span></a> *       <a class="link" href="MidgardPool.html#midgard-pool-push" title="midgard_pool_push ()">midgard_pool_push</a>                   (<em class="parameter"><code><a class="link" href="MidgardPool.html" title="MidgardPool"><span class="type">MidgardPool</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardPool.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GInterface
+   +----MidgardPool
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardPool.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+MidgardPool requires
+ <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardPool.implementations"></a><h2>Known Implementations</h2>
+<p>
+MidgardPool is implemented by
+ <a class="link" href="MidgardExecutionPool.html" title="MidgardExecutionPool">MidgardExecutionPool</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardPool.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardPool.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardPool-struct"></a><h3>MidgardPool</h3>
+<pre class="programlisting">typedef struct _MidgardPool MidgardPool;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-pool-get-max-n-resources"></a><h3>midgard_pool_get_max_n_resources ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               midgard_pool_get_max_n_resources    (<em class="parameter"><code><a class="link" href="MidgardPool.html" title="MidgardPool"><span class="type">MidgardPool</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardPool.html" title="MidgardPool"><span class="type">MidgardPool</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>maximum number of resources which can be available in the pool</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 12.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-pool-set-max-n-resources"></a><h3>midgard_pool_set_max_n_resources ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardPool.html" title="MidgardPool"><span class="returnvalue">MidgardPool</span></a> *       midgard_pool_set_max_n_resources    (<em class="parameter"><code><a class="link" href="MidgardPool.html" title="MidgardPool"><span class="type">MidgardPool</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_resources</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Sets maximum number of resources which can be available in pool
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardPool.html" title="MidgardPool"><span class="type">MidgardPool</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_resources</code></em> :</span></p></td>
+<td>number of resources</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store returned error</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="MidgardPool.html" title="MidgardPool"><span class="type">MidgardPool</span></a> self reference. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 12.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-pool-get-n-resources"></a><h3>midgard_pool_get_n_resources ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               midgard_pool_get_n_resources        (<em class="parameter"><code><a class="link" href="MidgardPool.html" title="MidgardPool"><span class="type">MidgardPool</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardPool.html" title="MidgardPool"><span class="type">MidgardPool</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>number of resources available in pool</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 12.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-pool-push"></a><h3>midgard_pool_push ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardPool.html" title="MidgardPool"><span class="returnvalue">MidgardPool</span></a> *       midgard_pool_push                   (<em class="parameter"><code><a class="link" href="MidgardPool.html" title="MidgardPool"><span class="type">MidgardPool</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> *object</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Adds an <em class="parameter"><code>object</code></em> to pool
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardPool.html" title="MidgardPool"><span class="type">MidgardPool</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> to add to pool</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store returned error</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="MidgardPool.html" title="MidgardPool"><span class="type">MidgardPool</span></a> self reference. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 12.09</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>
