@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>midgard_error</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Basic.html" title="Midgard Basic Types">
+<link rel="prev" href="midgard-2.0-midgard-quota.html" title="midgard_quota">
+<link rel="next" href="midgard-2.0-MidgardSchemaObjectTree.html" title="MidgardSchemaObjectTree">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="midgard-2.0-midgard-quota.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Basic.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="midgard-2.0-MidgardSchemaObjectTree.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#midgard-2.0-midgard-error.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-error.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="midgard-2.0-midgard-error"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="midgard-2.0-midgard-error.top_of_page"></a>midgard_error</span></h2>
+<p>midgard_error</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="midgard-2.0-midgard-error.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+#define             <a class="link" href="midgard-2.0-midgard-error.html#MIDGARD-GENERIC-ERROR:CAPS" title="MIDGARD_GENERIC_ERROR">MIDGARD_GENERIC_ERROR</a>
+enum                <a class="link" href="midgard-2.0-midgard-error.html#MidgardGenericError" title="enum MidgardGenericError">MidgardGenericError</a>;
+<a href="/usr/share/gtk-doc/html/glib/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              <a class="link" href="midgard-2.0-midgard-error.html#midgard-error-generic" title="midgard_error_generic ()">midgard_error_generic</a>               (<em class="parameter"><code><span class="type">void</span></code></em>);
+const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="midgard-2.0-midgard-error.html#midgard-error-string" title="midgard_error_string ()">midgard_error_string</a>                (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> domain</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> errcode</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="midgard-2.0-midgard-error.html#midgard-set-error" title="midgard_set_error ()">midgard_set_error</a>                   (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> domain</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> errcode</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *msg</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="midgard-2.0-midgard-error.html#midgard-error-default-log" title="midgard_error_default_log ()">midgard_error_default_log</a>           (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *domain</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Message-Logging.html#GLogLevelFlags"><span class="type">GLogLevelFlags</span></a> level</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *msg</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> ptr</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="midgard-2.0-midgard-error.html#midgard-error-parse-loglevel" title="midgard_error_parse_loglevel ()">midgard_error_parse_loglevel</a>        (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *levelstring</code></em>);
+#define             <a class="link" href="midgard-2.0-midgard-error.html#MIDGARD-ERRNO-SET:CAPS" title="MIDGARD_ERRNO_SET()">MIDGARD_ERRNO_SET</a>                   (str,
+                                                         errcode)
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-error.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-error.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MIDGARD-GENERIC-ERROR:CAPS"></a><h3>MIDGARD_GENERIC_ERROR</h3>
+<pre class="programlisting">#define MIDGARD_GENERIC_ERROR midgard_error_generic()
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardGenericError"></a><h3>enum MidgardGenericError</h3>
+<pre class="programlisting">typedef enum {
+	MIDGARD_GENERIC_ERROR_OK = -0, /**&lt; MD_ERR_OK  &lt;br /&gt; */ 
+	MIDGARD_GENERIC_ERROR_ERROR = -1, /**&lt;  &lt;br /&gt;*/ 
+	MIDGARD_GENERIC_ERROR_ACCESS_DENIED = -2, /**&lt; Access denied *  &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_NO_METADATA = -3,
+	MIDGARD_GENERIC_ERROR_NOT_OBJECT = -4, /**&lt; Not Midgard Object   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_NOT_EXISTS = -5, /**&lt; Object does not exist   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_INVALID_NAME = -6 , /**&lt;   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_DUPLICATE = -7 , /**&lt; Object already exist   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_HAS_DEPENDANTS = -8 , /**&lt; Object has dependants   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_RANGE = -9, /**&lt;   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_NOT_CONNECTED = -10, /**&lt; Not connected to the Midgard database   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_SG_NOTFOUND = -11, /**&lt; Sitegroup not found   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_INVALID_OBJECT = -12, /**&lt; Object not registered as Midgard Object   &lt;br /&gt; */ 
+	MIDGARD_GENERIC_ERROR_QUOTA = -13, /**&lt; Quota limit reached   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_INTERNAL = -14, /**&lt; Critical internal error   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_OBJECT_NAME_EXISTS = -15, /**&lt; Object with such name exists in tree   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_OBJECT_NO_STORAGE = -16, /**&lt; Storage table not defined for object   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_OBJECT_NO_PARENT= -17, /**&lt; Parent object in tree not defined   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_INVALID_PROPERTY_VALUE = -18, /**&lt; Invalid property value   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_INVALID_PROPERTY = -19, /**&lt;Invalid property &lt;br /&gt;*/
+	MIDGARD_GENERIC_ERROR_USER_DATA = -20, /**&lt; Empty error message reserved for application's developers   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_OBJECT_DELETED = -21, /**&lt; Object deleted   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_OBJECT_PURGED = -22, /**&lt; Object purged   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_OBJECT_EXPORTED = -23, /**&lt; Object already exported   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_OBJECT_IMPORTED = -24, /**&lt; Object already imported   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_MISSED_DEPENDENCE = -25, /**&lt; Missed dependence for object   &lt;br /&gt; */
+	MIDGARD_GENERIC_ERROR_TREE_IS_CIRCULAR = -26, /**&lt; Circular reference found in object's tree &lt;br /&gt;*/
+	MIDGARD_GENERIC_ERROR_OBJECT_IS_LOCKED = -27 /**&lt; Object is locked */
+} MidgardGenericError;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-error-generic"></a><h3>midgard_error_generic ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              midgard_error_generic               (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+GQuark for Midgard Error. It's used by Midgard Error implementation, and 
+probably not needed to use by any application.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>MGD_GENERIC_ERROR GQuark</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-error-string"></a><h3>midgard_error_string ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       midgard_error_string                (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> domain</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> errcode</code></em>);</pre>
+<p>
+Get error message for the given error code.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>domain</code></em> :</span></p></td>
+<td>GQuark which represents MidgardError domain.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>errcode</code></em> :</span></p></td>
+<td>MidgardErrorGeneric enum value.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>error messages which is owned by midgard-core and should not be freed.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-set-error"></a><h3>midgard_set_error ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_set_error                   (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> domain</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> errcode</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *msg</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);</pre>
+<p>
+This function sets internal error constant, and creates new error message.
+User defined message is appended to internal one.
+Any message created by application ( and its corresponding constant ) are destroyed 
+and reset to MGD_ERR_OK when any API function is invoked.
+Second <em class="parameter"><code>domain</code></em> parameter is optional , and can be safely defined as NULL for 
+MGD_GENERIC_ERROR domain.
+</p>
+<p>
+</p>
+<div class="example">
+<a name="idp5922712"></a><p class="title"><b>Example 5. </b></p>
+<div class="example-contents"><pre class="programlisting">
+
+void set_wrong_property(MidgardConnection *mgd, gchar *prop)
+{
+	midgard_set_error(mgd, NULL, 
+			MGD_ERR_INVALID_PROPERTY_VALUE,
+			"My application doesn't accept %s property",
+			prop);
+}
+</pre></div>
+</div>
+<p><br class="example-break">
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mgd</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>domain</code></em> :</span></p></td>
+<td>GQuark which represents MidgardError domain</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>errcode</code></em> :</span></p></td>
+<td>
+<span class="type">MidgardErrorGeneric</span> enum value</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td>a message which should be appended to string represented by errcode</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td>message argument list ( if required )</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-error-default-log"></a><h3>midgard_error_default_log ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_error_default_log           (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *domain</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Message-Logging.html#GLogLevelFlags"><span class="type">GLogLevelFlags</span></a> level</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *msg</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> ptr</code></em>);</pre>
+<p>
+<em class="parameter"><code>ptr</code></em> pointer may be a pointer to <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> or <span class="type">MidgardTypeHolder</span>
+structure. This function checks pointer type using MIDGARD_IS_CONNECTION
+convention macro. Next midgard_connection_get_loglevel is called to get loglevel.
+If MidgardConnection check fails , a typecast to MidgardTypeHolder is made.
+In this case, level member is used to get loglevel.
+</p>
+<p>
+You are responsible to correctly set MidgardConnection or MidgardTypeHolder
+before passing ptr argument. The main approach is to follow configuration's
+loglevel even if MidgardConnection pointer is not yet available.
+</p>
+<p>
+<em class="parameter"><code>see</code></em> <a class="link" href="MidgardConnection.html#midgard-connection-set-loglevel" title="midgard_connection_set_loglevel ()"><code class="function">midgard_connection_set_loglevel()</code></a> to set log level.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>domain</code></em> :</span></p></td>
+<td>domain for the given log message</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>level</code></em> :</span></p></td>
+<td>GLogLevelFlags</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td>log message</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ptr</code></em> :</span></p></td>
+<td>pointer to structure which holds loglevel</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-error-parse-loglevel"></a><h3>midgard_error_parse_loglevel ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                midgard_error_parse_loglevel        (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *levelstring</code></em>);</pre>
+<p>
+This function returns level registered in GLib.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>levelstring</code></em> :</span></p></td>
+<td>string which should be parsed</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Message-Logging.html#GLogLevelFlags"><span class="type">GLogLevelFlags</span></a> or -1 on failure</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MIDGARD-ERRNO-SET:CAPS"></a><h3>MIDGARD_ERRNO_SET()</h3>
+<pre class="programlisting">#define             MIDGARD_ERRNO_SET(str, errcode)</pre>
+<p>
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

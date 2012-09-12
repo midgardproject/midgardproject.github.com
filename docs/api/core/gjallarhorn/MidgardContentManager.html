@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardContentManager</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Persist-Operations.html" title="Midgard Persist Operations">
+<link rel="prev" href="midgard-Persist-Operations.html" title="Midgard Persist Operations">
+<link rel="next" href="MidgardJob.html" title="MidgardJob">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="midgard-Persist-Operations.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Persist-Operations.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardJob.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardContentManager.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardContentManager.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardContentManager.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardContentManager.prerequisites" class="shortcut">Prerequisites</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardContentManager"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardContentManager.top_of_page"></a>MidgardContentManager</span></h2>
+<p>MidgardContentManager</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardContentManager.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="MidgardContentManager.html#MidgardContentManager-struct" title="MidgardContentManager">MidgardContentManager</a>;
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="returnvalue">MidgardConnection</span></a> * <a class="link" href="MidgardContentManager.html#midgard-content-manager-get-connection" title="midgard_content_manager_get_connection ()">midgard_content_manager_get_connection</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardContentManager.html" title="MidgardContentManager"><span class="type">MidgardContentManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a class="link" href="MidgardContentManagerJob.html" title="MidgardContentManagerJob"><span class="returnvalue">MidgardContentManagerJob</span></a> * <a class="link" href="MidgardContentManager.html#midgard-content-manager-create-job" title="midgard_content_manager_create_job ()">midgard_content_manager_create_job</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardContentManager.html" title="MidgardContentManager"><span class="type">MidgardContentManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><span class="type">MidgardContentManagerJobType</span> type</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> *content</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardObjectReference.html" title="MidgardObjectReference"><span class="type">MidgardObjectReference</span></a> *reference</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardModel.html" title="MidgardModel"><span class="type">MidgardModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardContentManager.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GInterface
+   +----MidgardContentManager
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardContentManager.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+MidgardContentManager requires
+ <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardContentManager.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardContentManager.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardContentManager-struct"></a><h3>MidgardContentManager</h3>
+<pre class="programlisting">typedef struct _MidgardContentManager MidgardContentManager;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-content-manager-get-connection"></a><h3>midgard_content_manager_get_connection ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="returnvalue">MidgardConnection</span></a> * midgard_content_manager_get_connection
+                                                        (<em class="parameter"><code><a class="link" href="MidgardContentManager.html" title="MidgardContentManager"><span class="type">MidgardContentManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardContentManager.html" title="MidgardContentManager"><span class="type">MidgardContentManager</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store returned error</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 12.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-content-manager-create-job"></a><h3>midgard_content_manager_create_job ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardContentManagerJob.html" title="MidgardContentManagerJob"><span class="returnvalue">MidgardContentManagerJob</span></a> * midgard_content_manager_create_job
+                                                        (<em class="parameter"><code><a class="link" href="MidgardContentManager.html" title="MidgardContentManager"><span class="type">MidgardContentManager</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><span class="type">MidgardContentManagerJobType</span> type</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> *content</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardObjectReference.html" title="MidgardObjectReference"><span class="type">MidgardObjectReference</span></a> *reference</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardModel.html" title="MidgardModel"><span class="type">MidgardModel</span></a> *model</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardContentManager.html" title="MidgardContentManager"><span class="type">MidgardContentManager</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td><span class="type">MidgardContentManagerJobType</span></td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>content</code></em> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> object which holds content data</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>reference</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardObjectReference.html" title="MidgardObjectReference"><span class="type">MidgardObjectReference</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardModel.html" title="MidgardModel"><span class="type">MidgardModel</span></a> instance. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store returned error</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="MidgardContentManagerJob.html" title="MidgardContentManagerJob"><span class="type">MidgardContentManagerJob</span></a> job or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 12.09</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

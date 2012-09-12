@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardWorkspaceStorage</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Workspaces-And-Data-Contexts.html" title="Workspaces and Data Contexts">
+<link rel="prev" href="midgard-Midgard-Workspaces-And-Data-Contexts.html" title="Workspaces and Data Contexts">
+<link rel="next" href="MidgardWorkspaceContext.html" title="MidgardWorkspaceContext">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="midgard-Midgard-Workspaces-And-Data-Contexts.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Workspaces-And-Data-Contexts.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardWorkspaceContext.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardWorkspaceStorage.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardWorkspaceStorage.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardWorkspaceStorage.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardWorkspaceStorage.prerequisites" class="shortcut">Prerequisites</a>
+                   | 
+                  <a href="#MidgardWorkspaceStorage.implementations" class="shortcut">Known Implementations</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardWorkspaceStorage"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardWorkspaceStorage.top_of_page"></a>MidgardWorkspaceStorage</span></h2>
+<p>MidgardWorkspaceStorage</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardWorkspaceStorage.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+                    <a class="link" href="MidgardWorkspaceStorage.html#MidgardWorkspaceStorage-struct" title="MidgardWorkspaceStorage">MidgardWorkspaceStorage</a>;
+const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="MidgardWorkspaceStorage.html#midgard-workspace-storage-get-path" title="midgard_workspace_storage_get_path ()">midgard_workspace_storage_get_path</a>  (<em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *self</code></em>);
+<a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="returnvalue">MidgardWorkspaceStorage</span></a> * <a class="link" href="MidgardWorkspaceStorage.html#midgard-workspace-storage-get-workspace-by-name" title="midgard_workspace_storage_get_workspace_by_name ()">midgard_workspace_storage_get_workspace_by_name</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="returnvalue">MidgardWorkspaceStorage</span></a> ** <a class="link" href="MidgardWorkspaceStorage.html#midgard-workspace-storage-list-children" title="midgard_workspace_storage_list_children ()">midgard_workspace_storage_list_children</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_objects</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **            <a class="link" href="MidgardWorkspaceStorage.html#midgard-workspace-storage-list-workspace-names" title="midgard_workspace_storage_list_workspace_names ()">midgard_workspace_storage_list_workspace_names</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_names</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspaceStorage.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GInterface
+   +----MidgardWorkspaceStorage
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspaceStorage.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+MidgardWorkspaceStorage requires
+ <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspaceStorage.implementations"></a><h2>Known Implementations</h2>
+<p>
+MidgardWorkspaceStorage is implemented by
+ <a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace">MidgardWorkspace</a> and  <a class="link" href="MidgardWorkspaceContext.html" title="MidgardWorkspaceContext">MidgardWorkspaceContext</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspaceStorage.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspaceStorage.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardWorkspaceStorage-struct"></a><h3>MidgardWorkspaceStorage</h3>
+<pre class="programlisting">typedef struct _MidgardWorkspaceStorage MidgardWorkspaceStorage;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-workspace-storage-get-path"></a><h3>midgard_workspace_storage_get_path ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       midgard_workspace_storage_get_path  (<em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *self</code></em>);</pre>
+<p>
+Returned path may be <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, if given object doesn't exists in storage
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a path, given <a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> is at. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-workspace-storage-get-workspace-by-name"></a><h3>midgard_workspace_storage_get_workspace_by_name ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="returnvalue">MidgardWorkspaceStorage</span></a> * midgard_workspace_storage_get_workspace_by_name
+                                                        (<em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>a name of <a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> object to find</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>(transfer full): (transfer full): (transfer full): (transfer full): (transfer full): (transfer full): (transfer full): (transfer full): newly allocated <a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> object if found, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> otherwise. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-workspace-storage-list-children"></a><h3>midgard_workspace_storage_list_children ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="returnvalue">MidgardWorkspaceStorage</span></a> ** midgard_workspace_storage_list_children
+                                                        (<em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_objects</code></em>);</pre>
+<p>
+In case of <a class="link" href="MidgardWorkspaceContext.html" title="MidgardWorkspaceContext"><span class="type">MidgardWorkspaceContext</span></a>, all <a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> objects from context are 
+returned.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_objects</code></em> :</span></p></td>
+<td>a pointer to store number of returned objects</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>newly allocated array of <a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> objects. <span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_objects][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-workspace-storage-list-workspace-names"></a><h3>midgard_workspace_storage_list_workspace_names ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **            midgard_workspace_storage_list_workspace_names
+                                                        (<em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_names</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_names</code></em> :</span></p></td>
+<td>a pointer to store number of returned names</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>array of names. <span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_names]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

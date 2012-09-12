@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardJob</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Persist-Operations.html" title="Midgard Persist Operations">
+<link rel="prev" href="MidgardContentManager.html" title="MidgardContentManager">
+<link rel="next" href="MidgardContentManagerJob.html" title="MidgardContentManagerJob">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardContentManager.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Persist-Operations.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardContentManagerJob.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardJob.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardJob.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardJob.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardJob.prerequisites" class="shortcut">Prerequisites</a>
+                   | 
+                  <a href="#MidgardJob.derived-interfaces" class="shortcut">Known Derived Interfaces</a>
+                   | 
+                  <a href="#MidgardJob.implementations" class="shortcut">Known Implementations</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardJob"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardJob.top_of_page"></a>MidgardJob</span></h2>
+<p>MidgardJob</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardJob.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="MidgardJob.html#MidgardJob-struct" title="MidgardJob">MidgardJob</a>;
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardJob.html#midgard-job-is-running" title="midgard_job_is_running ()">midgard_job_is_running</a>              (<em class="parameter"><code><a class="link" href="MidgardJob.html" title="MidgardJob"><span class="type">MidgardJob</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardJob.html#midgard-job-is-executed" title="midgard_job_is_executed ()">midgard_job_is_executed</a>             (<em class="parameter"><code><a class="link" href="MidgardJob.html" title="MidgardJob"><span class="type">MidgardJob</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardJob.html#midgard-job-is-failed" title="midgard_job_is_failed ()">midgard_job_is_failed</a>               (<em class="parameter"><code><a class="link" href="MidgardJob.html" title="MidgardJob"><span class="type">MidgardJob</span></a> *self</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardJob.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GInterface
+   +----MidgardJob
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardJob.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+MidgardJob requires
+ <a class="link" href="MidgardExecutable.html" title="MidgardExecutable">MidgardExecutable</a> and  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardJob.derived-interfaces"></a><h2>Known Derived Interfaces</h2>
+<p>
+MidgardJob is required by
+ <a class="link" href="MidgardContentManagerJob.html" title="MidgardContentManagerJob">MidgardContentManagerJob</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardJob.implementations"></a><h2>Known Implementations</h2>
+<p>
+MidgardJob is implemented by
+ <a class="link" href="MidgardSqlContentManagerJob.html" title="MidgardSqlContentManagerJob">MidgardSqlContentManagerJob</a>,  <a class="link" href="MidgardSqlContentManagerJobCreate.html" title="MidgardSqlContentManagerJobCreate">MidgardSqlContentManagerJobCreate</a>,  <a class="link" href="MidgardSqlContentManagerJobDelete.html" title="MidgardSqlContentManagerJobDelete">MidgardSqlContentManagerJobDelete</a>,  <a class="link" href="MidgardSqlContentManagerJobLoad.html" title="MidgardSqlContentManagerJobLoad">MidgardSqlContentManagerJobLoad</a>,  <a class="link" href="MidgardSqlContentManagerJobPurge.html" title="MidgardSqlContentManagerJobPurge">MidgardSqlContentManagerJobPurge</a> and  <a class="link" href="MidgardSqlContentManagerJobUpdate.html" title="MidgardSqlContentManagerJobUpdate">MidgardSqlContentManagerJobUpdate</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardJob.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardJob.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardJob-struct"></a><h3>MidgardJob</h3>
+<pre class="programlisting">typedef struct _MidgardJob MidgardJob;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-job-is-running"></a><h3>midgard_job_is_running ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_job_is_running              (<em class="parameter"><code><a class="link" href="MidgardJob.html" title="MidgardJob"><span class="type">MidgardJob</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardJob.html" title="MidgardJob"><span class="type">MidgardJob</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if job is running, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 12.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-job-is-executed"></a><h3>midgard_job_is_executed ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_job_is_executed             (<em class="parameter"><code><a class="link" href="MidgardJob.html" title="MidgardJob"><span class="type">MidgardJob</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardJob.html" title="MidgardJob"><span class="type">MidgardJob</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if job is executed, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 12.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-job-is-failed"></a><h3>midgard_job_is_failed ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_job_is_failed               (<em class="parameter"><code><a class="link" href="MidgardJob.html" title="MidgardJob"><span class="type">MidgardJob</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardJob.html" title="MidgardJob"><span class="type">MidgardJob</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if job failed, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 12.09</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

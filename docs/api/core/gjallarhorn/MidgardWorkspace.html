@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardWorkspace</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Workspaces-And-Data-Contexts.html" title="Workspaces and Data Contexts">
+<link rel="prev" href="MidgardWorkspaceContext.html" title="MidgardWorkspaceContext">
+<link rel="next" href="MidgardWorkspaceManager.html" title="MidgardWorkspaceManager">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardWorkspaceContext.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Workspaces-And-Data-Contexts.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardWorkspaceManager.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardWorkspace.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardWorkspace.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardWorkspace.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardWorkspace.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#MidgardWorkspace.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardWorkspace"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardWorkspace.top_of_page"></a>MidgardWorkspace</span></h2>
+<p>MidgardWorkspace</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardWorkspace.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+                    <a class="link" href="MidgardWorkspace.html#MidgardWorkspace-struct" title="MidgardWorkspace">MidgardWorkspace</a>;
+struct              <a class="link" href="MidgardWorkspace.html#MidgardWorkspaceClass" title="struct MidgardWorkspaceClass">MidgardWorkspaceClass</a>;
+<a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="returnvalue">MidgardWorkspace</span></a> *  <a class="link" href="MidgardWorkspace.html#midgard-workspace-new" title="midgard_workspace_new ()">midgard_workspace_new</a>               ();
+const <a class="link" href="MidgardWorkspaceContext.html" title="MidgardWorkspaceContext"><span class="returnvalue">MidgardWorkspaceContext</span></a> * <a class="link" href="MidgardWorkspace.html#midgard-workspace-get-context" title="midgard_workspace_get_context ()">midgard_workspace_get_context</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> *self</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspace.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject">MidgardDBObject</a>
+         +----MidgardWorkspace
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspace.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+MidgardWorkspace implements
+ <a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage">MidgardWorkspaceStorage</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspace.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardWorkspace.html#MidgardWorkspace--guid" title='The "guid" property'>guid</a>"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read
+  "<a class="link" href="MidgardWorkspace.html#MidgardWorkspace--id" title='The "id" property'>id</a>"                       <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read
+  "<a class="link" href="MidgardWorkspace.html#MidgardWorkspace--name" title='The "name" property'>name</a>"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+  "<a class="link" href="MidgardWorkspace.html#MidgardWorkspace--parent-workspace" title='The "parent-workspace" property'>parent-workspace</a>"         <a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a>*     : Read / Write / Construct Only
+  "<a class="link" href="MidgardWorkspace.html#MidgardWorkspace--path" title='The "path" property'>path</a>"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read
+  "<a class="link" href="MidgardWorkspace.html#MidgardWorkspace--up" title='The "up" property'>up</a>"                       <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspace.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspace.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardWorkspace-struct"></a><h3>MidgardWorkspace</h3>
+<pre class="programlisting">typedef struct _MidgardWorkspace MidgardWorkspace;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardWorkspaceClass"></a><h3>struct MidgardWorkspaceClass</h3>
+<pre class="programlisting">struct MidgardWorkspaceClass {
+	MidgardDBObjectClass parent;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-workspace-new"></a><h3>midgard_workspace_new ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="returnvalue">MidgardWorkspace</span></a> *  midgard_workspace_new               ();</pre>
+<p>
+Simplified constructor.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> instance</td>
+</tr></tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-workspace-get-context"></a><h3>midgard_workspace_get_context ()</h3>
+<pre class="programlisting">const <a class="link" href="MidgardWorkspaceContext.html" title="MidgardWorkspaceContext"><span class="returnvalue">MidgardWorkspaceContext</span></a> * midgard_workspace_get_context
+                                                        (<em class="parameter"><code><a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceContext.html" title="MidgardWorkspaceContext"><span class="type">MidgardWorkspaceContext</span></a> <em class="parameter"><code>self</code></em> is in or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardWorkspace.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardWorkspace--guid"></a><h3>The <code class="literal">"guid"</code> property</h3>
+<pre class="programlisting">  "guid"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read</pre>
+<p></p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardWorkspace--id"></a><h3>The <code class="literal">"id"</code> property</h3>
+<pre class="programlisting">  "id"                       <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read</pre>
+<p></p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardWorkspace--name"></a><h3>The <code class="literal">"name"</code> property</h3>
+<pre class="programlisting">  "name"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p></p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardWorkspace--parent-workspace"></a><h3>The <code class="literal">"parent-workspace"</code> property</h3>
+<pre class="programlisting">  "parent-workspace"         <a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a>*     : Read / Write / Construct Only</pre>
+<p></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardWorkspace--path"></a><h3>The <code class="literal">"path"</code> property</h3>
+<pre class="programlisting">  "path"                     <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read</pre>
+<p></p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardWorkspace--up"></a><h3>The <code class="literal">"up"</code> property</h3>
+<pre class="programlisting">  "up"                       <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read</pre>
+<p></p>
+<p>Default value: 0</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

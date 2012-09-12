@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardSqlQueryConstraint</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Midgard-Query.html" title="Midgard Query">
+<link rel="prev" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn">
+<link rel="next" href="MidgardSqlQueryResult.html" title="MidgardSqlQueryResult">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardSqlQueryColumn.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Midgard-Query.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardSqlQueryResult.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardSqlQueryConstraint.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardSqlQueryConstraint.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardSqlQueryConstraint.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardSqlQueryConstraint.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#MidgardSqlQueryConstraint.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardSqlQueryConstraint"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardSqlQueryConstraint.top_of_page"></a>MidgardSqlQueryConstraint</span></h2>
+<p>MidgardSqlQueryConstraint</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardSqlQueryConstraint.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="MidgardSqlQueryConstraint.html#MidgardSqlQueryConstraint-struct" title="struct MidgardSqlQueryConstraint">MidgardSqlQueryConstraint</a>;
+struct              <a class="link" href="MidgardSqlQueryConstraint.html#MidgardSqlQueryConstraintClass" title="struct MidgardSqlQueryConstraintClass">MidgardSqlQueryConstraintClass</a>;
+<a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="returnvalue">MidgardSqlQueryConstraint</span></a> * <a class="link" href="MidgardSqlQueryConstraint.html#midgard-sql-query-constraint-new" title="midgard_sql_query_constraint_new ()">midgard_sql_query_constraint_new</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="type">MidgardSqlQueryColumn</span></a> *column</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *op</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardQueryHolder.html" title="MidgardQueryHolder"><span class="type">MidgardQueryHolder</span></a> *holder</code></em>);
+<a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="returnvalue">MidgardSqlQueryColumn</span></a> * <a class="link" href="MidgardSqlQueryConstraint.html#midgard-sql-query-constraint-get-column" title="midgard_sql_query_constraint_get_column ()">midgard_sql_query_constraint_get_column</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="type">MidgardSqlQueryConstraint</span></a> *self</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardSqlQueryConstraint.html#midgard-sql-query-constraint-set-column" title="midgard_sql_query_constraint_set_column ()">midgard_sql_query_constraint_set_column</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="type">MidgardSqlQueryConstraint</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="type">MidgardSqlQueryColumn</span></a> *column</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="MidgardSqlQueryConstraint.html#midgard-sql-query-constraint-get-operator" title="midgard_sql_query_constraint_get_operator ()">midgard_sql_query_constraint_get_operator</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="type">MidgardSqlQueryConstraint</span></a> *self</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardSqlQueryConstraint.html#midgard-sql-query-constraint-set-operator" title="midgard_sql_query_constraint_set_operator ()">midgard_sql_query_constraint_set_operator</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="type">MidgardSqlQueryConstraint</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *op</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a class="link" href="MidgardQueryHolder.html" title="MidgardQueryHolder"><span class="returnvalue">MidgardQueryHolder</span></a> * <a class="link" href="MidgardSqlQueryConstraint.html#midgard-sql-query-constraint-get-holder" title="midgard_sql_query_constraint_get_holder ()">midgard_sql_query_constraint_get_holder</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="type">MidgardSqlQueryConstraint</span></a> *self</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQueryConstraint.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----MidgardSqlQueryConstraint
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQueryConstraint.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+MidgardSqlQueryConstraint implements
+ <a class="link" href="MidgardQueryConstraintSimple.html" title="MidgardQueryConstraintSimple">MidgardQueryConstraintSimple</a> and  <a class="link" href="MidgardValidable.html" title="MidgardValidable">MidgardValidable</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQueryConstraint.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardSqlQueryConstraint.html#MidgardSqlQueryConstraint--column" title='The "column" property'>column</a>"                   <a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="type">MidgardSqlQueryColumn</span></a>*  : Read / Write
+  "<a class="link" href="MidgardSqlQueryConstraint.html#MidgardSqlQueryConstraint--holder" title='The "holder" property'>holder</a>"                   <a class="link" href="MidgardQueryHolder.html" title="MidgardQueryHolder"><span class="type">MidgardQueryHolder</span></a>*   : Read / Write
+  "<a class="link" href="MidgardSqlQueryConstraint.html#MidgardSqlQueryConstraint--operator" title='The "operator" property'>operator</a>"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQueryConstraint.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQueryConstraint.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardSqlQueryConstraint-struct"></a><h3>struct MidgardSqlQueryConstraint</h3>
+<pre class="programlisting">struct MidgardSqlQueryConstraint;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardSqlQueryConstraintClass"></a><h3>struct MidgardSqlQueryConstraintClass</h3>
+<pre class="programlisting">struct MidgardSqlQueryConstraintClass {
+	GObjectClass parent;
+	MidgardQueryConstraintSimple **(*list_constraints) (MidgardSqlQueryConstraint *self, guint *n_objects);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-sql-query-constraint-new"></a><h3>midgard_sql_query_constraint_new ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="returnvalue">MidgardSqlQueryConstraint</span></a> * midgard_sql_query_constraint_new
+                                                        (<em class="parameter"><code><a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="type">MidgardSqlQueryColumn</span></a> *column</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *op</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardQueryHolder.html" title="MidgardQueryHolder"><span class="type">MidgardQueryHolder</span></a> *holder</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>column</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="type">MidgardSqlQueryColumn</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>constraint operator</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>holder</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryHolder.html" title="MidgardQueryHolder"><span class="type">MidgardQueryHolder</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="type">MidgardSqlQueryConstraint</span></a> instance, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-sql-query-constraint-get-column"></a><h3>midgard_sql_query_constraint_get_column ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="returnvalue">MidgardSqlQueryColumn</span></a> * midgard_sql_query_constraint_get_column
+                                                        (<em class="parameter"><code><a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="type">MidgardSqlQueryConstraint</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="type">MidgardSqlQueryConstraint</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="type">MidgardSqlQueryColumn</span></a> associated with constraint or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-sql-query-constraint-set-column"></a><h3>midgard_sql_query_constraint_set_column ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_sql_query_constraint_set_column
+                                                        (<em class="parameter"><code><a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="type">MidgardSqlQueryConstraint</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="type">MidgardSqlQueryColumn</span></a> *column</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="type">MidgardSqlQueryConstraint</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>column</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="type">MidgardSqlQueryColumn</span></a> to associate with <em class="parameter"><code>self</code></em> constraint</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store returned error</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-sql-query-constraint-get-operator"></a><h3>midgard_sql_query_constraint_get_operator ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       midgard_sql_query_constraint_get_operator
+                                                        (<em class="parameter"><code><a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="type">MidgardSqlQueryConstraint</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="type">MidgardSqlQueryConstraint</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>operator type associated with <em class="parameter"><code>self</code></em> constraint, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-sql-query-constraint-set-operator"></a><h3>midgard_sql_query_constraint_set_operator ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_sql_query_constraint_set_operator
+                                                        (<em class="parameter"><code><a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="type">MidgardSqlQueryConstraint</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *op</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Check <a class="link" href="MidgardQueryConstraint.html#midgard-query-constraint-new" title="midgard_query_constraint_new ()"><code class="function">midgard_query_constraint_new()</code></a> for valid operator types.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="type">MidgardSqlQueryConstraint</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td>operator to associate with constraint</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store returned error</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-sql-query-constraint-get-holder"></a><h3>midgard_sql_query_constraint_get_holder ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardQueryHolder.html" title="MidgardQueryHolder"><span class="returnvalue">MidgardQueryHolder</span></a> * midgard_sql_query_constraint_get_holder
+                                                        (<em class="parameter"><code><a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="type">MidgardSqlQueryConstraint</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardSqlQueryConstraint.html" title="MidgardSqlQueryConstraint"><span class="type">MidgardSqlQueryConstraint</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="MidgardQueryHolder.html" title="MidgardQueryHolder"><span class="type">MidgardQueryHolder</span></a> associated with <em class="parameter"><code>self</code></em> constraint, or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.6</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardSqlQueryConstraint.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardSqlQueryConstraint--column"></a><h3>The <code class="literal">"column"</code> property</h3>
+<pre class="programlisting">  "column"                   <a class="link" href="MidgardSqlQueryColumn.html" title="MidgardSqlQueryColumn"><span class="type">MidgardSqlQueryColumn</span></a>*  : Read / Write</pre>
+<p></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardSqlQueryConstraint--holder"></a><h3>The <code class="literal">"holder"</code> property</h3>
+<pre class="programlisting">  "holder"                   <a class="link" href="MidgardQueryHolder.html" title="MidgardQueryHolder"><span class="type">MidgardQueryHolder</span></a>*   : Read / Write</pre>
+<p></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardSqlQueryConstraint--operator"></a><h3>The <code class="literal">"operator"</code> property</h3>
+<pre class="programlisting">  "operator"                 <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
+<p></p>
+<p>Default value: ""</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>
