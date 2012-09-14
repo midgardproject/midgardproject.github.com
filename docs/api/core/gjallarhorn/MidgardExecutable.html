@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardExecutable</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Execution-And-Validation.html" title="Common interfaces to validate and execute operations">
+<link rel="prev" href="MidgardValidable.html" title="MidgardValidable">
+<link rel="next" href="midgard-Types.html" title="Types">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardValidable.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Execution-And-Validation.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="midgard-Types.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardExecutable.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardExecutable.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardExecutable.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardExecutable.prerequisites" class="shortcut">Prerequisites</a>
+                   | 
+                  <a href="#MidgardExecutable.derived-interfaces" class="shortcut">Known Derived Interfaces</a>
+                   | 
+                  <a href="#MidgardExecutable.implementations" class="shortcut">Known Implementations</a>
+                   | 
+                  <a href="#MidgardExecutable.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardExecutable"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardExecutable.top_of_page"></a>MidgardExecutable</span></h2>
+<p>MidgardExecutable</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardExecutable.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="MidgardExecutable.html#MidgardExecutable-struct" title="MidgardExecutable">MidgardExecutable</a>;
+<span class="returnvalue">void</span>                <a class="link" href="MidgardExecutable.html#midgard-executable-execute" title="midgard_executable_execute ()">midgard_executable_execute</a>          (<em class="parameter"><code><a class="link" href="MidgardExecutable.html" title="MidgardExecutable"><span class="type">MidgardExecutable</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardExecutable.html#midgard-executable-execute-async" title="midgard_executable_execute_async ()">midgard_executable_execute_async</a>    (<em class="parameter"><code><a class="link" href="MidgardExecutable.html" title="MidgardExecutable"><span class="type">MidgardExecutable</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardExecutable.html#midgard-executable-execution-start" title="midgard_executable_execution_start ()">midgard_executable_execution_start</a>  (<em class="parameter"><code><a class="link" href="MidgardExecutable.html" title="MidgardExecutable"><span class="type">MidgardExecutable</span></a> *self</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardExecutable.html#midgard-executable-execution-end" title="midgard_executable_execution_end ()">midgard_executable_execution_end</a>    (<em class="parameter"><code><a class="link" href="MidgardExecutable.html" title="MidgardExecutable"><span class="type">MidgardExecutable</span></a> *self</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardExecutable.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GInterface
+   +----MidgardExecutable
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardExecutable.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+MidgardExecutable requires
+ <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardExecutable.derived-interfaces"></a><h2>Known Derived Interfaces</h2>
+<p>
+MidgardExecutable is required by
+ <a class="link" href="MidgardContentManagerJob.html" title="MidgardContentManagerJob">MidgardContentManagerJob</a> and  <a class="link" href="MidgardJob.html" title="MidgardJob">MidgardJob</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardExecutable.implementations"></a><h2>Known Implementations</h2>
+<p>
+MidgardExecutable is implemented by
+ <a class="link" href="MidgardQueryExecutor.html" title="MidgardQueryExecutor">MidgardQueryExecutor</a>,  <a class="link" href="MidgardQuerySelect.html" title="MidgardQuerySelect">MidgardQuerySelect</a>,  <a class="link" href="MidgardSqlContentManagerJob.html" title="MidgardSqlContentManagerJob">MidgardSqlContentManagerJob</a>,  <a class="link" href="MidgardSqlContentManagerJobCreate.html" title="MidgardSqlContentManagerJobCreate">MidgardSqlContentManagerJobCreate</a>,  <a class="link" href="MidgardSqlContentManagerJobDelete.html" title="MidgardSqlContentManagerJobDelete">MidgardSqlContentManagerJobDelete</a>,  <a class="link" href="MidgardSqlContentManagerJobLoad.html" title="MidgardSqlContentManagerJobLoad">MidgardSqlContentManagerJobLoad</a>,  <a class="link" href="MidgardSqlContentManagerJobPurge.html" title="MidgardSqlContentManagerJobPurge">MidgardSqlContentManagerJobPurge</a>,  <a class="link" href="MidgardSqlContentManagerJobUpdate.html" title="MidgardSqlContentManagerJobUpdate">MidgardSqlContentManagerJobUpdate</a> and  <a class="link" href="MidgardSqlQuerySelectData.html" title="MidgardSqlQuerySelectData">MidgardSqlQuerySelectData</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardExecutable.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardExecutable.html#MidgardExecutable-execution-end" title='The "execution-end" signal'>execution-end</a>"                                  : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a>
+  "<a class="link" href="MidgardExecutable.html#MidgardExecutable-execution-start" title='The "execution-start" signal'>execution-start</a>"                                : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardExecutable.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardExecutable.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardExecutable-struct"></a><h3>MidgardExecutable</h3>
+<pre class="programlisting">typedef struct _MidgardExecutable MidgardExecutable;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-executable-execute"></a><h3>midgard_executable_execute ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_executable_execute          (<em class="parameter"><code><a class="link" href="MidgardExecutable.html" title="MidgardExecutable"><span class="type">MidgardExecutable</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Execute command or perform operation.
+Implementation shall check if given instance is valid.
+If it's not, shall invoke validation method, if given instance is <a class="link" href="MidgardValidable.html" title="MidgardValidable"><span class="type">MidgardValidable</span></a> derived.
+</p>
+<p>
+Before execution, implementation should emit 'execution-start' signal, and 'execution-end' when 
+execution operation is completed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardExecutable.html" title="MidgardExecutable"><span class="type">MidgardExecutable</span></a> instance
+<em class="parameter"><code>error</code></em> (error-domains MIDGARD_EXECUTION_ERROR): location to store error</td>
+</tr></tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-executable-execute-async"></a><h3>midgard_executable_execute_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_executable_execute_async    (<em class="parameter"><code><a class="link" href="MidgardExecutable.html" title="MidgardExecutable"><span class="type">MidgardExecutable</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Execute asynchronous command or perform operation.
+Implementation shall check if given instance is valid.
+If it's not, shall invoke validation method, if given instance is <a class="link" href="MidgardValidable.html" title="MidgardValidable"><span class="type">MidgardValidable</span></a> derived.
+</p>
+<p>
+Implementation shall not emit any signal inside asynchronous method. 
+Instead, signal emission should be added to GLib's default main loop(e.g. g_idle_add).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardExecutable.html" title="MidgardExecutable"><span class="type">MidgardExecutable</span></a> instance
+<em class="parameter"><code>error</code></em> (error-domains MIDGARD_EXECUTION_ERROR): location to store error</td>
+</tr></tbody>
+</table></div>
+<p class="since">Since 12.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-executable-execution-start"></a><h3>midgard_executable_execution_start ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_executable_execution_start  (<em class="parameter"><code><a class="link" href="MidgardExecutable.html" title="MidgardExecutable"><span class="type">MidgardExecutable</span></a> *self</code></em>);</pre>
+<p>
+Emits 'execution-start' signal on given executable.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardExecutable.html" title="MidgardExecutable"><span class="type">MidgardExecutable</span></a> instance</td>
+</tr></tbody>
+</table></div>
+<p class="since">Since 12.09</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-executable-execution-end"></a><h3>midgard_executable_execution_end ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_executable_execution_end    (<em class="parameter"><code><a class="link" href="MidgardExecutable.html" title="MidgardExecutable"><span class="type">MidgardExecutable</span></a> *self</code></em>);</pre>
+<p>
+Emits 'execution-end' signal on given executable.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardExecutable.html" title="MidgardExecutable"><span class="type">MidgardExecutable</span></a> instance</td>
+</tr></tbody>
+</table></div>
+<p class="since">Since 12.09</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardExecutable.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="MidgardExecutable-execution-end"></a><h3>The <code class="literal">"execution-end"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardExecutable.html" title="MidgardExecutable"><span class="type">MidgardExecutable</span></a> *executor,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)      : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a></pre>
+<p>
+Gets emitted after <em class="parameter"><code>executor</code></em>'s operation is executed
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>executor</code></em> :</span></p></td>
+<td>the <a class="link" href="MidgardExecutable.html" title="MidgardExecutable"><span class="type">MidgardExecutable</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardExecutable-execution-start"></a><h3>The <code class="literal">"execution-start"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardExecutable.html" title="MidgardExecutable"><span class="type">MidgardExecutable</span></a> *executor,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)      : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a></pre>
+<p>
+Gets emitted before <em class="parameter"><code>executor</code></em>'s operation is executed
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>executor</code></em> :</span></p></td>
+<td>the <a class="link" href="MidgardExecutable.html" title="MidgardExecutable"><span class="type">MidgardExecutable</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

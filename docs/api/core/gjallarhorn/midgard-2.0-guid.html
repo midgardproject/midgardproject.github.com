@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>guid</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Misc.html" title="Miscelanous">
+<link rel="prev" href="midgard-2.0-uuid.html" title="uuid">
+<link rel="next" href="midgard-2.0-midgard-config-auto.html" title="midgard_config_auto">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="midgard-2.0-uuid.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Misc.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="midgard-2.0-midgard-config-auto.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#midgard-2.0-guid.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#midgard-2.0-guid.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="midgard-2.0-guid"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="midgard-2.0-guid.top_of_page"></a>guid</span></h2>
+<p>guid</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="midgard-2.0-guid.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="midgard-2.0-guid.html#midgard-is-guid" title="midgard_is_guid ()">midgard_is_guid</a>                     (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *guid</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="midgard-2.0-guid.html#midgard-guid-new" title="midgard_guid_new ()">midgard_guid_new</a>                    (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="midgard-2.0-guid.html#midgard-guid-external" title="midgard_guid_external ()">midgard_guid_external</a>               (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *external</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="midgard-2.0-guid.html#mgd-create-guid" title="mgd_create_guid ()">mgd_create_guid</a>                     (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *table</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> id</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-guid.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-guid.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="midgard-is-guid"></a><h3>midgard_is_guid ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_is_guid                     (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *guid</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-guid-new"></a><h3>midgard_guid_new ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             midgard_guid_new                    (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-guid-external"></a><h3>midgard_guid_external ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             midgard_guid_external               (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *external</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="mgd-create-guid"></a><h3>mgd_create_guid ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             mgd_create_guid                     (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *mgd</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *table</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> id</code></em>);</pre>
+<p>
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

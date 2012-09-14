@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardDBObject</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Basic.html" title="Midgard Basic Types">
+<link rel="prev" href="MidgardSchemaObjectFactory.html" title="MidgardSchemaObjectFactory">
+<link rel="next" href="MidgardSchema.html" title="MidgardSchemaObjectFactory">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardSchemaObjectFactory.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Basic.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardSchema.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#midgard-2.0-midgard-dbobject.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-dbobject.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-dbobject.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#midgard-2.0-midgard-dbobject.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="midgard-2.0-midgard-dbobject"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="midgard-2.0-midgard-dbobject.top_of_page"></a>MidgardDBObject</span></h2>
+<p>MidgardDBObject</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="midgard-2.0-midgard-dbobject.synopsis"></a><h2>Synopsis</h2>
+<a name="MidgardDBObject"></a><pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+                    <a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObjectPrivate" title="MidgardDBObjectPrivate">MidgardDBObjectPrivate</a>;
+struct              <a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject-struct" title="struct MidgardDBObject">MidgardDBObject</a>;
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-dbobject.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----MidgardDBObject
+         +----<a class="link" href="midgard-2.0-midgard-metadata.html#MidgardMetadata">MidgardMetadata</a>
+         +----<a class="link" href="MidgardObject.html" title="MidgardObject">MidgardObject</a>
+         +----<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser">MidgardUser</a>
+         +----<a class="link" href="MidgardView.html" title="MidgardView">MidgardView</a>
+         +----<a class="link" href="MidgardRepligard.html" title="MidgardRepligard">MidgardRepligard</a>
+         +----<a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace">MidgardWorkspace</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-dbobject.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="midgard-2.0-midgard-dbobject.html#MidgardDBObject--connection" title='The "connection" property'>connection</a>"               <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a>*    : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-dbobject.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-dbobject.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardDBObjectPrivate"></a><h3>MidgardDBObjectPrivate</h3>
+<pre class="programlisting">typedef struct _MidgardDBObjectPrivate MidgardDBObjectPrivate;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardDBObject-struct"></a><h3>struct MidgardDBObject</h3>
+<pre class="programlisting">struct MidgardDBObject;</pre>
+<p>
+</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="midgard-2.0-midgard-dbobject.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardDBObject--connection"></a><h3>The <code class="literal">"connection"</code> property</h3>
+<pre class="programlisting">  "connection"               <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a>*    : Read / Write / Construct Only</pre>
+<p>
+Pointer to <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a>, given object has been initialized for
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

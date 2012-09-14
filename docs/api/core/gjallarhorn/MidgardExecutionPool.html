@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardExecutionPool</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Resources-Pool.html" title="Midgard Resources Pool">
+<link rel="prev" href="MidgardPool.html" title="MidgardPool">
+<link rel="next" href="midgard-Midgard-Schema-User-Defined-Types.html" title="Midgard Schema User Defined Types">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="MidgardPool.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Resources-Pool.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="midgard-Midgard-Schema-User-Defined-Types.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardExecutionPool.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardExecutionPool.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardExecutionPool.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardExecutionPool.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#MidgardExecutionPool.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardExecutionPool"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardExecutionPool.top_of_page"></a>MidgardExecutionPool</span></h2>
+<p>MidgardExecutionPool — Pool of executable objects</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardExecutionPool.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+struct              <a class="link" href="MidgardExecutionPool.html#MidgardExecutionPool-struct" title="struct MidgardExecutionPool">MidgardExecutionPool</a>;
+struct              <a class="link" href="MidgardExecutionPool.html#MidgardExecutionPoolClass" title="struct MidgardExecutionPoolClass">MidgardExecutionPoolClass</a>;
+<a class="link" href="MidgardExecutionPool.html" title="MidgardExecutionPool"><span class="returnvalue">MidgardExecutionPool</span></a> * <a class="link" href="MidgardExecutionPool.html#midgard-execution-pool-new" title="midgard_execution_pool_new ()">midgard_execution_pool_new</a>       (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> max_n_threads</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardExecutionPool.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----MidgardExecutionPool
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardExecutionPool.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+MidgardExecutionPool implements
+ <a class="link" href="MidgardPool.html" title="MidgardPool">MidgardPool</a>.</p>
+</div>
+<div class="refsect1">
+<a name="MidgardExecutionPool.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardExecutionPool.html#MidgardExecutionPool--max-n-threads" title='The "max-n-threads" property'>max-n-threads</a>"            <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardExecutionPool.description"></a><h2>Description</h2>
+<p>
+ExecutionPool is a pool of executable objects. Once any executable object has been pushed to the pool,
+its execute_async method is invoked in separate thread. Internaly, execution pool uses threads pool from GLib.
+There are no strict rules to define priority or queue of executions. Such are done, once resources are available.
+</p>
+<p>
+The best approach, is to integrate execution pool with GLib's main loop, because of executors' signals which are not emitted immediately
+after any execution is done. As a workaround for missed main loop integration, execution pool will force all operations to be executed
+during pool's destruction phase. Simply, it'll wait for all executions to be done.
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardExecutionPool.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="MidgardExecutionPool-struct"></a><h3>struct MidgardExecutionPool</h3>
+<pre class="programlisting">struct MidgardExecutionPool;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardExecutionPoolClass"></a><h3>struct MidgardExecutionPoolClass</h3>
+<pre class="programlisting">struct MidgardExecutionPoolClass {
+	GObjectClass parent;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-execution-pool-new"></a><h3>midgard_execution_pool_new ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardExecutionPool.html" title="MidgardExecutionPool"><span class="returnvalue">MidgardExecutionPool</span></a> * midgard_execution_pool_new       (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> max_n_threads</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>max_n_threads</code></em> :</span></p></td>
+<td>maximum number of threads</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="MidgardExecutionPool.html" title="MidgardExecutionPool"><span class="type">MidgardExecutionPool</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 12.09</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardExecutionPool.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardExecutionPool--max-n-threads"></a><h3>The <code class="literal">"max-n-threads"</code> property</h3>
+<pre class="programlisting">  "max-n-threads"            <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only</pre>
+<p></p>
+<p>Default value: 0</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

@@ -8,10 +8,14 @@ product_categories:
     label: API docs
     products:
       -
-        label: Midgard2 core
+        label: Midgard2 core 10.05 (stable LTS generation)
         tagline: "C (GObject) API"
         url: "/docs/api/core/ratatoskr"
-      -
+ 
+      -	label: Midgard2 core 12.09 (gjallarhorn)
+        tagline: "C (GObject) API"
+        url: "/docs/api/core/gjallarhorn"
+     -
         label: PHP extension
         tagline: "PHP5 language bindings"
         url: "/docs/api/php/ratatoskr"

@@ -1,0 +1,970 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MidgardConnection</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Midgard2 Reference Manual">
+<link rel="up" href="midgard-Basic.html" title="Midgard Basic Types">
+<link rel="prev" href="midgard-2.0-midgard-config.html" title="MidgardConfig">
+<link rel="next" href="MidgardStorage.html" title="MidgardStorage">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="midgard-2.0-midgard-config.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="midgard-Basic.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Midgard2 Reference Manual</th>
+<td><a accesskey="n" href="MidgardStorage.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#MidgardConnection.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#MidgardConnection.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#MidgardConnection.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#MidgardConnection.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#MidgardConnection.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="MidgardConnection"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="MidgardConnection.top_of_page"></a>MidgardConnection</span></h2>
+<p>MidgardConnection —  Connection and environment variables handler.</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="MidgardConnection.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;midgard/midgard.h&gt;
+
+#define             <a class="link" href="MidgardConnection.html#GETTEXT-PACKAGE:CAPS" title="GETTEXT_PACKAGE">GETTEXT_PACKAGE</a>
+                    <a class="link" href="MidgardConnection.html#MidgardConnection-struct" title="MidgardConnection">MidgardConnection</a>;
+typedef             <a class="link" href="MidgardConnection.html#MidgardConnectionClass" title="MidgardConnectionClass">MidgardConnectionClass</a>;
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="returnvalue">MidgardConnection</span></a> * <a class="link" href="MidgardConnection.html#midgard-connection-new" title="midgard_connection_new ()">midgard_connection_new</a>              (<em class="parameter"><code><span class="type">void</span></code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardConnection.html#midgard-connection-open" title="midgard_connection_open ()">midgard_connection_open</a>             (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardConnection.html#midgard-connection-close" title="midgard_connection_close ()">midgard_connection_close</a>            (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardConnection.html#midgard-connection-open-config" title="midgard_connection_open_config ()">midgard_connection_open_config</a>      (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> *config</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardConnection.html#midgard-connection-set-loglevel" title="midgard_connection_set_loglevel ()">midgard_connection_set_loglevel</a>     (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *level</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Message-Logging.html#GLogFunc"><span class="type">GLogFunc</span></a> log_func</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="MidgardConnection.html#midgard-connection-get-loglevel" title="midgard_connection_get_loglevel ()">midgard_connection_get_loglevel</a>     (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardConnection.html#midgard-connection-set-loghandler" title="midgard_connection_set_loghandler ()">midgard_connection_set_loghandler</a>   (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> loghandler</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="MidgardConnection.html#midgard-connection-get-loghandler" title="midgard_connection_get_loghandler ()">midgard_connection_get_loghandler</a>   (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="MidgardConnection.html#midgard-connection-get-error" title="midgard_connection_get_error ()">midgard_connection_get_error</a>        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);
+const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="MidgardConnection.html#midgard-connection-get-error-string" title="midgard_connection_get_error_string ()">midgard_connection_get_error_string</a> (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardConnection.html#midgard-connection-set-error" title="midgard_connection_set_error ()">midgard_connection_set_error</a>        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> errcode</code></em>);
+<a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="returnvalue">MidgardUser</span></a> *       <a class="link" href="MidgardConnection.html#midgard-connection-get-user" title="midgard_connection_get_user ()">midgard_connection_get_user</a>         (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="returnvalue">MidgardConnection</span></a> * <a class="link" href="MidgardConnection.html#midgard-connection-copy" title="midgard_connection_copy ()">midgard_connection_copy</a>             (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardConnection.html#midgard-connection-reopen" title="midgard_connection_reopen ()">midgard_connection_reopen</a>           (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **            <a class="link" href="MidgardConnection.html#midgard-connection-list-auth-types" title="midgard_connection_list_auth_types ()">midgard_connection_list_auth_types</a>  (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_types</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardConnection.html#midgard-connection-enable-replication" title="midgard_connection_enable_replication ()">midgard_connection_enable_replication</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> toggle</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardConnection.html#midgard-connection-enable-quota" title="midgard_connection_enable_quota ()">midgard_connection_enable_quota</a>     (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> toggle</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardConnection.html#midgard-connection-enable-dbus" title="midgard_connection_enable_dbus ()">midgard_connection_enable_dbus</a>      (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> toggle</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="MidgardConnection.html#midgard-connection-enable-workspace" title="midgard_connection_enable_workspace ()">midgard_connection_enable_workspace</a> (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> toggle</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardConnection.html#midgard-connection-is-enabled-replication" title="midgard_connection_is_enabled_replication ()">midgard_connection_is_enabled_replication</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardConnection.html#midgard-connection-is-enabled-quota" title="midgard_connection_is_enabled_quota ()">midgard_connection_is_enabled_quota</a> (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardConnection.html#midgard-connection-is-enabled-dbus" title="midgard_connection_is_enabled_dbus ()">midgard_connection_is_enabled_dbus</a>  (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardConnection.html#midgard-connection-is-enabled-workspace" title="midgard_connection_is_enabled_workspace ()">midgard_connection_is_enabled_workspace</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);
+const <a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="returnvalue">MidgardWorkspaceStorage</span></a> * <a class="link" href="MidgardConnection.html#midgard-connection-get-workspace" title="midgard_connection_get_workspace ()">midgard_connection_get_workspace</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="MidgardConnection.html#midgard-connection-set-workspace" title="midgard_connection_set_workspace ()">midgard_connection_set_workspace</a>    (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *workspace</code></em>);
+<a class="link" href="MidgardContentManager.html" title="MidgardContentManager"><span class="returnvalue">MidgardContentManager</span></a> * <a class="link" href="MidgardConnection.html#midgard-connection-get-content-manager" title="midgard_connection_get_content_manager ()">midgard_connection_get_content_manager</a>
+                                                        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardConnection.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----MidgardConnection
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardConnection.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardConnection.html#MidgardConnection--config" title='The "config" property'>config</a>"                   <a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a>*        : Read
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardConnection.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="MidgardConnection.html#MidgardConnection-auth-changed" title='The "auth-changed" signal'>auth-changed</a>"                                   : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a>
+  "<a class="link" href="MidgardConnection.html#MidgardConnection-connected" title='The "connected" signal'>connected</a>"                                      : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a>
+  "<a class="link" href="MidgardConnection.html#MidgardConnection-disconnected" title='The "disconnected" signal'>disconnected</a>"                                   : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a>
+  "<a class="link" href="MidgardConnection.html#MidgardConnection-error" title='The "error" signal'>error</a>"                                          : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a>
+  "<a class="link" href="MidgardConnection.html#MidgardConnection-lost-provider" title='The "lost-provider" signal'>lost-provider</a>"                                  : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="MidgardConnection.description"></a><h2>Description</h2>
+<p>
+ <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> represents database connection, and runtime Midgard related
+ environment variables. Logged in <a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> or <span class="type">midgard_error</span> for example.</p>
+<p>
+ Use <a class="link" href="MidgardConnection.html#midgard-connection-new" title="midgard_connection_new ()"><code class="function">midgard_connection_new()</code></a> to initialize new <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> object, and
+ <a class="link" href="MidgardConnection.html#midgard-connection-open" title="midgard_connection_open ()"><code class="function">midgard_connection_open()</code></a> to open database connection.
+ There is also <a class="link" href="MidgardConnection.html#midgard-connection-open-config" title="midgard_connection_open_config ()"><code class="function">midgard_connection_open_config()</code></a> for cases, if configuration file
+ is not in common path, and this file could be represented by <a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a>.
+</p>
+</div>
+<div class="refsect1">
+<a name="MidgardConnection.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="GETTEXT-PACKAGE:CAPS"></a><h3>GETTEXT_PACKAGE</h3>
+<pre class="programlisting">#define GETTEXT_PACKAGE "midgard"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConnection-struct"></a><h3>MidgardConnection</h3>
+<pre class="programlisting">typedef struct {
+	gint errnum;
+	gchar *errstr;
+	GError *err;
+} MidgardConnection;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConnectionClass"></a><h3>MidgardConnectionClass</h3>
+<pre class="programlisting">typedef struct MidgardConnectionClass MidgardConnectionClass;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-new"></a><h3>midgard_connection_new ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="returnvalue">MidgardConnection</span></a> * midgard_connection_new              (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Initializes new instance of MidgardConnection object type. 
+</p>
+<p>
+MidgardConnectionClass has no properties registered as class members. 
+Every internal data of MidgardConnection object is accessible with API
+functions, and is not settable or gettable as property's value.
+Particular methods should be implemented for language bindings.
+</p>
+<p>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> objects holds runtime ( or request ) non persistent
+data like authentication type, debug level, etc. 
+</p>
+<p>
+Persistent data like database name, blobs directory are associated with <a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> object.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>pointer to <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> object or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-open"></a><h3>midgard_connection_open ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_connection_open             (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Opens a connection to the database, which is defined in named configuration. 
+The configuration file is read from the system configuration directory
+and is used as the configuration for the created connection. For example: `/etc`
+directory is taken into account if library is compiled with `/usr' prefix, 
+`/usr/local/etc` if compiled with `/usr/local` prefix, etc.
+</p>
+<p>
+Consider using <a class="link" href="MidgardConnection.html#midgard-connection-open-config" title="midgard_connection_open_config ()"><code class="function">midgard_connection_open_config()</code></a>, if you need to open connection to 
+database which is configured in user's home directory.
+</p>
+<p>
+If the named database configuration can not be read or the connection fails,
+then <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> is returned and an error message is written to the global midgard
+error state.
+</p>
+<p>
+It also initializes <a class="link" href="MidgardSchema.html" title="MidgardSchemaObjectFactory"><span class="type">MidgardSchema</span></a> object (which is encapsulated by implementation )
+and register all MgdSchema, <a class="link" href="MidgardObject.html" title="MidgardObject"><span class="type">MidgardObject</span></a> derived classes defined by user.
+This happens only when basic Midgard classes are not registered in GType system.
+This is recommended way to initialize MgdSchema types.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>configuration file name</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>pointer to store error</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the operation succeeded, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-close"></a><h3>midgard_connection_close ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_connection_close            (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);</pre>
+<p>
+Closes connection to underlying storage. 
+All private and public data remains unchanged, so connection might be reopened at any time.
+After closing connection, 'disconnected' signal is emitted.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr></tbody>
+</table></div>
+<p class="since">Since 10.05.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-open-config"></a><h3>midgard_connection_open_config ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_connection_open_config      (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> *config</code></em>);</pre>
+<p>
+Opens a <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> with the given configuration. 
+</p>
+<p>
+Take a look at <a class="link" href="MidgardConnection.html#midgard-connection-open" title="midgard_connection_open ()"><code class="function">midgard_connection_open()</code></a> wrt <a class="link" href="MidgardSchema.html" title="MidgardSchemaObjectFactory"><span class="type">MidgardSchema</span></a>.
+</p>
+<p>
+If <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> is already associated with given config, method returns <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.
+If associated with another one, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> is returned and MGD_ERR_INTERNAL error is set.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>[in]newly initialized <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> object</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>config</code></em> :</span></p></td>
+<td>
+<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> object</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-set-loglevel"></a><h3>midgard_connection_set_loglevel ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_connection_set_loglevel     (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *level</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Message-Logging.html#GLogFunc"><span class="type">GLogFunc</span></a> log_func</code></em>);</pre>
+<p>
+Sets log level of the given MidgardConnection.
+Overwrites internal <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a>'s log level defined in configuration file. 
+By default MidgardConnection holds loglevel which is associated with ( and duplicated 
+from ) <a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a>. 
+<a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a> object's log level isn't changed by this function
+</p>
+<p>
+This method is a shortcut which sets correctly loghandler,loglevel
+   and GLib's log function. Default log function will be used if <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> 
+is defined. Core's default function is <a class="link" href="midgard-2.0-midgard-error.html#midgard-error-default-log" title="midgard_error_default_log ()"><span class="type">midgard_error_default_log</span></a>.
+</p>
+<p>
+Available levels: error, warn, warning, info, message, debug.
+warn is default loglevel, SQL queries are logged with debug level.
+With info level, function names ( and classes' names ) are ( at least should be) logged in language bindings
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>level</code></em> :</span></p></td>
+<td>Loglevel string</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>log_func</code></em> :</span></p></td>
+<td>log handler function. <span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if debug level is set, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-get-loglevel"></a><h3>midgard_connection_get_loglevel ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               midgard_connection_get_loglevel     (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>MidgardConnection instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>unsigned integer flag specified by GLogLevelFlags.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-set-loghandler"></a><h3>midgard_connection_set_loghandler ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_connection_set_loghandler   (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> loghandler</code></em>);</pre>
+<p>
+Sets internal loghandler id associated with G_LOG_DOMAIN and loglevel.
+Caller is responsible to remove loghandler using g_log_remove_handler
+when new loglevel for G_LOG_DOMAIN is set.
+</p>
+<p>
+See also: <a class="link" href="MidgardConnection.html#midgard-connection-set-loglevel" title="midgard_connection_set_loglevel ()"><span class="type">midgard_connection_set_loglevel</span></a>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>loghandler</code></em> :</span></p></td>
+<td>loghandler id</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-get-loghandler"></a><h3>midgard_connection_get_loghandler ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               midgard_connection_get_loghandler   (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>unsigned integer value which is associated with G_LOG_DOMAIN and
+MidgardConnection's loglevel currently set.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-get-error"></a><h3>midgard_connection_get_error ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                midgard_connection_get_error        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);</pre>
+<p>
+Error id may be one of set by <span class="type">midgard_error</span>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>Last error id set</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-get-error-string"></a><h3>midgard_connection_get_error_string ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       midgard_connection_get_error_string (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);</pre>
+<p>
+Error string may be one set by <span class="type">midgard_error</span>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>last error string</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-set-error"></a><h3>midgard_connection_set_error ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_connection_set_error        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> errcode</code></em>);</pre>
+<p>
+Valid <em class="parameter"><code>errcode</code></em> is one defined in <span class="type">MidgardErrorGeneric</span>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>errcode</code></em> :</span></p></td>
+<td>error code</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-get-user"></a><h3>midgard_connection_get_user ()</h3>
+<pre class="programlisting"><a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="returnvalue">MidgardUser</span></a> *       midgard_connection_get_user         (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);</pre>
+<p>
+NULL is explicitly returned if there's no midgard_user logged in 
+for the given MidgardConnection.
+See also <a class="link" href="midgard-2.0-midgard-user.html#MidgardUser"><span class="type">MidgardUser</span></a> methods if you need midgard_person associated with user.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>MidgardConnection instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A pointer to MidgardUser instance or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-copy"></a><h3>midgard_connection_copy ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="returnvalue">MidgardConnection</span></a> * midgard_connection_copy             (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);</pre>
+<p>
+This function duplicates given <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a>. It doesn't make deep copy. 
+All persistant data are kept unchanged, but runtime related members are reset 
+to default state. This function is helpful if application is forking and new 
+processes might have different environment variables.
+</p>
+<p>
+Call g_object_unref if returned object is no longer needed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>Newly allocated and duplicated <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-reopen"></a><h3>midgard_connection_reopen ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_connection_reopen           (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);</pre>
+<p>
+This is MySQL optimized workaround for lost connection event.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-list-auth-types"></a><h3>midgard_connection_list_auth_types ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> **            midgard_connection_list_auth_types  (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_types</code></em>);</pre>
+<p>
+List available and registered authentication types.
+Use <a href="/usr/share/gtk-doc/html/glib/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a> to free returned array.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_types</code></em> :</span></p></td>
+<td>a pointer to store number of returned types</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>NULL terminated array with authentication types. <span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-enable-replication"></a><h3>midgard_connection_enable_replication ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_connection_enable_replication
+                                                        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> toggle</code></em>);</pre>
+<p>
+Enable or disable repligard table usage.
+If enabled, every base operation (create, update, delete) will be recorded in repligard table.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>toggle</code></em> :</span></p></td>
+<td>replication enable, disable toggle</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-enable-quota"></a><h3>midgard_connection_enable_quota ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_connection_enable_quota     (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> toggle</code></em>);</pre>
+<p>
+Enable or disable quota table usage.
+If enabled, every base operation (create, update, delete) will be recorded in quota table, 
+limiting particular types usage.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>toggle</code></em> :</span></p></td>
+<td>quota enable, disable toggle</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-enable-dbus"></a><h3>midgard_connection_enable_dbus ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_connection_enable_dbus      (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> toggle</code></em>);</pre>
+<p>
+Enable or disable dbus messages send for basic operation
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>toggle</code></em> :</span></p></td>
+<td>dbus enable, disable toggle</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-enable-workspace"></a><h3>midgard_connection_enable_workspace ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                midgard_connection_enable_workspace (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> toggle</code></em>);</pre>
+<p>
+Enable or disable workspace (and contexts) support
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>toggle</code></em> :</span></p></td>
+<td>workspace enable, disable toggle</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-is-enabled-replication"></a><h3>midgard_connection_is_enabled_replication ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_connection_is_enabled_replication
+                                                        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, if replication is enabled, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-is-enabled-quota"></a><h3>midgard_connection_is_enabled_quota ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_connection_is_enabled_quota (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, if quota is enabled, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-is-enabled-dbus"></a><h3>midgard_connection_is_enabled_dbus ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_connection_is_enabled_dbus  (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, if dbus is enabled, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-is-enabled-workspace"></a><h3>midgard_connection_is_enabled_workspace ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_connection_is_enabled_workspace
+                                                        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, if workspace support is enabled, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-get-workspace"></a><h3>midgard_connection_get_workspace ()</h3>
+<pre class="programlisting">const <a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="returnvalue">MidgardWorkspaceStorage</span></a> * midgard_connection_get_workspace
+                                                        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> associated with <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-set-workspace"></a><h3>midgard_connection_set_workspace ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            midgard_connection_set_workspace    (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> *workspace</code></em>);</pre>
+<p>
+Actual workspace scope depends on <a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> implementation.
+For example, if <a class="link" href="MidgardWorkspaceContext.html" title="MidgardWorkspaceContext"><span class="type">MidgardWorkspaceContext</span></a> is passed as <em class="parameter"><code>workspace</code></em> argument,
+Midgard environmental workspace is a tree context, which is the opposite 
+of <a class="link" href="MidgardWorkspace.html" title="MidgardWorkspace"><span class="type">MidgardWorkspace</span></a> which limits workspace scope to given one only.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>workspace</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardWorkspaceStorage.html" title="MidgardWorkspaceStorage"><span class="type">MidgardWorkspaceStorage</span></a> to set for given <a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 10.05.5</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="midgard-connection-get-content-manager"></a><h3>midgard_connection_get_content_manager ()</h3>
+<pre class="programlisting"><a class="link" href="MidgardContentManager.html" title="MidgardContentManager"><span class="returnvalue">MidgardContentManager</span></a> * midgard_connection_get_content_manager
+                                                        (<em class="parameter"><code><a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *self</code></em>,
+                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a pointer to store returned error</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="MidgardContentManager.html" title="MidgardContentManager"><span class="type">MidgardContentManager</span></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 12.09</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardConnection.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="MidgardConnection--config"></a><h3>The <code class="literal">"config"</code> property</h3>
+<pre class="programlisting">  "config"                   <a class="link" href="midgard-2.0-midgard-config.html#MidgardConfig"><span class="type">MidgardConfig</span></a>*        : Read</pre>
+<p>A deep copy of config with empty database username and password values.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="MidgardConnection.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="MidgardConnection-auth-changed"></a><h3>The <code class="literal">"auth-changed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *midgardconnection,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)              : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardconnection</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConnection-connected"></a><h3>The <code class="literal">"connected"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *midgardconnection,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)              : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardconnection</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConnection-disconnected"></a><h3>The <code class="literal">"disconnected"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *midgardconnection,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)              : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardconnection</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConnection-error"></a><h3>The <code class="literal">"error"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *arg0,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)      : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a></pre>
+<p>
+error signal is emitted every time when error set is different than MGD_ERR_OK
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MidgardConnection-lost-provider"></a><h3>The <code class="literal">"lost-provider"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="MidgardConnection.html" title="MidgardConnection"><span class="type">MidgardConnection</span></a> *midgardconnection,
+                                                        <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)              : <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-NO-HOOKS:CAPS"><code class="literal">No Hooks</code></a></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>midgardconnection</code></em> :</span></p></td>
+<td>the object which received the signal.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>
