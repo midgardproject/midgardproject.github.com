@@ -37,7 +37,7 @@
 <div class="refnamediv"><table width="100%"><tr>
 <td valign="top">
 <h2><span class="refentrytitle"><a name="MidgardExecutionPool.top_of_page"></a>MidgardExecutionPool</span></h2>
-<p>MidgardExecutionPool — Pool of executable objects</p>
+<p>MidgardExecutionPool</p>
 </td>
 <td valign="top" align="right"></td>
 </tr></table></div>
@@ -73,14 +73,6 @@ MidgardExecutionPool implements
 <div class="refsect1">
 <a name="MidgardExecutionPool.description"></a><h2>Description</h2>
 <p>
-ExecutionPool is a pool of executable objects. Once any executable object has been pushed to the pool,
-its execute_async method is invoked in separate thread. Internaly, execution pool uses threads pool from GLib.
-There are no strict rules to define priority or queue of executions. Such are done, once resources are available.
-</p>
-<p>
-The best approach, is to integrate execution pool with GLib's main loop, because of executors' signals which are not emitted immediately
-after any execution is done. As a workaround for missed main loop integration, execution pool will force all operations to be executed
-during pool's destruction phase. Simply, it'll wait for all executions to be done.
 </p>
 </div>
 <div class="refsect1">
