@@ -11,4 +11,8 @@ Midgard2 is an Open Source Content Repository. It provides an object-oriented an
 
 With Midgard2 you have generic way to define your own storage objects, that can then be queried and managed using multiple programming languages and applications. This enables writing your CMS or project management tool using a repository-oriented architecture where the Midgard2 storage system acts as the central point of integration between various tools.
 
+<div class="update">
+<strong>12.09 Gjallarhorn</strong> is the latest stable version of Midgard2. Please refer to the <a href="http://lists.midgard-project.org/pipermail/dev/2012-September/003202.html">release notes</a> or the <a href="http://bergie.iki.fi/blog/gjallarhorn/">introductory blog post</a>.
+</div>
+
 Midgard2 is built on the [GNOME](http://www.gnome.org/) stack of libraries like [GLib](http://en.wikipedia.org/wiki/GLib) and [libgda](http://www.gnome-db.org/), and has language bindings for [C](http://en.wikipedia.org/wiki/C_%28programming_language%29), [Python](http://python.org/), [PHP](http://php.net/), and other languages via [GObject Introspection](http://live.gnome.org/GObjectIntrospection/). Communications between applications written in the different languages happen over [D-Bus](http://www.freedesktop.org/wiki/Software/dbus).
